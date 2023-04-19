@@ -1,0 +1,210 @@
+{
+  "version": 3,
+  "location": "twilight:draconic_rtg",
+  "traits": {},
+  "properties": {
+    "rotationState": "NONE",
+    "showInJei": true,
+    "isOpaque": false,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 2,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "state": {
+          "id": "thermal:energy_cell_frame",
+          "meta": 0
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "lightEmissive": 15,
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "generation",
+  "basePattern": {
+    "structureDir": [
+      "RIGHT",
+      "UP",
+      "FRONT"
+    ],
+    "pattern": [
+      [
+        "ABHBA",
+        "A C A",
+        "D C D",
+        "  C  ",
+        "  B  "
+      ],
+      [
+        "BEEEB",
+        "     ",
+        "     ",
+        "     ",
+        "  A  "
+      ],
+      [
+        "HEEEH",
+        "C F C",
+        "C G C",
+        "C   C",
+        "BA@AB"
+      ],
+      [
+        "BEEEB",
+        "     ",
+        "     ",
+        "     ",
+        "  A  "
+      ],
+      [
+        "ABHBA",
+        "A C A",
+        "D C D",
+        "  C  ",
+        "  B  "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "create:shadow_steel_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "twilight:draconic_rtg",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "dustrial_decor:bolted_industrial_iron_stairs"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "dustrial_decor:industrial_iron_pillar"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "minecraft:end_rod"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "tconstruct:hepatizon_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "minecraft:beacon"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "minecraft:dragon_egg"
+          }
+        ],
+        "type": "blocks"
+      },
+      "energy": {
+        "capability": "forge_energy",
+        "type": "capability",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [
+        "C",
+        "energy"
+      ]
+    }
+  }
+}

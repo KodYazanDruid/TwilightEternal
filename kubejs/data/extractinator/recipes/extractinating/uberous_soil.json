@@ -1,0 +1,14 @@
+{
+  "type": "extractinator:extractinating",
+  "input": {
+    "item": "twilightforest:uberous_soil"
+  },
+  "drops": [
+    {
+      "drop": "#twilight:extract_twilightforest_material",
+      "drop_chance": 0.17,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    }
+  ]
+}

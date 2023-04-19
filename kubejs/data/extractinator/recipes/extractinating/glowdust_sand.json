@@ -1,0 +1,34 @@
+{
+    "type": "extractinator:extractinating",
+    "input": {
+    "item": "infernalexp:glowdust_sand"
+    },
+    "drops": [
+        {
+            "drop": "minecraft:glowstone_dust",
+            "drop_change": 0.25
+        },
+        {
+            "drop": "infernalexp:glowsilk",
+            "drop_change": 0.15,
+            "min_drop_count": 1,
+            "max_drop_count": 2
+        },
+        {
+            "drop": "minecraft:gold_nugget",
+            "drop_change": 0.10,
+            "min_drop_count": 1,
+            "max_drop_count": 2
+        },
+        {
+            "drop": "infernalexp:luminous_fungus",
+            "drop_change": 0.10,
+            "min_drop_count": 1,
+            "max_drop_count": 3
+        },
+        {
+            "drop": "infernalexp:moth_dust",
+            "drop_change": 0.05
+        }
+    ]
+}

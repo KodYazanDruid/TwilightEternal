@@ -1,0 +1,19 @@
+{
+  "name": "generation",
+  "progressTexture": "multiblocked:textures/gui/progress_bar_arrow.png",
+  "fuelTexture": "multiblocked:textures/gui/progress_bar_fuel.png",
+  "recipes": [
+    {
+      "uid": "1d2eb1b8-a255-4345-81a9-f462f148eb36",
+      "duration": 1,
+      "outputs": {
+        "forge_energy": [
+          {
+            "content": 1000,
+            "chance": 1.0
+          }
+        ]
+      }
+    }
+  ]
+}

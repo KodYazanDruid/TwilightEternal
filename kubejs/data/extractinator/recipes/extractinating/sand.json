@@ -1,0 +1,32 @@
+{
+  "type": "extractinator:extractinating",
+  "input": {
+    "tag": "minecraft:sand"
+  },
+  "drops": [
+    {
+      "drop": "thermal:sawdust",
+      "drop_chance": 0.15,
+      "min_drop_count": 1,
+      "max_drop_count": 3
+    },
+    {
+      "drop": "minecraft:bone_meal",
+      "drop_chance": 0.25,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    },
+    {
+      "drop": "minecraft:bone",
+      "drop_chance": 0.15,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    },
+    {
+      "drop": "minecraft:gold_nugget",
+      "drop_chance": 0.10,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    }
+  ]
+}

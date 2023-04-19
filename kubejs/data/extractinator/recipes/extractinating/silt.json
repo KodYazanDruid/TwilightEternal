@@ -1,0 +1,32 @@
+{
+  "type": "extractinator:extractinating",
+  "input": {
+    "item": "extractinator:silt"
+  },
+  "drops": [
+    {
+      "drop": "#twilight:extract_minecraft_raw",
+      "drop_chance": 0.30,
+      "min_drop_count": 1,
+      "max_drop_count": 3
+    },
+    {
+      "drop": "create:raw_zinc",
+      "drop_chance": 0.10,
+      "min_drop_count": 2,
+      "max_drop_count": 3
+    },
+    {
+      "drop": "#twilight:extract_thermal_raw",
+      "drop_chance": 0.40,
+      "min_drop_count": 2,
+      "max_drop_count": 3
+    },
+    {
+      "drop": "minecraft:clay_ball",
+      "drop_chance": 0.35,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    }
+  ]
+}

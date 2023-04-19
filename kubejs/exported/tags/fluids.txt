@@ -1,0 +1,111 @@
+To refresh this file, delete it and run /reload command again! Last updated: Sep 5, 2022, 2:36:32 PM
+
+#minecraft:water
+- minecraft:water
+- minecraft:flowing_water
+- create_confectionery:black_chocolate
+- create_confectionery:flowing_black_chocolate
+- create_confectionery:white_chocolate
+- create_confectionery:flowing_white_chocolate
+- create_confectionery:hot_chocolate
+- create_confectionery:flowing_hot_chocolate
+- create_confectionery:caramel
+- create_confectionery:flowing_caramel
+- create_confectionery:ruby_chocolate
+- create_confectionery:flowing_ruby_chocolate
+- create:flowing_honey
+- create:honey
+- create:flowing_chocolate
+- create:chocolate
+
+#forge:milk
+- minecraft:milk?
+- minecraft:flowing_milk?
+
+#tconstruct:tooltips/metal
+- #forge:molten_fiery
+- #forge:molten_knightmetal
+
+#twilightforest:molten_knightmetal
+- twilightforest:molten_knightmetal?
+- twilightforest:flowing_molten_knightmetal?
+
+#forge:molten_fiery
+- #twilightforest:molten_fiery?
+
+#twilightforest:fire_jet_fuel
+- #minecraft:lava
+
+#forge:magentite
+- bigreactors:magentite
+- bigreactors:magentite_flowing
+
+#minecraft:lava
+- minecraft:lava
+- minecraft:flowing_lava
+
+#create:bottomless/deny
+
+#forge:chocolate
+- create:flowing_chocolate
+- create:chocolate
+
+#create:bottomless/allow
+- minecraft:water
+- minecraft:lava
+
+#forge:verderium
+- bigreactors:verderium
+- bigreactors:verderium_flowing
+
+#forge:potion
+- cofh_core:potion
+
+#forge:steam
+- bigreactors:steam
+- bigreactors:steam_flowing
+
+#forge:experience
+- cofh_core:experience
+
+#forge:yellorium
+- bigreactors:yellorium
+- bigreactors:yellorium_flowing
+
+#forge:tea
+- create:flowing_tea
+- create:tea
+
+#twilightforest:molten_fiery
+- twilightforest:molten_fiery?
+- twilightforest:flowing_molten_fiery?
+
+#forge:molten_knightmetal
+- #twilightforest:molten_knightmetal?
+
+#ae2:blacklisted/annihilation_plane
+
+#forge:rossinite
+- bigreactors:rossinite
+- bigreactors:rossinite_flowing
+
+#twilightforest:fiery_essence
+- twilightforest:fiery_essence?
+- twilightforest:flowing_fiery_essence?
+
+#tconstruct:spilling/metal/cheap
+- #forge:molten_fiery
+- #twilightforest:molten_knightmetal
+
+#forge:honey
+- cofh_core:honey
+- create:flowing_honey
+- create:honey
+
+#forge:cyanite
+- bigreactors:cyanite
+- bigreactors:cyanite_flowing
+
+#forge:blutonium
+- bigreactors:blutonium
+- bigreactors:blutonium_flowing

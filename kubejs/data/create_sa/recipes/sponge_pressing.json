@@ -1,0 +1,17 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:wet_sponge"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:sponge"
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "type": "extractinator:extractinating",
+  "input": {
+    "tag": "minecraft:soul_fire_base_blocks"
+  },
+  "drops": [
+    {
+      "drop": "minecraft:quartz",
+      "drop_chance": 0.20,
+      "min_drop_count": 2,
+      "max_drop_count": 3
+    },
+    {
+      "drop": "tconstruct:debris_nugget",
+      "drop_chance": 0.05,
+      "min_drop_count": 1,
+      "max_drop_count": 1
+    },
+    {
+      "drop": "minecraft:gold_nugget",
+      "drop_chance": 0.05,
+      "min_drop_count": 1,
+      "max_drop_count": 1
+    },
+    {
+      "drop": "minecraft:ghast_tear",
+      "drop_chance": 0.05,
+      "min_drop_count": 1,
+      "max_drop_count": 1
+    },
+    {
+      "drop": "minecraft:nether_wart",
+      "drop_chance": 0.10,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    }
+  ]
+}

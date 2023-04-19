@@ -1,0 +1,32 @@
+{
+  "type": "extractinator:extractinating",
+  "input": {
+    "item": "extractinator:slush"
+  },
+  "drops": [
+    {
+      "drop": "#twilight:extract_minecraft_raw",
+      "drop_chance": 0.15,
+      "min_drop_count": 1,
+      "max_drop_count": 4
+    },
+    {
+      "drop": "create:raw_zinc",
+      "drop_chance": 0.05,
+      "min_drop_count": 2,
+      "max_drop_count": 4
+    },
+    {
+      "drop": "#twilight:extract_thermal_raw",
+      "drop_chance": 0.20,
+      "min_drop_count": 2,
+      "max_drop_count": 3
+    },
+    {
+      "drop": "minecraft:snowball",
+      "drop_chance": 0.25,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    }
+  ]
+}

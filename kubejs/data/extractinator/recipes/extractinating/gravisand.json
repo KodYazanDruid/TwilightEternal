@@ -1,0 +1,32 @@
+{
+  "type": "extractinator:extractinating",
+  "input": {
+    "item": "quark:gravisand"
+  },
+  "drops": [
+    {
+      "drop": "minecraft:glowstone_dust",
+      "drop_chance": 0.10,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    },
+    {
+      "drop": "minecraft:redstone",
+      "drop_chance": 0.10,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    },
+    {
+      "drop": "biggerreactors:uranium_dust",
+      "drop_chance": 0.10,
+      "min_drop_count": 1,
+      "max_drop_count": 2
+    },
+    {
+      "drop": "thermal:ender_pearl_dust",
+      "drop_chance": 0.20,
+      "min_drop_count": 1,
+      "max_drop_count": 1
+    }
+  ]
+}

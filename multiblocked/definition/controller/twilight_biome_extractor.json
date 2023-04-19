@@ -1,0 +1,247 @@
+{
+  "version": 3,
+  "location": "twilight:biome_extractor",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "state": {
+          "id": "dustrial_decor:bolted_industrial_iron_block",
+          "meta": 0
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "biome_extract",
+  "catalyst": "{Count:1b,id:\"kubejs:refined_fluix_mechanism\"}",
+  "consumeCatalyst": "CONSUMED",
+  "noNeedController": false,
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "   ",
+        "   ",
+        "A A",
+        "B B",
+        "A A",
+        "   "
+      ],
+      [
+        "C C",
+        "D D",
+        "EEE",
+        "EFE",
+        "EEE",
+        "   "
+      ],
+      [
+        "   ",
+        " G ",
+        "EHE",
+        "FIF",
+        "@HE",
+        " J "
+      ],
+      [
+        "C C",
+        "D D",
+        "EEE",
+        "EFE",
+        "EEE",
+        "   "
+      ],
+      [
+        "   ",
+        "   ",
+        "A A",
+        "B B",
+        "A A",
+        "   "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "architects_palette:plating_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "twilight:biome_extractor",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "architects_palette:plating_wall"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "create:refined_radiance_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "create:shadow_steel_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "thermal_extra:dragonsteel_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "create:fluid_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "minecraft:conduit"
+          }
+        ],
+        "type": "blocks"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "create:fluid_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "OUT"
+      },
+      "any": {
+        "type": "any"
+      },
+      "up": {
+        "states": [
+          {
+            "id": "architects_palette:polished_glowstone_slab",
+            "meta": 1
+          }
+        ],
+        "type": "states"
+      },
+      "pump": {
+        "states": [
+          {
+            "id": "create:mechanical_pump",
+            "meta": 9
+          }
+        ],
+        "type": "states"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "up"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [
+        "pump"
+      ],
+      "I": [
+        "I"
+      ],
+      "J": [
+        "J"
+      ]
+    }
+  }
+}

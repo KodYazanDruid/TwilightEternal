@@ -1,0 +1,16 @@
+
+#List of curio slot type settings
+[[curiosSettings]]
+	identifier = "charm"
+	size = 2
+
+[[curiosSettings]]
+	identifier = "head"
+
+[[curiosSettings]]
+	identifier = "magicfeather"
+	icon = "curios:slot/feathercurios"
+
+[[curiosSettings]]
+	identifier = "backpack"
+	icon = "curios:slot/backpackcurios"

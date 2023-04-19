@@ -1,0 +1,10 @@
+{
+    "block.twilight.rune_embedder": "Rune Embedder",
+    "block.twilight.draconic_rtg": "Draconic Radioisotope Thermoelectric Generator",
+    
+    "multiblocked.recipe_map.rune": "Rune Embedder",
+    "multiblocked.recipe_map.generation": "Draconic Radioisotope Thermoelectric Generator",
+    
+    "curios.identifier.magicfeather": "Magic Feather",
+    "curios.identifier.backpack": "Backpack"
+}

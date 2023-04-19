@@ -1,0 +1,278 @@
+{
+  "version": 3,
+  "location": "twilight:rune_embedder",
+  "traits": {
+    "background": "multiblocked:textures/yawning-face_1f971.png"
+  },
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": false,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "state": {
+          "id": "tconstruct:scorched_anvil",
+          "meta": 1
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "rune",
+  "basePattern": {
+    "structureDir": [
+      "RIGHT",
+      "UP",
+      "FRONT"
+    ],
+    "pattern": [
+      [
+        "AABAA",
+        "  C  ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "DDEDD",
+        "  C  ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "FMEGF",
+        "FH@HF",
+        "F   F",
+        "F I F",
+        "FJKJF",
+        "L   L"
+      ],
+      [
+        "ADEDA",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "ADDDA",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "architects_palette:plating_slab"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "twilight:rune_embedder",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "thermal:fluid_cell"
+          },
+          {
+            "id": "ae2:interface"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "create:fluid_pipe"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "architects_palette:plating_stairs"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "architects_palette:plating_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "architects_palette:sunmetal_pillar"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "minecraft:barrel"
+          },
+          {
+            "id": "ae2:interface"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "create:mechanical_press"
+          }
+        ],
+        "type": "blocks"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "decorative_blocks:chain"
+          }
+        ],
+        "type": "blocks"
+      },
+      "K": {
+        "blocks": [
+          {
+            "id": "thermal:energy_cell"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "L": {
+        "blocks": [
+          {
+            "id": "createdeco:red_copper_lamp"
+          }
+        ],
+        "type": "blocks"
+      },
+      "any": {
+        "type": "any"
+      },
+      "M": {
+        "blocks": [
+          {
+            "id": "minecraft:barrel"
+          },
+          {
+            "id": "ae2:interface"
+          }
+        ],
+        "type": "blocks",
+        "io": "OUT"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [],
+      "I": [
+        "I"
+      ],
+      "J": [
+        "J"
+      ],
+      "K": [
+        "K"
+      ],
+      "L": [
+        "L"
+      ],
+      "M": [
+        "M"
+      ]
+    }
+  }
+}

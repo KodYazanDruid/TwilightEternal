@@ -1,0 +1,34 @@
+{
+    "type": "extractinator:extractinating",
+    "input": {
+    "item": "infernalexp:trapped_glowdust_sand"
+    },
+    "drops": [
+        {
+            "drop": "infernalexp:glownuggets",
+            "drop_change": 0.35,
+            "min_drop_count": 1,
+            "max_drop_count": 2
+        },
+        {
+            "drop": "minecraft:glowstone_dust",
+            "drop_change": 0.25,
+            "min_drop_count": 1,
+            "max_drop_count": 2
+        },
+        {
+            "drop": "infernalexp:soul_salt_clump",
+            "drop_change": 0.20
+        },
+        {
+            "drop": "infernalexp:glowcoal",
+            "drop_change": 0.15
+        },
+        {
+            "drop": "infernalexp:molten_gold_cluster",
+            "drop_change": 0.10,
+            "min_drop_count": 1,
+            "max_drop_count": 4
+        }
+    ]
+}

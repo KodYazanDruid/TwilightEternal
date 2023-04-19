@@ -1,0 +1,20 @@
+{
+    "type": "extractinator:extractinating",
+    "input": {
+      "item": "thermal:phytosoil"
+    },
+    "drops": [
+      {
+        "drop": "#twilight:extract_thermal_dust",
+        "drop_chance": 0.35,
+        "min_drop_count": 1,
+        "max_drop_count": 2
+      },
+      {
+        "drop": "#twilight:extract_elemental_powder",
+        "drop_chance": 0.15,
+        "min_drop_count": 1,
+        "max_drop_count": 2
+      }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "extractinator:extractinating",
+  "input": {
+    "tag": "chipped:dirt"
+  },
+  "drops": [
+    {
+      "drop": "#twilight:extract_dirt_misc",
+      "drop_chance": 0.25,
+      "min_drop_count": 2,
+      "max_drop_count": 3
+    }
+  ]
+}

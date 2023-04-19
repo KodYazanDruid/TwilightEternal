@@ -1,0 +1,41 @@
+{
+  "name": "biome_extract",
+  "progressTexture": "multiblocked:textures/gui/progress_bar_arrow.png",
+  "fuelTexture": "multiblocked:textures/gui/progress_bar_fuel.png",
+  "recipes": [
+    {
+      "uid": "overworld",
+      "duration": 200,
+      "inputs": {
+        "fluid": [
+          {
+            "content": {
+              "fluid": "thermal:refined_fuel",
+              "amount": 50
+            },
+            "chance": 1.0
+          }
+        ]
+      },
+      "outputs": {
+        "fluid": [
+          {
+            "content": {
+              "fluid": "create_confectionery:ruby_chocolate",
+              "amount": 10
+            },
+            "chance": 1.0
+          }
+        ]
+      },
+      "conditions": [
+        {
+          "type": "dimension",
+          "condition": {
+            "dim": "minecraft:overworld"
+          }
+        }
+      ]
+    }
+  ]
+}
