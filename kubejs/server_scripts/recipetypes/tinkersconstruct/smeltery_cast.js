@@ -6,4 +6,8 @@ onEvent('recipes', event => {
     event.recipes.tconstruct.casting_table('thermal:redstone_servo', 'thermal:redstone', 50).cast('minecraft:iron_ingot').consumeCast()
     event.recipes.tconstruct.casting_table('thermal:rf_coil', 'thermal:redstone', 50).cast('minecraft:gold_ingot').consumeCast() 
     event.recipes.tconstruct.casting_table('create:rose_quartz', 'thermal:redstone', 300).cast('minecraft:quartz').consumeCast()
+    event.recipes.tconstruct.casting_table('redstone_arsenal:flux_gem', 'thermal:redstone', 250).cast('minecraft:diamond').consumeCast()
+    event.recipes.tconstruct.casting_table('thermal:redstone_servo', 'thermal:redstone', 50).cast('minecraft:iron_ingot').consumeCast()
+    event.recipes.tconstruct.casting_table('thermal:rf_coil', 'thermal:redstone', 50).cast('minecraft:gold_ingot').consumeCast()
+    event.recipes.tconstruct.casting_table('create:rose_quartz', 'thermal:redstone', 300).cast('minecraft:quartz').consumeCast()
 })

@@ -1,8 +1,8 @@
-function erOutput(e, item, type){
-    e.remove({output: item, type: type})
+function erOutput(e, output, type){
+    e.remove({output: output, type: type})
 }
-function erInput(e, item, type){
-    e.remove({input: item, type: type})
+function erInput(e, input, type){
+    e.remove({input: input, type: type})
 }
 function erId(e, id){
     e.remove({id: id})

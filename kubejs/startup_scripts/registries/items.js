@@ -8,5 +8,6 @@ onEvent('item.registry', event => {
 	event.create('tiny_charcoal').displayName('Tiny Charcoal')
 		.burnTime(200)
 	event.create('range_addon_base').displayName('Range Addon Base')
+	event.create('enzymatic_essence_catalyst').displayName('Enzymatic Essence Catalyst')
 
 })

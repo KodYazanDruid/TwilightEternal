@@ -126,4 +126,15 @@ onEvent('recipes', event =>{
         P: Item.of('tconstruct:large_plate', '{Material:"tconstruct:electrum"}'),
         M: INF+':machine_frame_simple'    
     })
+    event.shaped(INF+':fluid_extractor', [
+        'TPT',
+        'HMH',
+        'TGT'
+    ], {
+        T: '#forge:ingots/tin',
+        P: '#forge:plates/bronze',
+        H: '#thermal:glass/hardened',
+        M: INF+':machine_frame_pity',
+        G: '#forge:gears/constantan'
+    }).id(INF+':fluid_extractor')
 })

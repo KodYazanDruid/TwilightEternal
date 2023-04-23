@@ -1,5 +1,6 @@
 const INF = 'industrialforegoing'
 const TCOMP = 'tools_complement'
+const TCON = 'tconstruct'
 const toolsVanilla = ['helmet', 'chestplate', 'leggings', 'boots', 'sword', 'pickaxe', 'axe', 'shovel', 'hoe']
 
 
@@ -67,8 +68,13 @@ onEvent('jei.hide.items', event => {
     event.hide(INF+':fluid_transporter_type')
     event.hide(INF+':world_transporter_type')
     event.hide(INF+':black_hole_controller')
-    event.hide(INF+':iron_gear')
-    event.hide(INF+':gold_gear')
-    event.hide(INF+':diamond_gear')
     event.hide(TCOMP+'gold_knife')
+    event.hide(TCON+'tconstruct:honey_bucket')
+    event.hide('tinkers_reforged:molten_redstone_bucket')
+})
+
+onEvent('jei.hide.fluids', event => {
+    event.hide(TCON+'tconstruct:honey')
+    event.hide('cofh_core:honey')
+    event.hide('tinkers_reforged:molten_redstone')
 })

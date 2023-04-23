@@ -26,9 +26,9 @@ onEvent('tags.items', event => {
     event.add('forge:blocks/bronze', 'thermal:bronze_block')
     event.add('forge:blocks/steel', 'thermal:steel_block')
 
-    event.remove('forge:gears/iron', INF+':iron_gear')
+    /* event.remove('forge:gears/iron', INF+':iron_gear')   
     event.remove('forge:gears/gold', INF+':gold_gear')
-    event.remove('forge:gears/diamond', INF+':diamond_gear')
+    event.remove('forge:gears/diamond', INF+':diamond_gear') */
     event.remove('curios:charm', 'magicfeather:magicfeather')
 
     event.remove(TF+':portal/activator', '#forge:gems/diamond')
@@ -56,6 +56,7 @@ onEvent('tags.items', event => {
     event.add('forge:fertilizer', 'waterstrainer:fertilizer')
     event.add('twilight:extract_dirt_misc', ['waterstrainer:fertilizer', INF+':fertilizer'])
     event.add('curios:magicfeather', 'magicfeather:magicfeather')
+
     /* event.add('curios:backpack', 'backpacked:backpack')
     event.remove('curios:back', 'backpacked:backpack') */
 
