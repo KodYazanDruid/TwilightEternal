@@ -117,4 +117,5 @@ onEvent('tags.items', event => {
 
     event.removeAllTagsFrom('thermal:onion_seeds')
     event.removeAllTagsFrom('thermal:tomato_seeds')
+    event.removeAllTagsFrom('thermal:rice_seeds')
 })

@@ -72,6 +72,7 @@ onEvent('jei.hide.items', event => {
     event.hide('tinkers_reforged:molten_redstone_bucket')
     event.hide('thermal:onion_seeds')
     event.hide('thermal:tomato_seeds')
+    event.hide('thermal:rice_seeds')
 })
 
 onEvent('jei.hide.fluids', event => {
