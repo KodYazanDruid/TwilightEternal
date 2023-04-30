@@ -273,5 +273,23 @@ onEvent('recipes', event =>{
         Z: 'create:zinc_ingot'
     })
 
-    
+    event.shaped('kubejs:enzymatic_essence_catalyst', [
+        ' SE',
+        'SNS',
+        'ES '
+    ], {
+        E: 'minecraft:emerald',
+        S: TCON+':earth_slime_crystal',
+        N: 'create:experience_nugget'
+    })
+
+    event.shaped(CEI+':experience_rotor', [
+        ' Z ',
+        'ZCZ',
+        ' Z '
+    ], {
+        Z: 'create:zinc_ingot',
+        C: 'kubejs:enzymatic_essence_catalyst'
+    }).id(CEI+':crafting/experience_rotor')
+
 })

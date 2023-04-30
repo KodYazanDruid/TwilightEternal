@@ -5,3 +5,15 @@ onEvent('item.tooltip', event => {
 
     event.add('create:chromatic_compound', 'This item is a mystery!')
 })
+
+const ItemDescription = java('com.simibubi.create.foundation.item.ItemDescription')
+const Palette = java('com.simibubi.create.foundation.item.ItemDescription$Palette')
+
+onEvent('item.tooltip', event => {
+  event.addAdvanced('kubejs:enzymatic_essence_catalyst', (item, advanced, tooltip) => {
+    new ItemDescription(Palette.Green)
+      .withSummary(Component.translate('item.kubejs:enzymatic_essence_catalysyt.tooltip.summary'))
+      .createTabs()
+      .addInformation(tooltip)
+  })
+})

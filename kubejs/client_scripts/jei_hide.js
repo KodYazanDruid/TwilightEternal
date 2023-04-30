@@ -55,7 +55,6 @@ onEvent('jei.hide.items', event => {
 })
 
 onEvent('jei.remove.categories', event => {
-    console.log(event.getCategoryIds())
     event.remove('ae2:facade')
 })
 
@@ -68,13 +67,15 @@ onEvent('jei.hide.items', event => {
     event.hide(INF+':fluid_transporter_type')
     event.hide(INF+':world_transporter_type')
     event.hide(INF+':black_hole_controller')
-    event.hide(TCOMP+'gold_knife')
-    event.hide(TCON+'tconstruct:honey_bucket')
+    event.hide(TCOMP+':gold_knife')
+    event.hide(TCON+':honey_bucket')
     event.hide('tinkers_reforged:molten_redstone_bucket')
+    event.hide('thermal:onion_seeds')
+    event.hide('thermal:tomato_seeds')
 })
 
 onEvent('jei.hide.fluids', event => {
-    event.hide(TCON+'tconstruct:honey')
+    event.hide(TCON+':honey')
     event.hide('cofh_core:honey')
     event.hide('tinkers_reforged:molten_redstone')
 })

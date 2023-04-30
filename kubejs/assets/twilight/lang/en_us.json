@@ -6,5 +6,8 @@
     "multiblocked.recipe_map.generation": "Draconic Radioisotope Thermoelectric Generator",
     
     "curios.identifier.magicfeather": "Magic Feather",
-    "curios.identifier.backpack": "Backpack"
+    "curios.identifier.backpack": "Backpack",
+
+    "item.kubejs:enzymatic_essence_catalysyt.tooltip.summary": "Used in _Mixing Recipes_ to convert _Essence_ and _Experience_ into each other."
+
 }
