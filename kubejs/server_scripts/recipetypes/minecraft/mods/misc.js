@@ -1,6 +1,6 @@
 onEvent('recipes', event =>{
     const snads = ['s', 'red_s', 'suol_s']
-    let fullAkashicTome = Item.of('akashictome:tome', '{"akashictome:data":{ftbquests:{Count:1b,id:"ftbquests:book"},industrialforegoing:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"industrialforegoing:industrial_foregoing"}},sebastrnlib:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"sebastrnlib:sebastrn_mods_guide_book"}},solcarrot:{Count:1b,id:"solcarrot:food_book"},thermal:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"thermal:guidebook"}},twilightforest:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"twilightforest:guide"}}}}')
+    let fullAkashicTome = Item.of('akashictome:tome', '{"akashictome:data":{cookingforblockheads:{Count:1b,id:"cookingforblockheads:no_filter_edition"},ftbquests:{Count:1b,id:"ftbquests:book"},industrialforegoing:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"industrialforegoing:industrial_foregoing"}},kubejs:{Count:1b,id:"kubejs:create_manual"},pfm:{Count:1b,id:"pfm:furniture_book"},sebastrnlib:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"sebastrnlib:sebastrn_mods_guide_book"}},solcarrot:{Count:1b,id:"solcarrot:food_book"},thermal:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"thermal:guidebook"}},twilightforest:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"twilightforest:guide"}}},"akashictome:is_morphing":1b}')
 
     function erOutput(item, type){
         event.remove({output: item, type: type})

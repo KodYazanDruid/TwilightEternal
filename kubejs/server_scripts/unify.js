@@ -1,9 +1,7 @@
 onEvent('recipes', event => {
     //let honeyTypes = ['cofh_core:honey', TCON + ':honey', 'create:honey']
     //let redstoneTypes = ['thermal:redstone', TR + ':molten_redstone']
-
-    //Crops
-
+    
     // Honey unify
     event.custom({
         "type": "tconstruct:entity_melting",

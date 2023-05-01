@@ -9,5 +9,6 @@ onEvent('item.registry', event => {
 		.burnTime(200)
 	event.create('range_addon_base').displayName('Range Addon Base')
 	event.create('enzymatic_essence_catalyst').displayName('Enzymatic Essence Catalyst')
+	event.create('create_manual').displayName('Create Manual').texture('create:item/crafting_blueprint')
 
 })
