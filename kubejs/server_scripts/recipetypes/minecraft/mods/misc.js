@@ -145,7 +145,7 @@ onEvent('recipes', event =>{
         S: 'twilightforest:steeleaf_ingot',
         H: Item.of('tconstruct:tough_handle', '{Material:"tconstruct:steel"}')
     })
-    event.shaped('twilight:rune_embedder', [
+    /* event.shaped('twilight:rune_embedder', [
         'GGG',
         'LTC',
         'PEP'
@@ -156,7 +156,7 @@ onEvent('recipes', event =>{
         C: 'ae2:calculation_processor',
         P: AP+':plating_block',
         E: 'ae2:engineering_processor'
-    })
+    }) */
     event.shaped('twilight:draconic_rtg', [
         'IEI',
         'DFD',

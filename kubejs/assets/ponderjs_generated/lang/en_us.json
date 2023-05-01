@@ -1,8 +1,4 @@
 {
   "kubejs.ponder.tag.multiblocks": "Multiblocks!",
-  "kubejs.ponder.tag.multiblocks.description": "This modpack has few neat multiblocks.",
-  "kubejs.ponder.draconic_rtg.header": "The draconic radioisotope thermoelectric generator multiblock.",
-  "kubejs.ponder.draconic_rtg.text_1": "Controller of the multiblock",
-  "kubejs.ponder.rune_embedder.header": "The rune embedder multiblock.",
-  "kubejs.ponder.rune_embedder.text_1": "Controller of the multiblock"
+  "kubejs.ponder.tag.multiblocks.description": "This modpack has few neat multiblocks."
 }

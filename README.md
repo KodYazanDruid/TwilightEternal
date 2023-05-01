@@ -1,2 +1,2 @@
-# twilight-modpack
-Fairly kitchen-sink 1.18.2 modpack.
+# Twilight Eternal
+Fairly kitchen-sink and cozy 1.18.2 modpack.

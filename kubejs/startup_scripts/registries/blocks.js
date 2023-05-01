@@ -1,7 +1,5 @@
 onEvent('block.registry', event => {
     event.create('crude_controller').material('metal').hardness(2).displayName('Crude Controller').tagBlock('minecraft:mineable/pickaxe')
-    event.create('budding_uranium').material('metal').hardness(2).displayName('Budding Uranium').tagBlock('minecraft:mineable/pickaxe')
-    event.create('lutfi').material('metal').hardness(2).displayName('Lütfi Block').tagBlock('minecraft:mineable/pickaxe')
     event.create('impure_uranium').material('stone').hardness(2).displayName('Impure Uranium').tagBlock('minecraft:mineable/pickaxe')
     
     event.create('mossy_seared_bricks').material('stone').hardness(3).resistance(9).displayName('Mossy Seared Bricks')
