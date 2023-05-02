@@ -1,8 +1,7 @@
 onEvent('tags.blocks', event =>{
     //Blocks that don't have 'minecraft:mineable/pickaxe' tag.
     const blocksP = [
-        TF+":aurora_block", "travel_anchors:travel_anchor",
-        TE+':soul_infused_block', TE+':shellite_block', TE+':twinite_block', TE+':dragonsteel_block'
+        TF+":aurora_block", "travel_anchors:travel_anchor"
     ]
     const blocksS = [
         'snad:snad', 'snad:red_snad', 'snad:suol_snad'

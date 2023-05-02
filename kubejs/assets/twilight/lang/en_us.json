@@ -10,6 +10,9 @@
     "curios.identifier.magicfeather": "Magic Feather",
     "curios.identifier.backpack": "Backpack",
 
-    "item.kubejs:enzymatic_essence_catalysyt.tooltip.summary": "Used in _Mixing Recipes_ to convert _Essence_ and _Experience_ into each other."
+    "item.kubejs:enzymatic_essence_catalysyt.tooltip.summary": "Used in _Mixing Recipes_ to convert _Essence_ and _Experience_ into each other.",
+    "item.industrialforegoing:block_breaker.tooltip.summary": "Be sure to allow _Fake Players_ on FTB Chunks properties in your team settings. If you want to just enable _Industrial Foregoing_ machines, add _[IF]_ to the _Allied Fake Player Names/IDs_ list.",
+    "item.industrialforegoing:block_placer.tooltip.summary": "Be sure to allow _Fake Players_ on FTB Chunks properties in your team settings. If you want to just enable _Industrial Foregoing_ machines, add _[IF]_ to the _Allied Fake Player Names/IDs_ list.",
+    "item.create:deployer.tooltip.summary": "Be sure to allow _Fake Players_ on FTB Chunks properties in your team settings. If you want to just enable _deployer_, add _Deployer_ to the _Allied Fake Player Names/IDs_ list."
 
 }

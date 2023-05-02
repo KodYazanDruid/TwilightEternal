@@ -1,0 +1,23 @@
+{
+    "type": "tconstruct:modifier",
+    "inputs": [
+      {
+        "item": "create:polished_rose_quartz"
+      },
+      {
+        "item": "minecraft:rose_bush"
+      },
+      {
+        "tag": "forge:plates/rose_gold"
+      }
+    ],
+    "tools": {
+      "tag": "tconstruct:modifiable"
+    },
+    "allow_crystal": true,
+    "result": {
+      "name": "tconstruct:enhanced",
+      "level": 1
+    },
+    "max_level": 1
+  }

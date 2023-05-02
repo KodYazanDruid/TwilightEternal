@@ -16,4 +16,25 @@ onEvent('item.tooltip', event => {
       .createTabs()
       .addInformation(tooltip)
   })
+
+  event.addAdvanced('industrialforegoing:block_breaker', (item, advanced, tooltip) => {
+    new ItemDescription(Palette.Red)
+      .withSummary(Component.translate('item.industrialforegoing:block_breaker.tooltip.summary'))
+      .createTabs()
+      .addInformation(tooltip)
+  })
+
+  event.addAdvanced('industrialforegoing:block_placer', (item, advanced, tooltip) => {
+    new ItemDescription(Palette.Red)
+      .withSummary(Component.translate('item.industrialforegoing:block_placer.tooltip.summary'))
+      .createTabs()
+      .addInformation(tooltip)
+  })
+
+  event.addAdvanced('create:deployer', (item, advanced, tooltip) => {
+    new ItemDescription(Palette.Red)
+      .withSummary(Component.translate('item.create:deployer.tooltip.summary'))
+      .createTabs()
+      .addInformation(tooltip)
+  })
 })
