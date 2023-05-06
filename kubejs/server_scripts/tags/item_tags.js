@@ -53,6 +53,7 @@ onEvent('tags.items', event => {
     event.add('forge:fertilizer', 'waterstrainer:fertilizer')
     event.add('twilight:extract_dirt_misc', ['waterstrainer:fertilizer', INF + ':fertilizer'])
     event.add('curios:magicfeather', 'magicfeather:magicfeather')
+    event.add('forge:plates', 'createdeco:zinc_sheet')
 
     /* event.add('curios:backpack', 'backpacked:backpack')
     event.remove('curios:back', 'backpacked:backpack') */

@@ -14,6 +14,7 @@ const CC = 'colossalchests'
 const TT = 'tinkers_things'
 const TR = 'tinkers_reforged'
 const CEI = 'create_enchantment_industry'
+const CCR = 'computercraft'
 
 const colors = ['white', 'orange', 'magenta', 'light_blue', 'yellow', 'lime', 'pink', 'gray', 'light_gray', 'cyan', 'purple', 'blue', 'brown', 'green', 'red', 'black']
 const toolsVanilla = ['helmet', 'chestplate', 'leggings', 'boots', 'sword', 'pickaxe', 'axe', 'shovel', 'hoe']

@@ -55,6 +55,7 @@ onEvent('recipes', event =>{
     erOutput('backpacked:backpack')
     erOutput('quark:gold_bars')
     erId(AP+':bone_meal')
+    erId(CA+':digital_adapter')
     event.remove({mod: 'portality'})
     for(let i of toolsVanilla){
         erOutput(TCOMP+':copper_'+i)
@@ -68,6 +69,11 @@ onEvent('recipes', event =>{
     event.shapeless('portality:teleportation_token', ['minecraft:name_tag', 'ae2:basic_card', 'minecraft:blue_dye', 'minecraft:blue_dye', 'minecraft:black_dye'])
     event.shapeless(TCON+':necrotic_bone', AP+':withered_bone')
     event.shapeless(AP+':withered_bone', TCON+':necrotic_bone')
+    event.shapeless('9x kubejs:fiery_nugget', TF+':fiery_ingot')
+    event.shapeless(TF+':fiery_ingot', '9x kubejs:fiery_nugget')
+    event.shapeless('9x kubejs:knightmetal_nugget', TF+':knightmetal_ingot')
+    event.shapeless(TF+':knightmetal_ingot', '9x kubejs:knightmetal_nugget')
+
     //To fix a bug that prevents stacking torches
     event.shapeless('minecraft:torch', 'minecraft:torch')
     moduleCraft('items', 'ae2:sky_stone_chest')
@@ -291,5 +297,5 @@ onEvent('recipes', event =>{
         Z: 'create:zinc_ingot',
         C: 'kubejs:enzymatic_essence_catalyst'
     }).id(CEI+':crafting/experience_rotor')
-
+    
 })

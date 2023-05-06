@@ -10,5 +10,11 @@ onEvent('item.registry', event => {
 	event.create('range_addon_base').displayName('Range Addon Base')
 	event.create('enzymatic_essence_catalyst').displayName('Enzymatic Essence Catalyst')
 	event.create('create_manual').displayName('Create Manual').texture('create:item/crafting_blueprint')
+	event.create('fiery_nugget').displayName('Fiery Nugget')
+		.tag('forge:nuggets')
+		.tag('forge:nuggets/fiery')
+	event.create('knightmetal_nugget').displayName('Knightmetal Nugget')
+		.tag('forge:nuggets')
+		.tag('forge:nuggets/knightmetal')
 
 })
