@@ -11,8 +11,9 @@ onEvent('item.tooltip', event => {
 onEvent('item.tooltip', event => {
   event.addAdvanced(Ingredient.getAll(), (item, a, text) => {
     if(item === 'magicfeather:magicfeather') {
-      text.remove(0)
-      text.remove(1)
+      var name = text.get(0)
+      text.clear()
+      text.add(0, name)
     }
   })
 })
