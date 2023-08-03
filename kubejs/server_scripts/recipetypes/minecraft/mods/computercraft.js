@@ -120,7 +120,7 @@ onEvent('recipes', event => {
         R: '#forge:dusts/redstone'
     }).id(CCR+':wired_modem')
 
-    event.shaped(CCR+':cable', [
+    event.shaped('4x '+CCR+':cable', [
         'RRR',
         'EEE',
         'RRR'

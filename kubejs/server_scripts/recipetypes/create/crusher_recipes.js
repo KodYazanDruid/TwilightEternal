@@ -1,5 +1,5 @@
 onEvent('recipes', event => {
-	event.recipes.createCrushing('ae2:ender_dust', 'minecraft:ender_pearl')
+	event.recipes.createCrushing('#forge:dusts/ender_pearl', 'minecraft:ender_pearl')
 	event.recipes.createCrushing('ae2:sky_dust', 'ae2:sky_stone_block')
 	event.recipes.createCrushing('ae2:fluix_dust', 'ae2:fluix_crystal')
 	event.recipes.createCrushing('ae2:certus_quartz_dust', '#ae2:all_certus_quartz')
@@ -7,5 +7,5 @@ onEvent('recipes', event => {
 	event.recipes.createCrushing([Item.of('twilightforest:armor_shard').withChance(0.65).withCount(7)], '#forge:mazestone')
 	event.recipes.createCrushing(['infernalexp:glownuggets', Item.of('infernalexp:glownuggets').withChance(0.50).withCount(1), 'minecraft:glowstone_dust',Item.of('minecraft:glowstone_dust').withChance(0.50).withCount(1)], 'infernalexp:dimstone')
 	event.recipes.createCrushing(['3x infernalexp:glownuggets', Item.of('infernalexp:glownuggets').withChance(0.50).withCount(1)], 'infernalexp:dullstone')
-
+	event.recipes.createCrushing([Item.of('thermal:electrum_dust').withChance(0.4), Item.of('gold_nugget').withChance(0.6).withCount(2), Item.of(INF+':plastic').withChance(0.2)], 'thermaloot:variable_capacitor')
 })

@@ -12,8 +12,8 @@ onEvent('recipes', event =>{
         event.remove({type: type})
     }
     //Removed Recipes
-    erOutput(BR+':graphite_ingot', 'minecraft:blasting')
-    erOutput(BR+':graphite_ingot', 'minecraft:smelting')
+    erOutput('#forge:ingots/graphite', 'minecraft:blasting')
+    erOutput('#forge:ingots/graphite', 'minecraft:smelting')
     erOutput(BR+':reactor_casing')
     erOutput(BR+':reactor_control_rod')
     erOutput(BR+':reactor_fuel_rod')
@@ -33,7 +33,7 @@ onEvent('recipes', event =>{
         'CGC'
     ], {
         C: '#forge:ingots/cast_iron',
-        G: BR+':graphite_ingot',
+        G: '#forge:ingots/graphite',
         Q: 'minecraft:smooth_quartz'
     })
     event.shaped(BR+':reactor_control_rod', [
@@ -45,7 +45,7 @@ onEvent('recipes', event =>{
         C: TF+':carminite',
         L: 'thermal:lead_ingot',
         S: 'thermal:redstone_servo',
-        G: BR+':graphite_ingot'
+        G: '#forge:ingots/graphite'
     })
     event.shaped(BR+':reactor_access_port', [
         'RHR',
@@ -88,8 +88,8 @@ onEvent('recipes', event =>{
         R: BR+':reactor_casing',
         P: 'minecraft:piston',
         L: 'thermal:lead_ingot',
-        G: BR+':graphite_ingot',
-        U: BR+':uranium_ingot'
+        G: '#forge:ingots/graphite',
+        U: '#forge:ingots/uranium'
     })
     event.shaped(BR+':reactor_redstone_port', [
         'RCR',
@@ -101,16 +101,39 @@ onEvent('recipes', event =>{
         D: 'minecraft:redstone',
         P: 'ae2:logic_processor'
     })
-    //create me a recipe for BR+':cyanite_reprocessor' with id
+
     event.shaped(BR+':cyanite_reprocessor', [
         'RGR',
         'LML',
-        'RSR'
+        'RGR'
     ], {
         R: BR+':reactor_casing',
-        G: 'redstone_arsenal:flux_gem',
-        L: 'thermal:lead_ingot',
-        S: 'thermal:redstone_servo',
-        M: TCON+':manyullyn_block'
-    })
+        G: '#forge:gears/invar',
+        L: '#forge:ingots/lead',
+        M: 'thermal:machine_frame'
+    }).id('biggerreactors:crafting/cyanite_reprocessor')
+
+    event.shaped(BR+':reactor_coolant_port', [
+        'RSR',
+        'BMB',
+        'RPR'
+    ], {
+        R: BR+':reactor_casing',
+        S: '#forge:plates/constantan',
+        B: '#forge:ingots/bronze',
+        M: 'thermal:fluid_cell_frame',
+        P: 'create:fluid_pipe'
+    }).id('biggerreactors:crafting/reactor/reactor_coolant_port')
+
+    event.shaped(BR+':reactor_computer_port', [
+        'RQR',
+        'SMS',
+        'RIR'
+    ], {
+        R: BR+':reactor_casing',
+        Q: 'ae2:quartz_fiber',
+        S: CA+':gold_spool',
+        M: CCR+':wired_modem',
+        I: '#forge:ingots/silver'
+    }).id('biggerreactors:crafting/reactor/reactor_computer_port')
 })

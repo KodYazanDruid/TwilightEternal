@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "twilight:ruined_smeltery",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "salt": 5435846156,
+        "spacing": 30,
+        "separation": 10
+    }
+}

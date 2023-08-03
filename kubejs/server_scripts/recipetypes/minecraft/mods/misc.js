@@ -76,6 +76,7 @@ onEvent('recipes', event =>{
 
     //To fix a bug that prevents stacking torches
     event.shapeless('minecraft:torch', 'minecraft:torch')
+    
     moduleCraft('items', 'ae2:sky_stone_chest')
     moduleCraft('fluids', 'thermal:fluid_cell')
     moduleCraft('energy', 'thermal:energy_cell')

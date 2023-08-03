@@ -11,6 +11,17 @@ onEvent('recipes', event =>{
               },
               "type": INF+":dissolution_chamber"
         })
+        // use .inputJson things to make it better
+        /* event.custom({
+            "input": input,
+            "inputFluid": "{FluidName:\""+fluid[0]+"\",Amount:"+fluid[1]+"}",
+            "processingTime": proccesTime,
+            "output": {
+              "item": output[0],
+              "count": output[1]
+            },
+            "type": INF+":dissolution_chamber"
+      }) */
     }
     //Usage: dissolutionChamber([{"item": "item0"},.....,{"item": "item7"}], ["fluid", "amount"], ["output", count], 100)
     dissolutionChamber([
@@ -56,11 +67,7 @@ onEvent('recipes', event =>{
     ],
     ["thermal:creosote", "1000"], [INF+":mechanical_dirt", 1], 200)
     event.custom({
-        "input": [
-            {
-                "item": "minecraft:experience_bottle"
-            }
-        ],
+        "input": [ { "item": "minecraft:experience_bottle" } ],
         "processingTime": 5,
         "output": {
             "item": "minecraft:glass_bottle",
@@ -70,11 +77,7 @@ onEvent('recipes', event =>{
         "type": "industrialforegoing:dissolution_chamber"
       })
       event.custom({
-        "input": [
-            {
-                "item": "minecraft:glass_bottle"
-            }
-        ],
+        "input": [ { "item": "minecraft:glass_bottle" } ],
         "inputFluid": "{FluidName:\"industrialforegoing:essence\",Amount:250}",
         "processingTime": 5,
         "output": {

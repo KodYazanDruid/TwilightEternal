@@ -1,4 +1,4 @@
-onEvent('block.break', event => {
+/* onEvent('block.break', event => {
     let block = event.block
     if(block.id != 'kubejs:impure_uranium') return
 
@@ -11,4 +11,4 @@ onEvent('block.break', event => {
     melon_husk.setHeadArmorItem('melon')
     //melon_husk.mergeFullNBT('{customLootTableNBtPropertyName:"melon_husk"}')
     melon_husk.spawn()
-})
+}) */

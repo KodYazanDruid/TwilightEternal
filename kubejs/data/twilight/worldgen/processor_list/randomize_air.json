@@ -1,0 +1,100 @@
+{
+    "processors": [
+        {
+            "processor_type": "minecraft:rule",
+            "rules": [
+                {
+                    "input_predicate": {
+                        "predicate_type": "minecraft:random_block_match",
+                        "block": "kubejs:mossy_seared_paver",
+                        "probability": 0.35
+                    },
+                    "location_predicate": {
+                        "predicate_type": "always_true"
+                    },
+                    "output_state": {
+                        "Name": "minecraft:air"
+                    }
+                },
+                {
+                    "input_predicate": {
+                        "predicate_type": "minecraft:random_block_match",
+                        "block": "kubejs:mossy_seared_fancy_bricks",
+                        "probability": 0.35
+                    },
+                    "location_predicate": {
+                        "predicate_type": "always_true"
+                    },
+                    "output_state": {
+                        "Name": "minecraft:air"
+                    }
+                },
+                {
+                    "input_predicate": {
+                        "predicate_type": "minecraft:random_block_match",
+                        "block": "kubejs:mossy_seared_bricks",
+                        "probability": 0.35
+                    },
+                    "location_predicate": {
+                        "predicate_type": "always_true"
+                    },
+                    "output_state": {
+                        "Name": "minecraft:air"
+                    }
+                },
+                {
+                    "input_predicate": {
+                        "predicate_type": "minecraft:random_block_match",
+                        "block": "kubejs:mossy_seared_stone",
+                        "probability": 0.35
+                    },
+                    "location_predicate": {
+                        "predicate_type": "always_true"
+                    },
+                    "output_state": {
+                        "Name": "minecraft:air"
+                    }
+                },
+                {
+                    "input_predicate": {
+                        "predicate_type": "minecraft:random_block_match",
+                        "block": "kubejs:mossy_seared_triangle_bricks",
+                        "probability": 0.35
+                    },
+                    "location_predicate": {
+                        "predicate_type": "always_true"
+                    },
+                    "output_state": {
+                        "Name": "minecraft:air"
+                    }
+                },
+                {
+                    "input_predicate": {
+                        "predicate_type": "minecraft:random_block_match",
+                        "block": "kubejs:mossy_seared_cracked_bricks",
+                        "probability": 0.35
+                    },
+                    "location_predicate": {
+                        "predicate_type": "always_true"
+                    },
+                    "output_state": {
+                        "Name": "minecraft:air"
+                    }
+                },
+                {
+                    "input_predicate": {
+                        "predicate_type": "minecraft:random_block_match",
+                        "block": "kubejs:mossy_seared_cobble",
+                        "probability": 0.35
+                    },
+                    "location_predicate": {
+                        "predicate_type": "always_true"
+                    },
+                    "output_state": {
+                        "Name": "minecraft:air"
+                    }
+                }
+            ]
+        }
+    ]
+}

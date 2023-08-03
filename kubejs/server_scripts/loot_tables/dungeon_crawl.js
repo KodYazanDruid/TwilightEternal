@@ -1,3 +1,5 @@
+const CAPACITOR = 'thermaloot:single_capacitor'
+
 onEvent('chest.loot_tables', event =>{
     event.addChest('dungeoncrawl:food', table =>{
         table.addPool(pool =>{
@@ -31,6 +33,7 @@ onEvent('chest.loot_tables', event =>{
             addArmor('zinc')
             pool.addItem('create_sa:copper_sword', '2').randomChance(0.5).enchantWithLevels(5, true)
             pool.addItem('create_sa:zinc_sword', '2').randomChance(0.5).enchantWithLevels(5, true)
+            pool.addItem(CAPACITOR, '2')
         })
     })
     event.addChest('dungeoncrawl:library', table =>{
@@ -125,6 +128,7 @@ onEvent('chest.loot_tables', event =>{
             pool.addItem('minecraft:feather', '1', [3, 7])
             pool.addItem('minecraft:ender_pearl')
             pool.addItem('minecraft:golden_apple')
+            pool.addLootTable(CAPACITOR).weight(1)
         })
     })
     event.addChest('dungeoncrawl:stage_3', table =>{
@@ -153,6 +157,7 @@ onEvent('chest.loot_tables', event =>{
             pool.addItem(INF+':tinydryrubber', '2', [3, 5])
             pool.addItem('thermal:bitumen', '2', [1,6])
             pool.addItem('minecraft:diamond')
+            pool.addLootTable(CAPACITOR).weight(1)
         })
     })
     event.addChest('dungeoncrawl:stage_4', table =>{
@@ -190,7 +195,9 @@ onEvent('chest.loot_tables', event =>{
             pool.addItem('create:gearbox')
             pool.addItem('create:experience_nugget', '2', [3, 7])
             pool.addItem('thermal:tar', '2', [2, 5])
+            pool.addLootTable(CAPACITOR).weight(2)
         })
+
     })
     event.addChest('dungeoncrawl:stage_5', table=>{
         table.addPool(pool =>{
@@ -227,6 +234,7 @@ onEvent('chest.loot_tables', event =>{
             pool.addItem('thermal:tar', '2', [2, 5])
             pool.addItem(INF+':plastic', '2', [1, 3])
             pool.addItem('thermal:cured_rubber', '2', [2, 5])
+            pool.addLootTable(CAPACITOR).weight(2)
         })
     })
     event.addChest('dungeoncrawl:treasure', table =>{

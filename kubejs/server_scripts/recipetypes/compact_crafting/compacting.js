@@ -38,5 +38,57 @@ onEvent('recipes', event => {
         ]
       }) */
 
-      
+      event.custom({
+        "type": "compactcrafting:miniaturization",
+        "recipeSize": 3,
+        "layers": [
+            {
+                "type": "compactcrafting:mixed",
+                "pattern": [
+                    ["S", "S", "S"],
+                    ["S", "G", "S"],
+                    ["S", "S", "S"]
+                ]
+            },
+            {
+                "type": "compactcrafting:mixed",
+                "pattern": [
+                    ["S", "G", "S"],
+                    ["G", "M", "G"],
+                    ["S", "G", "S"]
+                ]
+            },{
+                "type": "compactcrafting:mixed",
+                "pattern": [
+                    ["S", "S", "S"],
+                    ["S", "G", "S"],
+                    ["S", "S", "S"]
+                ]
+            }
+        ],
+        "catalyst": {
+            "id": "ae2:engineering_processor",
+            "Count": 1
+        },
+        "components": {
+            "S": {
+                "type": "compactcrafting:block",
+                "block": "ae2:smooth_sky_stone_block"
+            },
+            "G": {
+                "type": "compactcrafting:block",
+                "block": "thermal:obsidian_glass"
+            },
+            "M": {
+                "type": "compactcrafting:block",
+                "block": "thermal:energy_cell_frame"
+            }
+        },
+        "outputs": [
+            {
+                "id": "kubejs:crude_controller",
+                "Count": 1
+            }
+        ]
+      })
 })

@@ -1,3 +1,5 @@
+const $AXE_DIG  = java('net.minecraftforge.common.ToolAction').get('axe_dig')
+
 onEvent('tags.items', event => {
     event.add('forge:mazestone', [
         TF + ':mazestone',
@@ -19,8 +21,11 @@ onEvent('tags.items', event => {
         'aquaculture:neptunes_bounty',
         TCON + ':sledge_hammer',
         INF + ':pink_slime',
-        'minecraft:turtle_egg'
+        'minecraft:turtle_egg',
+        'ae2:ender_dust'
     ])
+
+    colors.forEach(color => event.add(TF + ':banned_uncrafting_ingredients', 'minecraft:' + color + '_dye'))
 
     event.add('create:crushed_ores', 'kubejs:crushed_ironwood')
     event.add('forge:blocks/bronze', 'thermal:bronze_block')
@@ -55,6 +60,11 @@ onEvent('tags.items', event => {
     event.add('curios:magicfeather', 'magicfeather:magicfeather')
     event.add('forge:plates', 'createdeco:zinc_sheet')
 
+    event.add('sliceanddice:allowed_tools', '#farmersdelight:tools/knives')
+    event.add('sliceanddice:allowed_tools', '#bookshelf:shears')
+
+    for(let i of armorTypes) for(let j of thermalIngots) event.add('twilight:starter_'+i, `${TCOMP}:${j}_${i}`)
+
     /* event.add('curios:backpack', 'backpacked:backpack')
     event.remove('curios:back', 'backpacked:backpack') */
 
@@ -67,6 +77,13 @@ onEvent('tags.items', event => {
         event.add(`forge:storage_blocks`, item)
         event.add(`forge:storage_blocks/${material}`, item)
     }
+
+    Ingredient.all.stacks.forEach(ingredient => {
+        var item = Item.of(ingredient)
+        if (item.getItemStack().canPerformAction($AXE_DIG)){
+            event.add('twilight:allowed_tools', item.getId())
+        }
+    })
 
     //Might be a better way to do this, but this works for now.
     const unifyTags = [

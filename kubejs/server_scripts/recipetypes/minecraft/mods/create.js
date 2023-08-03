@@ -61,14 +61,15 @@ onEvent('recipes', event =>{
 	    S: 'ae2:spatial_anchor'
 	})
     event.shaped('create_enchantment_industry:enchanting_guide', [
-        ' H ',
+        'NHN',
         'SBS',
-        ' M '
+        'NMN'
     ], {
         H: 'create_enchantment_industry:hyper_experience_bottle',
         S: 'create:sturdy_sheet',
         B: 'minecraft:book',
-        M: 'quark:matrix_enchanter'
+        M: 'quark:matrix_enchanter',
+        N: 'minecraft:nether_star'
     })
     event.shaped('create_enchantment_industry:disenchanter', [
         'SBS',
@@ -88,7 +89,7 @@ onEvent('recipes', event =>{
         'P'
     ], {
         T: 'create:fluid_tank',
-        P: 'minecraft:writable_book',
+        P: '#forge:plates/shellite',
         W: 'create:mechanical_press'
     }).id('create_enchantment_industry:crafting/printer')
 })

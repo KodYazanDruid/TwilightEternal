@@ -22,3 +22,4 @@ declare const RARITY_COMMON: Rarity;
 declare const Client: Internal.ClientWrapper;
 declare const SLOT_MAINHAND: EquipmentSlot;
 declare const OFF_HAND: Hand;
+declare const Interval: Internal.IntervalJS;

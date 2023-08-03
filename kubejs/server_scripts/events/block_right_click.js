@@ -1,4 +1,4 @@
-onEvent('block.right_click', event => {
+/* onEvent('block.right_click', event => {
     let block = event.block
     let item = event.item
     let player = event.player
@@ -21,4 +21,4 @@ onEvent('block.right_click', event => {
         if(!player.isCreativeMode())
             item.count--
     }
-})
+}) */

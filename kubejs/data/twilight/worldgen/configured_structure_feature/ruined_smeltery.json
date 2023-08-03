@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:village",
+    "config": {
+        "start_pool": "twilight:ruined_smeltery",
+        "size": 7
+    },
+    "biomes": "#twilight:has_structure/ruined_smeltery",
+    "adapt_noise": true,
+    "spawn_overrides": {}
+}

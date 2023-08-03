@@ -9,11 +9,12 @@ onEvent('recipes', event => {
     event.remove({output: 'ae2:engineering_processor'})
 
     function processorRecipe(type){
-        event.recipes.createSequencedAssembly('ae2:'+type+'_processor', 'ae2:printed_'+type+'_processor', [
-                event.recipes.createDeploying('ae2:printed_'+type+'_processor', ['ae2:printed_'+type+'_processor', 'minecraft:redstone']),
-                event.recipes.createDeploying('ae2:printed_'+type+'_processor', ['ae2:printed_'+type+'_processor', 'ae2:printed_silicon']),
-                event.recipes.createPressing('ae2:printed_'+type+'_processor', 'ae2:printed_'+type+'_processor')
-            ]).transitionalItem('ae2:printed_'+type+'_processor').loops(1)
+        var item = 'ae2:printed_'+type+'_processor'
+        event.recipes.createSequencedAssembly('ae2:'+type+'_processor', item, [
+                event.recipes.createDeploying(item, [item, 'minecraft:redstone']),
+                event.recipes.createDeploying(item, [item, 'ae2:printed_silicon']),
+                event.recipes.createPressing(item, item)
+            ]).transitionalItem(item).loops(1)
     }
     processors.forEach(processorRecipe)
 
