@@ -1,0 +1,101 @@
+{
+    "type": "create:sequenced_assembly",
+    "ingredient": {
+        "item": "minecraft:bowl"
+    },
+    "transitionalItem": {
+        "item": "twilightforest:hydra_chop"
+    },
+    "sequence": [
+        {
+            "type": "create:deploying",
+            "ingredients": [
+                {
+                    "item": "twilightforest:hydra_chop"
+                },
+                {
+                    "tag": "forge:hydra_meat"
+                }
+            ],
+            "results": [
+                {
+                    "item": "twilightforest:hydra_chop"
+                }
+            ]
+        },
+        {
+            "type": "create:deploying",
+            "ingredients": [
+                {
+                    "item": "twilightforest:hydra_chop"
+                },
+                {
+                    "item": "twilightforest:naga_scale"
+                }
+            ],
+            "results": [
+                {
+                    "item": "twilightforest:hydra_chop"
+                }
+            ]
+        },
+        {
+            "type": "create:filling",
+            "ingredients": [
+              {
+                "item": "twilightforest:hydra_chop"
+              },
+              {
+                "fluid": "twilightforest:fiery_essence",
+                "nbt": {},
+                "amount": 250
+              }
+            ],
+            "results": [
+              {
+                "item": "twilightforest:hydra_chop"
+              }
+            ]
+          },
+        {
+            "type": "create:filling",
+            "ingredients": [
+              {
+                "item": "twilightforest:hydra_chop"
+              },
+              {
+                "fluid": "create_central_kitchen:tomato_sauce",
+                "nbt": {},
+                "amount": 250
+              }
+            ],
+            "results": [
+              {
+                "item": "twilightforest:hydra_chop"
+              }
+            ]
+          },
+        {
+            "type": "create:deploying",
+            "ingredients": [
+                {
+                    "item": "twilightforest:hydra_chop"
+                },
+                {
+                    "item": "twilightforest:torchberries"
+                }
+            ],
+            "results": [
+                {
+                    "item": "twilightforest:hydra_chop"
+                }
+            ]
+        }
+    ],
+    "results": [
+        {
+            "item": "twilightdelight:fiery_snakes_block"
+        }
+    ],
+    "loops": 1
+}

@@ -1,3 +1,4 @@
+//priority: 10
 const INF = 'industrialforegoing'
 const TF = 'twilightforest'
 const BR = 'biggerreactors'
@@ -17,6 +18,7 @@ const CEI = 'create_enchantment_industry'
 const CCR = 'computercraft'
 
 const colors = ['white', 'orange', 'magenta', 'light_blue', 'yellow', 'lime', 'pink', 'gray', 'light_gray', 'cyan', 'purple', 'blue', 'brown', 'green', 'red', 'black']
+const dyenamiColors = ['peach', 'aquamarine', 'fluorescent', 'mint', 'maroon', 'bubblegum', 'lavender', 'cherenkov']
 const toolsVanilla = ['helmet', 'chestplate', 'leggings', 'boots', 'sword', 'pickaxe', 'axe', 'shovel', 'hoe']
 const armorTypes = ['helmet', 'chestplate', 'leggings', 'boots']
 const thermalIngots = ['tin', 'nickel', 'lead', 'silver', 'bronze', 'electrum', 'constantan', 'invar']

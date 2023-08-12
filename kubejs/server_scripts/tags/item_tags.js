@@ -1,4 +1,8 @@
+//priority: 2
 const $AXE_DIG  = java('net.minecraftforge.common.ToolAction').get('axe_dig')
+
+//Filter for #forge:storage_blocks
+let blStorage = []
 
 onEvent('tags.items', event => {
     //Might be a better way to do this, but this works for now.
@@ -121,6 +125,7 @@ onEvent('tags.items', event => {
     event.add('twilight:extract_dirt_misc', ['waterstrainer:fertilizer', INF + ':fertilizer'])
     event.add('curios:magicfeather', 'magicfeather:magicfeather')
     event.add('forge:plates', 'createdeco:zinc_sheet')
+    event.add('forge:slimeballs', 'thermal_extra:sticky_ball')
 
     event.add('sliceanddice:allowed_tools', '#farmersdelight:tools/knives')
     event.add('sliceanddice:allowed_tools', '#bookshelf:shears')
@@ -140,6 +145,8 @@ onEvent('tags.items', event => {
     starter_candies.forEach(candy => event.add('twilight:starter_candy', candy))
     starter_meal.forEach(meal => event.add('twilight:starter_meal', meal))
 
+    Ingredient.of(/\w+:\w+knife$/).itemIds.forEach(knife => event.add('forge:tools/knives', knife))
+
     for (let i of colors) {
         event.add('comforts:sleeping_bags', 'comforts:sleeping_bag_' + i)
         event.add('comforts:hammocks', 'comforts:hammock_' + i)
@@ -156,11 +163,14 @@ onEvent('tags.items', event => {
             event.add('twilight:allowed_tools', item.getId())
         }
     })
-
-    unifyTags.forEach(entry => addUnifyTag(entry[0], entry[1]))
+    
+    blStorage.push('tconstruct:rose_gold_block')
+    unifyTags.forEach(entry => {
+        addUnifyTag(entry[0], entry[1])
+        if(entry[1].includes('thermal')) blStorage.push(entry[1])
+    })
 
     event.removeAllTagsFrom('thermal:onion_seeds')
     event.removeAllTagsFrom('thermal:tomato_seeds')
     event.removeAllTagsFrom('thermal:rice_seeds')
-
 })

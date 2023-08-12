@@ -1,6 +1,14 @@
 const CAPACITOR = 'thermaloot:single_capacitor'
 
 onEvent('chest.loot_tables', event =>{
+    event.modify('minecraft:chests/buried_treasure', table => {
+        table.addPool(p => {
+            p.setUniformRolls(1, 1)
+            p.addLootTable(CAPACITOR)
+            p.addItem('minecraft:tnt', '1', [2, 4])
+        })
+    })
+
     event.addChest('dungeoncrawl:food', table =>{
         table.addPool(pool =>{
             pool.setUniformRolls(6, 12)
@@ -33,7 +41,7 @@ onEvent('chest.loot_tables', event =>{
             addArmor('zinc')
             pool.addItem('create_sa:copper_sword', '2').randomChance(0.5).enchantWithLevels(5, true)
             pool.addItem('create_sa:zinc_sword', '2').randomChance(0.5).enchantWithLevels(5, true)
-            pool.addItem(CAPACITOR, '2')
+            pool.addLootTable(CAPACITOR)
         })
     })
     event.addChest('dungeoncrawl:library', table =>{

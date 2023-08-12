@@ -19,6 +19,7 @@ onEvent('recipes', event =>{
     erOutput('createchunkloading:chunk_loader')
     erOutput('chunkloaders:basic_chunk_loader')
     erOutput('create_enchantment_industry:enchanting_guide')
+    erId(CA+':crafting/large_connector_gold')
 
     //Recipes
 
@@ -92,4 +93,30 @@ onEvent('recipes', event =>{
         P: '#forge:plates/shellite',
         W: 'create:mechanical_press'
     }).id('create_enchantment_industry:crafting/printer')
+    event.shaped('8x '+CA+':spool', [
+        ' S ',
+        'RBR',
+        ' S '
+    ], {
+        S: 'createdeco:cast_iron_sheet',
+        R: 'thermal:cured_rubber',
+        B: CA+':brass_rod'
+    }).id(CA+':crafting/spool')
+    event.shaped('2x '+CA+':connector', [
+        ' C ',
+        'ASA',
+    ], {
+        C: CA+':copper_rod',
+        A: 'create:andesite_alloy',
+        S: '#forge:slimeballs'
+    }).id(CA+':crafting/small_connector_copper')
+    event.shaped('2x '+CA+':large_connector', [
+        ' E ',
+        'AEA',
+        'ASA'
+    ], {
+        E: CA+':electrum_rod',
+        A: 'create:andesite_alloy',
+        S: '#forge:slimeballs'
+    }).id(CA+':crafting/large_connector_electrum')
 })
