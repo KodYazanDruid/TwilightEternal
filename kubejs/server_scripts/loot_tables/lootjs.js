@@ -1,8 +1,12 @@
 const $Random = java('java.util.Random')
+/* const $LootItemCondition = java("net.minecraft.world.level.storage.loot.predicates.LootItemCondition")
+const $EnchantTome = java('vazkii.quark.content.tools.loot.EnchantTome') */
 
 let colorIDs = []
 for(let i of colors) colorIDs.push(`minecraft:${i}_dye`)
 for(let i of dyenamiColors) colorIDs.push(`dyenamics:${i}_dye`)
+
+/* let allEnchants = Array.from($Registry.ENCHANTMENT.keySet().toArray()) */
 
 onEvent('lootjs', event => {
     // TODO Convert ALL of the KubeJS loot table modifier codes to LootJS
@@ -93,6 +97,12 @@ onEvent('lootjs', event => {
             .removeLoot(Ingredient.getAll().filter(ignoreSD).not())
             .addWeightedLoot(2, arrayToLoot(Ingredient.of('#forge:seeds').getStacks(), 1))
             .addWeightedLoot([2, 4], )
+
+        /* event.addLootTableModifier('minecraft:blocks/coarse_dirt')
+            .apply(ctx => {
+                let tomeInstance = new $EnchantTome(new $LootItemCondition[0])
+                tomeInstance.run(Item.of('quark:ancient_tome'), )
+            }) */
 
 })
 

@@ -43,11 +43,11 @@ skull_candles = false
 #For example: "minecraft:iron_ore 0.7 8 1 24" would add a stalactite equal to the default iron ore stalactite.
 ["Custom Hollow Hill Stalactites"]
 	#Blocks generating as stalactites in large hills only
-	largeHill = []
+	largeHill = ["thermal:tin_ore 0.6 8 2 20", "thermal:nickel_ore 0.6 8 2 20", "thermal:lead_ore 0.5 6 2 16", "thermal:silver_ore 0.45 6 2 15", "create:zinc_ore 0.7 8 1 24"]
 	#Blocks generating as stalactites in medium and large hills
-	mediumHill = []
+	mediumHill = ["thermal:tin_ore 0.6 8 2 20", "thermal:nickel_ore 0.6 8 2 20", "thermal:lead_ore 0.5 6 2 16", "thermal:silver_ore 0.45 6 2 15", "create:zinc_ore 0.7 8 1 24"]
 	#Blocks generating as stalactites in all hills
-	smallHill = []
+	smallHill = ["thermal:tin_ore 0.6 8 2 20", "thermal:nickel_ore 0.6 8 2 20", "thermal:lead_ore 0.5 6 2 16", "thermal:silver_ore 0.45 6 2 15", "create:zinc_ore 0.7 8 1 24"]
 	#If true, default stalactites and stalactites defined by other mods will not be used.
 	useConfigOnly = false
 
