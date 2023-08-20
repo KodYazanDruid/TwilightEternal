@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:sword_or_axe",
+    "industrialforegoing:infinity_saw",
+    "industrialforegoing:infinity_hammer",
+    "redstone_arsenal:flux_sickle",
+    "create:potato_cannon",
+    "farmersdelight:flint_knife",
+    "farmersdelight:iron_knife",
+    "farmersdelight:diamond_knife",
+    "farmersdelight:netherite_knife",
+    "farmersdelight:golden_knife",
+    "$minecraft:universal_enchants_axe",
+    "$minecraft:trident",
+    "$minecraft:bow",
+    "$minecraft:crossbow",
+    "minecraft:bundle"
+  ],
+  "incompatible": [
+    "ensorcellation:excavating",
+    "minecraft:silk_touch",
+    "minecraft:fortune"
+  ]
+}

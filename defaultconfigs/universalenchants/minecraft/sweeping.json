@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:weapon",
+    "infernalexp:blindsight_tongue_whip",
+    "infernalexp:kinetic_tongue_whip",
+    "industrialforegoing:infinity_hammer",
+    "redstone_arsenal:flux_sickle",
+    "$minecraft:universal_enchants_axe",
+    "$minecraft:trident"
+  ],
+  "incompatible": [
+    "ensorcellation:magic_edge"
+  ]
+}

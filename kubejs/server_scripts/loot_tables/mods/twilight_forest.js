@@ -49,21 +49,27 @@ onEvent('lootjs', event => {
         
 })
 
+let storageBlockStacks = Ingredient.of('#forge:storage_blocks').filter([
+    Ingredient.of('@minecraft'),
+    Ingredient.of('@create'),
+    Ingredient.of('@thermal'),
+    Ingredient.of('@thermal_extra'),
+    Ingredient.of('@redstone_arsenal'),
+    Ingredient.of('@materialis'),
+    Ingredient.of('@tconstruct'),
+    Ingredient.of('@aquaculture'),
+    Ingredient.of('@twilightforest'),
+    Ingredient.of('@ae2'),
+    Ingredient.of('@architects_palette')
+]).getStacks()
+
+// blStrage defined in item_tags.js
 function bundleGen() {
     let invArr = []
-    Ingredient.of('#forge:storage_blocks').filter([
-        Ingredient.of('@minecraft'),
-        Ingredient.of('@create'),
-        Ingredient.of('@thermal'),
-        Ingredient.of('@thermal_extra'),
-        Ingredient.of('@redstone_arsenal'),
-        Ingredient.of('@materialis'),
-        Ingredient.of('@tconstruct')
-    ]).getStacks().forEach(stk => {
+    storageBlockStacks.forEach(stk => {
         if(stk.anyStackMatches(Ingredient.of(blStorage))) { return }
         invArr.push(`{Count:1b,id:"${stk.getId()}"}`.replace("'", ""))
     })
-
     return Item.of('bundle', `{Items:[{Count:1b,id:"twilightforest:quest_ram_trophy"},${invArr.selectRandomElements(8)}]}`)
 }
 Array.prototype.shuffle = function () {

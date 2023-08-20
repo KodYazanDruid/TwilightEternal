@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:travel_anchors_teleportable_no_staff",
+    "industrialforegoing:infinity_drill",
+    "industrialforegoing:infinity_saw",
+    "industrialforegoing:infinity_hammer"
+  ],
+  "incompatible": []
+}

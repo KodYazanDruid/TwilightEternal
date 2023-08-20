@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:digger",
+    "waterstrainer:strainer_survivalist",
+    "waterstrainer:strainer_survivalist_solid",
+    "waterstrainer:strainer_survivalist_reinforced",
+    "waterstrainer:strainer_fisherman",
+    "waterstrainer:strainer_fisherman_solid",
+    "waterstrainer:strainer_fisherman_reinforced",
+    "industrialforegoing:infinity_drill",
+    "industrialforegoing:infinity_saw",
+    "thermal:flux_drill",
+    "thermal:flux_saw",
+    "ae2:annihilation_plane",
+    "quark:pickarang",
+    "quark:flamerang"
+  ],
+  "incompatible": [
+    "minecraft:piercing"
+  ]
+}

@@ -16,4 +16,5 @@ onEvent('item.registry', event => {
 	event.create('knightmetal_nugget').displayName('Knightmetal Nugget')
 		.tag('forge:nuggets')
 		.tag('forge:nuggets/knightmetal')
+	event.create('loot_bag').displayName('Loot Bag').unstackable()
 })

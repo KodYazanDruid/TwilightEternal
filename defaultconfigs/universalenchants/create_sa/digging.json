@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:digger",
+    "industrialforegoing:infinity_drill",
+    "industrialforegoing:infinity_saw",
+    "ae2:annihilation_plane"
+  ],
+  "incompatible": []
+}

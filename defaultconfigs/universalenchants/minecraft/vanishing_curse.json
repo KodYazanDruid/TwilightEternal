@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:vanishable",
+    "industrialforegoing:infinity_drill",
+    "industrialforegoing:infinity_saw",
+    "industrialforegoing:infinity_hammer",
+    "industrialforegoing:infinity_trident",
+    "supplementaries:key",
+    "$minecraft:universal_enchants_horse_armor"
+  ],
+  "incompatible": [
+    "ensorcellation:soulbound"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:weapon",
+    "infernalexp:blindsight_tongue_whip",
+    "infernalexp:kinetic_tongue_whip",
+    "industrialforegoing:infinity_hammer",
+    "farmersdelight:skillet",
+    "farmersdelight:flint_knife",
+    "farmersdelight:iron_knife",
+    "farmersdelight:diamond_knife",
+    "farmersdelight:netherite_knife",
+    "farmersdelight:golden_knife",
+    "$minecraft:universal_enchants_axe",
+    "$minecraft:trident"
+  ],
+  "incompatible": [
+    "ensorcellation:damage_villager",
+    "ensorcellation:instigating",
+    "minecraft:impaling",
+    "ensorcellation:damage_ender",
+    "minecraft:smite",
+    "ensorcellation:magic_edge",
+    "ensorcellation:damage_illager"
+  ]
+}

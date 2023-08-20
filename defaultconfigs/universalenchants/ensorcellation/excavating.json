@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:pickaxe_or_shovel",
+    "industrialforegoing:infinity_drill"
+  ],
+  "incompatible": [
+    "minecraft:looting"
+  ]
+}

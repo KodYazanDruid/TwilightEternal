@@ -92,7 +92,7 @@ onEvent('lootjs', event => {
             Ingredient.of(Item.of('quark:ancient_tome').ignoreNBT()), 
             Ingredient.of(Item.of('thermaloot:variable_capacitor').ignoreNBT())
         ]
-        const musicDiscs = Ingredient.of('#minecraft:music_discs').filter(Item.of('minecraft:'))
+        //const musicDiscs = Ingredient.of('#minecraft:music_discs').filter(Item.of('minecraft:'))
         event.addLootTableModifier('minecraft:chests/simple_dungeon')
             .removeLoot(Ingredient.getAll().filter(ignoreSD).not())
             .addWeightedLoot(2, arrayToLoot(Ingredient.of('#forge:seeds').getStacks(), 1))
@@ -103,6 +103,8 @@ onEvent('lootjs', event => {
                 let tomeInstance = new $EnchantTome(new $LootItemCondition[0])
                 tomeInstance.run(Item.of('quark:ancient_tome'), )
             }) */
+
+        event.addBlockLootModifier
 
 })
 

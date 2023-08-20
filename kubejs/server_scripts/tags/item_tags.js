@@ -1,5 +1,5 @@
 //priority: 2
-const $AXE_DIG  = java('net.minecraftforge.common.ToolAction').get('axe_dig')
+const $AXE_DIG = java('net.minecraftforge.common.ToolAction').get('axe_dig')
 
 //Filter for #forge:storage_blocks
 let blStorage = []
@@ -165,6 +165,8 @@ onEvent('tags.items', event => {
     })
     
     blStorage.push('tconstruct:rose_gold_block')
+    blStorage.push('thermal:ruby_block')
+    blStorage.push('thermal:sapphire_block')
     unifyTags.forEach(entry => {
         addUnifyTag(entry[0], entry[1])
         if(entry[1].includes('thermal')) blStorage.push(entry[1])

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:armor_head",
+    "thermal:underwater_minecart",
+    "$minecraft:universal_enchants_horse_armor"
+  ],
+  "incompatible": []
+}

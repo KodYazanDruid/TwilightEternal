@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "items": [
+    "$minecraft:breakable",
+    "industrialforegoing:infinity_drill",
+    "industrialforegoing:infinity_saw",
+    "industrialforegoing:infinity_hammer",
+    "industrialforegoing:infinity_trident",
+    "industrialforegoing:infinity_backpack",
+    "industrialforegoing:infinity_launcher"
+  ],
+  "incompatible": []
+}

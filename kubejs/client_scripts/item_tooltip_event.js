@@ -5,7 +5,6 @@ onEvent('item.tooltip', event => {
 
   event.add('create:chromatic_compound', 'This item is a mystery!')
 
-
 })
 
 onEvent('item.tooltip', event => {
@@ -17,43 +16,47 @@ onEvent('item.tooltip', event => {
     }
   })
 })
-
-const ItemDescription = java('com.simibubi.create.foundation.item.ItemDescription')
-const Palette = java('com.simibubi.create.foundation.item.ItemDescription$Palette')
+//use client.init
+/* const ItemDescription = java('com.simibubi.create.foundation.item.ItemDescription$Modifier')
+const TooltipModifier = java('com.simibubi.create.foundation.item.TooltipModifier')
+const Palette = java('com.simibubi.create.foundation.item.TooltipHelper$Palette')
 
 onEvent('item.tooltip', event => {
   event.addAdvanced('kubejs:enzymatic_essence_catalyst', (item, advanced, tooltip) => {
-    new ItemDescription(Palette.Green)
-      .withSummary(Component.translate('item.kubejs.enzymatic_essence_catalyst.tooltip.summary'))
-      .createTabs()
-      .addInformation(tooltip)
+    TooltipModifier.REGISTRY.register(
+      item.item, new ItemDescription(item.item, Palette.GREEN)
+    )
   })
 
   event.addAdvanced('industrialforegoing:block_breaker', (item, advanced, tooltip) => {
-    new ItemDescription(Palette.Red)
-      .withSummary(Component.translate('item.industrialforegoing.block_breaker.tooltip.summary'))
-      .createTabs()
-      .addInformation(tooltip)
+      TooltipModifier.REGISTRY.register(
+        item, new ItemDescription(item, Palette.RED)
+      )
   })
 
   event.addAdvanced('industrialforegoing:block_placer', (item, advanced, tooltip) => {
-    new ItemDescription(Palette.Red)
-      .withSummary(Component.translate('item.industrialforegoing.block_placer.tooltip.summary'))
-      .createTabs()
-      .addInformation(tooltip)
+      TooltipModifier.REGISTRY.register(
+        item.item, new ItemDescription(item.item, Palette.RED)
+      )
   })
 
   event.addAdvanced('create:deployer', (item, advanced, tooltip) => {
-    new ItemDescription(Palette.Red)
-      .withSummary(Component.translate('item.create.deployer.tooltip.summary'))
-      .createTabs()
-      .addInformation(tooltip)
+      TooltipModifier.REGISTRY.register(
+        item.item, new ItemDescription(item.item, Palette.RED)
+      )
   })
 
   event.addAdvanced('magicfeather:magicfeather', (item, advanced, tooltip) => {
-    new ItemDescription(Palette.Purple)
-      .withSummary(Component.translate('item.magicfeather.magicfeather.tooltip.summary'))
-      .createTabs()
-      .addInformation(tooltip)
+      TooltipModifier.REGISTRY.register(
+        item.item, new ItemDescription(item.item, Palette.PURPLE)
+      )
+  })
+}) */
+
+onEvent('item.tooltip', tooltip => {
+  tooltip.addAdvanced(Ingredient.all, (item, _, text) => {
+    if (tooltip.alt && item.nbt) {
+      text.add(Text.of('NBT: ').append(Text.prettyPrintNbt(item.nbt)))
+    }
   })
 })
