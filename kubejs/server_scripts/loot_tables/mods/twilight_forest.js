@@ -70,6 +70,8 @@ function bundleGen() {
         if(stk.anyStackMatches(Ingredient.of(blStorage))) { return }
         invArr.push(`{Count:1b,id:"${stk.getId()}"}`.replace("'", ""))
     })
+    console.log(invArr)
+    console.log(invArr.selectRandomElements(8))
     return Item.of('bundle', `{Items:[{Count:1b,id:"twilightforest:quest_ram_trophy"},${invArr.selectRandomElements(8)}]}`)
 }
 Array.prototype.shuffle = function () {

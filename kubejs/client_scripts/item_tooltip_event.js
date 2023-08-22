@@ -17,11 +17,11 @@ onEvent('item.tooltip', event => {
   })
 })
 //use client.init
-/* const ItemDescription = java('com.simibubi.create.foundation.item.ItemDescription$Modifier')
+const ItemDescription = java('com.simibubi.create.foundation.item.ItemDescription$Modifier')
 const TooltipModifier = java('com.simibubi.create.foundation.item.TooltipModifier')
 const Palette = java('com.simibubi.create.foundation.item.TooltipHelper$Palette')
 
-onEvent('item.tooltip', event => {
+/* onEvent('item.tooltip', event => {
   event.addAdvanced('kubejs:enzymatic_essence_catalyst', (item, advanced, tooltip) => {
     TooltipModifier.REGISTRY.register(
       item.item, new ItemDescription(item.item, Palette.GREEN)
@@ -30,7 +30,7 @@ onEvent('item.tooltip', event => {
 
   event.addAdvanced('industrialforegoing:block_breaker', (item, advanced, tooltip) => {
       TooltipModifier.REGISTRY.register(
-        item, new ItemDescription(item, Palette.RED)
+        item.item.asItem(), new ItemDescription(item.item.asItem(), Palette.RED)
       )
   })
 

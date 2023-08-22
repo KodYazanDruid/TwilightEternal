@@ -58,7 +58,7 @@ onEvent('recipes', event =>{
     erId(CA+':digital_adapter')
     event.remove({mod: 'portality'})
     for(let i of toolsVanilla){
-        erOutput(TCOMP+':copper_'+i)
+        erOutput(CS+':copper_'+i)
     }
 
     //Recipes

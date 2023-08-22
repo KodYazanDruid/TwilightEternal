@@ -136,6 +136,11 @@ onEvent('tags.items', event => {
     Ingredient.of(/tools_complement:\w+leggings/).itemIds.forEach(leggings => event.add('twilight:starter_leggings', leggings))
     Ingredient.of(/tools_complement:\w+boots/).itemIds.forEach(boots => event.add('twilight:starter_boots', boots))
 
+    event.add('twilight:starter_helmet', [CS+':zinc_helmet', CS+':brass_helmet'])
+    event.add('twilight:starter_chestplate', [CS+':zinc_chestplate', CS+':brass_chestplate'])
+    event.add('twilight:starter_leggings', [CS+':zinc_leggings', CS+':brass_leggings'])
+    event.add('twilight:starter_boots', [CS+':zinc_boots', CS+':brass_boots'])
+
     Ingredient.of(/\w+:\w+tea$/).itemIds.forEach(tea => event.add('twilight:starter_tea', tea))
     Ingredient.of(/\w+:\w+(juice|cider|custard)$/).itemIds.forEach(juice => event.add('twilight:starter_juice', juice))
     Ingredient.of(/\w+:\w+pie_slice$/).itemIds.forEach(pie => event.add('twilight:starter_pie', pie))

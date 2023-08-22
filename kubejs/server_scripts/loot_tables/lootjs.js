@@ -103,9 +103,6 @@ onEvent('lootjs', event => {
                 let tomeInstance = new $EnchantTome(new $LootItemCondition[0])
                 tomeInstance.run(Item.of('quark:ancient_tome'), )
             }) */
-
-        event.addBlockLootModifier
-
 })
 
 let itemChance = (item, chance) => { return Item.of(item).withChance(chance) }

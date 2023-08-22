@@ -47,7 +47,7 @@ let thermalPrize = thermalMats.concat([
 let tconMats = []
 Ingredient.of('@tconstruct').filter([
     Ingredient.of('#forge:ingots'),
-    Ingredient.of('#tconstruct:slime_block'),
+    Ingredient.of('#tconstruct:slime_block')
 ]).getStacks().forEach(stk => tconMats.push(Array.of(stk.id, [2, 4], 5)))
 let tconstructPrize = tconMats.concat([
     ['glass', [3, 5], 5],
@@ -58,7 +58,7 @@ let tforestMats = []
 Ingredient.of('@twilightforest').filter([
     Ingredient.of('#forge:ingots'),
     Ingredient.of('#forge:ores'),
-    Ingredient.of('#forge:gems'),
+    Ingredient.of('#forge:gems')
 ]).getStacks().forEach(stk => tforestMats.push(Array.of(stk.id, [2, 4], 5)))
 let tforestPrize = tforestMats.concat([
     ['twilightforest:experiment_115', [2, 5], 6],
@@ -89,7 +89,7 @@ let minecraftPrize = minecraftMats.concat([
     ['diamond_ore', [2, 3], 2],
     ['deepslate_diamond_ore', [2, 3], 2],
     ['emerald_ore', [2, 3], 2],
-    ['deepslate_emerald_ore', [2, 3], 2],
+    ['deepslate_emerald_ore', [2, 3], 2]
 ])
 
 let foregoingPrize = [

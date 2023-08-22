@@ -3,22 +3,9 @@ const TCOMP = 'tools_complement'
 const TCON = 'tconstruct'
 const toolsVanilla = ['helmet', 'chestplate', 'leggings', 'boots', 'sword', 'pickaxe', 'axe', 'shovel', 'hoe']
 
-
 onEvent('jei.hide.items', event => {
-    //Refined pipe hiding
-    // MAKE THIS MORE PROFESSIONAL
-    const pipeTiers = ['basic', 'improved', 'advanced', 'elite', 'ultimate']
-    const pipeTypes = ['item', 'fluid']
-
     const conveyorTypes = ['extraction', 'insertion', 'detection', 'bouncing', 'dropping', 'blinking', 'splitting']
     const blackHoleTypes = ['common', 'pity', 'simple', 'advanced', 'supreme']
-
-    function pipeHide(tier, type){
-        event.hide('refinedpipes:'+tier+'_'+type+'_pipe')
-    }
-    function extractorAttachmentHide(tier){
-        event.hide('refinedpipes:'+tier+'_extractor_attachment')
-    }
 
     function conveyorHide(type){
         event.hide(INF+':conveyor_'+type+'_upgrade')
@@ -28,22 +15,7 @@ onEvent('jei.hide.items', event => {
         event.hide(INF+':'+type+'_black_hole_unit')
     }
     
-    for(let i of toolsVanilla){
-        event.hide(TCOMP+':copper_'+i)
-    }
-
-    pipeTypes.forEach(e =>{
-        pipeHide('basic', e)
-        pipeHide('improved', e)
-        pipeHide('advanced', e)
-        if(e!='item'){
-            pipeHide('elite', e)
-            pipeHide('ultimate', e)
-        }
-    })
-    pipeTiers.forEach(e =>{
-        extractorAttachmentHide(e)
-    })
+    for(let i of toolsVanilla) event.hide(CS+':copper_'+i)
 
     conveyorTypes.forEach(e =>{
         conveyorHide(e)
@@ -51,7 +23,6 @@ onEvent('jei.hide.items', event => {
     blackHoleTypes.forEach(e =>{
         blackHoleRemove(e)
     })
-
 })
 
 onEvent('jei.remove.categories', event => {
