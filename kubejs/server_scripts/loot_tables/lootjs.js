@@ -11,7 +11,7 @@ for(let i of dyenamiColors) colorIDs.push(`dyenamics:${i}_dye`)
 onEvent('lootjs', event => {
     // TODO Convert ALL of the KubeJS loot table modifier codes to LootJS
     event.addLootTableModifier('minecraft:chests/buried_treasure')
-        .removeLoot(Ingredient.getAll().filter([Ingredient.of('tnt'), Ingredient.of(Item.of('thermaloot:variable_capacitor').ignoreNBT())]).not())
+        .removeLoot(Ingredient.getAll().filter(Ingredient.of(['tnt', Item.of('thermaloot:variable_capacitor').ignoreNBT()])).not())
         .addLoot('heart_of_the_sea')
         .addWeightedLoot([TCOMP+':iron_knife', TCOMP+':nickel_knife', TCOMP+':bronze_knife', TCOMP+':constantan_knife'])
         .addWeightedLoot(['thermal:diving_helmet', 'thermal:diving_chestplate', 'thermal:diving_leggings', 'thermal:diving_boots'])
@@ -50,6 +50,10 @@ onEvent('lootjs', event => {
                 LootEntry.of(FD+':cooked_cod_slice').limitCount([2, 5]),
                 LootEntry.of(FD+':cod_roll').limitCount([2, 5])
             ])
+        })
+        .randomChance(0.5).addLoot(LootEntry.of('quark:ancient_tome'))
+        .apply(ctx => {
+            ctx.findLoot('quark:ancient_tome').forEach(stk => stk.setNbt(genTomeNbt()))
         })
 
         //Aquaculture 2 treasure fishing loot

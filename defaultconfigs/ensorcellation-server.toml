@@ -12,7 +12,7 @@
 
 	[Enchantments.Displacement]
 		#If TRUE, the Displacement Enchantment is available for Armor, Shields, and Horse Armor.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -26,7 +26,7 @@
 
 	[Enchantments."Flaming Rebuke"]
 		#If TRUE, the Flaming Rebuke Enchantment is available for Armor, Shields, and Horse Armor.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -40,7 +40,7 @@
 
 	[Enchantments."Chilling Rebuke"]
 		#If TRUE, the Chilling Rebuke Enchantment is available for Armor, Shields, and Horse Armor.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -72,7 +72,7 @@
 
 	[Enchantments.Gourmand]
 		#If TRUE, the Gourmand Enchantment is available for Helmets.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = false
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -102,7 +102,7 @@
 
 	[Enchantments."Ender Disruption"]
 		#If TRUE, the Ender Disruption Enchantment is available for various Weapons.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -120,7 +120,7 @@
 
 	[Enchantments.Outlaw]
 		#If TRUE, the Outlaw Enchantment is available for various Weapons.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = false
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -131,7 +131,7 @@
 
 	[Enchantments.Cavalier]
 		#If TRUE, the Cavalier Enchantment is available for various Weapons.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -149,7 +149,7 @@
 
 	[Enchantments.Instigating]
 		#If TRUE, the Instigating Enchantment is available for various Weapons.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 
@@ -164,7 +164,7 @@
 
 	[Enchantments."Magic Edge"]
 		#If TRUE, the Magic Edge Enchantment is available for various Weapons.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 		#This option adjusts the maximum allowable level for the Enchantment.
@@ -251,7 +251,7 @@
 
 	[Enchantments.Pilfering]
 		#If TRUE, the Pilfering Enchantment is available for Fishing Rods.
-		Enable = false
+		Enable = true
 		#This sets whether or not the Enchantment is considered a 'treasure' enchantment.
 		Treasure = true
 		#This sets whether or not the Enchantment works on Players.

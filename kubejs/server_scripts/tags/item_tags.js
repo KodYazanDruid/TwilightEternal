@@ -109,6 +109,11 @@ onEvent('tags.items', event => {
     event.removeAll('extractinator:common_gravel_drops')
     event.removeAll('extractinator:common_snow_drops')
     event.removeAll('extractinator:rare_sand_drops')
+
+    event.removeAll('sapience:piglins_barter_cheap')
+    event.removeAll('sapience:piglins_barter_expensive')
+
+
     function extract(id, type, items) {
         event.add(`twilight:extract_${id}_${type}`, items)
     }
@@ -130,7 +135,9 @@ onEvent('tags.items', event => {
     event.add('sliceanddice:allowed_tools', '#farmersdelight:tools/knives')
     event.add('sliceanddice:allowed_tools', '#bookshelf:shears')
 
-    //for(let i of armorTypes) for(let j of thermalIngots) event.add('twilight:starter_'+i, `${TCOMP}:${j}_${i}`)
+    event.add('sapience:piglins_barter', 'thermal:gold_coin')
+    event.add('sapience:piglins_barter', 'create:golden_sheet')
+
     Ingredient.of(/tools_complement:\w+helmet/).itemIds.forEach(helmet => event.add('twilight:starter_helmet', helmet))
     Ingredient.of(/tools_complement:\w+chestplate/).itemIds.forEach(chestplate => event.add('twilight:starter_chestplate', chestplate))
     Ingredient.of(/tools_complement:\w+leggings/).itemIds.forEach(leggings => event.add('twilight:starter_leggings', leggings))

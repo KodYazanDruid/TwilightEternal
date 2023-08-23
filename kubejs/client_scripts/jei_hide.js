@@ -1,6 +1,7 @@
 const INF = 'industrialforegoing'
 const TCOMP = 'tools_complement'
 const TCON = 'tconstruct'
+const CS = 'create_sa'
 const toolsVanilla = ['helmet', 'chestplate', 'leggings', 'boots', 'sword', 'pickaxe', 'axe', 'shovel', 'hoe']
 
 onEvent('jei.hide.items', event => {

@@ -15,6 +15,7 @@ onEvent('item.tooltip', event => {
       text.add(0, name)
     }
   })
+  event.add('#sapience:piglins_barter', 'This item can be bartered with Piglins.')
 })
 //use client.init
 const ItemDescription = java('com.simibubi.create.foundation.item.ItemDescription$Modifier')
