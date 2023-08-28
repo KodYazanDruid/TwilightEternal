@@ -1,3 +1,4 @@
+//requires: lmft
 const tfep = TF + ':entities/'
 const tfsp = TF + ':structures/'
 
@@ -7,18 +8,19 @@ onEvent('lootjs', event => {
         .addLoot(TF + ':crumble_horn')
         .apply(ctx => ctx.addLoot(bundleGen()))
 
-    event.addLootTableModifier(tfep + 'naga')
-        .addWeightedLoot(2, true, [
-            LootEntry.of(TF + ':liveroot').limitCount([1, 2]),
-            LootEntry.of(TF + ':raw_ironwood').limitCount([2, 5]),
-        ])
+    event.addLootTableModifier(tfep + 'naga')    
         .pool(p => {
-            p.randomChance(0.75)
+            p.addLoot(LootEntry.of(TF + ':liveroot').limitCount([1, 2]))
+            p.addLoot(LootEntry.of(TF + ':raw_ironwood').limitCount([2, 5]))
+            p.applyLootingBonus([1, 2])
+        })
+        .pool(p => {
             p.addWeightedLoot(2, [
                 LootEntry.of('redstone').limitCount([3, 7]),
                 LootEntry.of('glowstone_dust').limitCount([3, 7]),
                 LootEntry.of(TF + ':raven_feather').limitCount([1, 2])
             ])
+            p.applyLootingBonus([1, 2])
         })
 
     event.addLootTableModifier(tfep + 'lich')
@@ -49,42 +51,12 @@ onEvent('lootjs', event => {
         
 })
 
-let storageBlockStacks = Ingredient.of('#forge:storage_blocks').filter([
-    Ingredient.of('@minecraft'),
-    Ingredient.of('@create'),
-    Ingredient.of('@thermal'),
-    Ingredient.of('@thermal_extra'),
-    Ingredient.of('@redstone_arsenal'),
-    Ingredient.of('@materialis'),
-    Ingredient.of('@tconstruct'),
-    Ingredient.of('@aquaculture'),
-    Ingredient.of('@twilightforest'),
-    Ingredient.of('@ae2'),
-    Ingredient.of('@architects_palette')
-]).getStacks()
-
 // blStrage defined in item_tags.js
 function bundleGen() {
     let invArr = []
-    storageBlockStacks.forEach(stk => {
+    global.storageBlockStacks.forEach(stk => {
         if(stk.anyStackMatches(Ingredient.of(blStorage))) { return }
         invArr.push(`{Count:1b,id:"${stk.getId()}"}`.replace("'", ""))
     })
-    console.log(invArr)
-    console.log(invArr.selectRandomElements(8))
-    return Item.of('bundle', `{Items:[{Count:1b,id:"twilightforest:quest_ram_trophy"},${invArr.selectRandomElements(8)}]}`)
+    return Item.of('bundle', `{Items:[{Count:1b,id:"twilightforest:quest_ram_trophy"},${selectRandomElements(invArr, 8)}]}`)
 }
-Array.prototype.shuffle = function () {
-    var m = this.length, t, i
-    // While there remain elements to shuffle…
-    while (m) {
-        // Pick a remaining element…
-        i = $Random().nextInt(m--)
-        // And swap it with the current element.
-        t = this[m]
-        this[m] = this[i]
-        this[i] = t
-    }
-    return this
-}
-Array.prototype.selectRandomElements = function (count) { return this.shuffle().slice(0, count) }

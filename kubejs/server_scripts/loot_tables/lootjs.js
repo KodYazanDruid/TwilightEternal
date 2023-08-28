@@ -1,4 +1,3 @@
-const $Random = java('java.util.Random')
 /* const $LootItemCondition = java("net.minecraft.world.level.storage.loot.predicates.LootItemCondition")
 const $EnchantTome = java('vazkii.quark.content.tools.loot.EnchantTome') */
 
@@ -97,10 +96,10 @@ onEvent('lootjs', event => {
             Ingredient.of(Item.of('thermaloot:variable_capacitor').ignoreNBT())
         ]
         //const musicDiscs = Ingredient.of('#minecraft:music_discs').filter(Item.of('minecraft:'))
-        event.addLootTableModifier('minecraft:chests/simple_dungeon')
+        /* event.addLootTableModifier('minecraft:chests/simple_dungeon')
             .removeLoot(Ingredient.getAll().filter(ignoreSD).not())
             .addWeightedLoot(2, arrayToLoot(Ingredient.of('#forge:seeds').getStacks(), 1))
-            .addWeightedLoot([2, 4], )
+            .addWeightedLoot([2, 4], '') */
 
         /* event.addLootTableModifier('minecraft:blocks/coarse_dirt')
             .apply(ctx => {

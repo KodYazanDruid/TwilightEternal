@@ -1,12 +1,12 @@
 onEvent("recipes", event => {
     //Made by hand. For now.
-    event.recipes.createMixing('miners_delight:pasta_with_veggieballs', [FD+':raw_pasta', 'miners_delight:cave_carrot', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
-    event.recipes.createMixing(FD+':pasta_with_meatballs', [FD+':raw_pasta', FD+':minced_beef', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
-    event.recipes.createMixing('alexsdelight:lobster_pasta', [FD+':raw_pasta', 'alexsmobs:lobster_tail', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
-    event.recipes.createMixing('alexsdelight:kangaroo_pasta', [FD+':raw_pasta', '#alexsdelight:cooked_kangaroo', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
-    event.recipes.createMixing('bundledelight:borscht', ['#forge:raw_beef', '#forge:salad_ingredients/cabbage', 'beetroot', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
-    event.recipes.createMixing(FD+':pasta_with_mutton_chop', [FD+':raw_pasta', '#forge:raw_mutton', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
-    event.recipes.createMixing(FD+':fish_stew', ['#forge:crops/onion', '#forge:raw_fishes', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
+    //event.recipes.createMixing('miners_delight:pasta_with_veggieballs', [FD+':raw_pasta', 'miners_delight:cave_carrot', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
+    //event.recipes.createMixing(FD+':pasta_with_meatballs', [FD+':raw_pasta', FD+':minced_beef', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
+    //event.recipes.createMixing('alexsdelight:lobster_pasta', [FD+':raw_pasta', 'alexsmobs:lobster_tail', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
+    //event.recipes.createMixing('alexsdelight:kangaroo_pasta', [FD+':raw_pasta', '#alexsdelight:cooked_kangaroo', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
+    //event.recipes.createMixing('bundledelight:borscht', ['#forge:raw_beef', '#forge:salad_ingredients/cabbage', 'beetroot', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
+    //event.recipes.createMixing(FD+':pasta_with_mutton_chop', [FD+':raw_pasta', '#forge:raw_mutton', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
+    //event.recipes.createMixing(FD+':fish_stew', ['#forge:crops/onion', '#forge:raw_fishes', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250)])
     //event.recipes.createMixing('twilightdelight:fiery_snakes_block', [TF+':torchberries', '#forge:hydra_meat', 'bowl', Fluid.of('create_central_kitchen:tomato_sauce', 250), Fluid.of(TF+':fiery_essence', 250)])
     
 

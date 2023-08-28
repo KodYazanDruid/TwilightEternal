@@ -10,4 +10,8 @@ onEvent('recipes', event => {
     event.recipes.tconstruct.casting_table('thermal:redstone_servo', 'thermal:redstone', 50).cast('minecraft:iron_ingot').consumeCast()
     event.recipes.tconstruct.casting_table('thermal:rf_coil', 'thermal:redstone', 50).cast('minecraft:gold_ingot').consumeCast()
     event.recipes.tconstruct.casting_table('create:rose_quartz', 'thermal:redstone', 300).cast('minecraft:quartz').consumeCast()
+
+    event.recipes.tconstruct.casting_table('miners_delight:beetroot_soup_cup', 'tconstruct:beetroot_soup', 250).cast('miners_delight:copper_cup').consumeCast()
+    event.recipes.tconstruct.casting_table('miners_delight:mushroom_stew_cup', 'tconstruct:mushroom_stew', 250).cast('miners_delight:copper_cup').consumeCast()
+    event.recipes.tconstruct.casting_table('miners_delight:rabbit_stew_cup', 'tconstruct:rabbit_stew', 250).cast('miners_delight:copper_cup').consumeCast()
 })

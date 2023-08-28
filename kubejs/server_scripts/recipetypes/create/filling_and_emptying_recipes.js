@@ -27,4 +27,17 @@ onEvent('recipes', event => {
     ],
         '#twilightforest:fiery_vial'
     )
+    event.recipes.createFilling('beetroot_soup', ['bowl', Fluid.of('tconstruct:beetroot_soup', 250)])
+    event.recipes.createFilling('miners_delight:beetroot_soup_cup', ['miners_delight:copper_cup', Fluid.of('tconstruct:beetroot_soup', 250)])
+    event.recipes.createFilling('mushroom_stew', ['bowl', Fluid.of('tconstruct:mushroom_stew', 250)])
+    event.recipes.createFilling('miners_delight:mushroom_stew_cup', ['miners_delight:copper_cup', Fluid.of('tconstruct:mushroom_stew', 250)])
+    event.recipes.createFilling('rabbit_stew', ['bowl', Fluid.of('tconstruct:rabbit_stew', 250)])
+    event.recipes.createFilling('miners_delight:rabbit_stew_cup', ['miners_delight:copper_cup', Fluid.of('tconstruct:rabbit_stew', 250)])
+
+    event.recipes.createEmptying(['minecraft:bowl', Fluid.of('tconstruct:beetroot_soup', 250)], 'beetroot_soup')
+    event.recipes.createEmptying(['miners_delight:copper_cup', Fluid.of('tconstruct:beetroot_soup', 250)], 'miners_delight:beetroot_soup_cup')
+    event.recipes.createEmptying(['minecraft:bowl', Fluid.of('tconstruct:mushroom_stew', 250)], 'mushroom_stew')
+    event.recipes.createEmptying(['miners_delight:copper_cup', Fluid.of('tconstruct:mushroom_stew', 250)], 'miners_delight:mushroom_stew_cup')
+    event.recipes.createEmptying(['minecraft:bowl', Fluid.of('tconstruct:rabbit_stew', 250)], 'rabbit_stew')
+    event.recipes.createEmptying(['miners_delight:copper_cup', Fluid.of('tconstruct:rabbit_stew', 250)], 'miners_delight:rabbit_stew_cup')
 })

@@ -1,4 +1,3 @@
-//priority: 2
 const $AXE_DIG = java('net.minecraftforge.common.ToolAction').get('axe_dig')
 
 //Filter for #forge:storage_blocks
@@ -131,6 +130,10 @@ onEvent('tags.items', event => {
     event.add('curios:magicfeather', 'magicfeather:magicfeather')
     event.add('forge:plates', 'createdeco:zinc_sheet')
     event.add('forge:slimeballs', 'thermal_extra:sticky_ball')
+    event.add('forge:ores', 'infernalexp:basalt_iron_ore')
+    event.add('forge:ores/iron', 'infernalexp:basalt_iron_ore')
+    event.add('minecraft:iron_ores', 'infernalexp:basalt_iron_ore')
+    event.add('balm:ores', 'infernalexp:basalt_iron_ore')
 
     event.add('sliceanddice:allowed_tools', '#farmersdelight:tools/knives')
     event.add('sliceanddice:allowed_tools', '#bookshelf:shears')

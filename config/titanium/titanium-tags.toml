@@ -1,17 +1,5 @@
 
 [TagConfig]
 	#A list of mod ids sorted by preference when getting an Item for a tag
-	ITEM_PREFERENCE = [
-    "minecraft",
-    "kubejs",
-    "crafttweaker",
-    "farmersdelight",
-    "farmers_bundle",
-    "quark",
-    "supplementaries",
-    "create",
-    "thermal",
-    "immersiveengineering",
-    "mekanism"
-  ]
+	ITEM_PREFERENCE = ["minecraft", "kubejs", "crafttweaker", "farmersdelight", "farmers_bundle", "quark", "supplementaries", "create", "thermal", "immersiveengineering", "mekanism"]
 

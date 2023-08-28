@@ -1,0 +1,11 @@
+{
+    "type": "mantle:empty_item",
+    "input": {
+      "item": "miners_delight:rabbit_stew_cup"
+    },
+    "filled": "miners_delight:copper_cup",
+    "fluid": {
+      "fluid": "tconstruct:rabbit_stew",
+      "amount": 250
+    }
+  }

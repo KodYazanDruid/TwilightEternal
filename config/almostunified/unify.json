@@ -111,7 +111,9 @@
   ],
   "priorityOverrides": {},
   "ignoredTags": [],
-  "ignoredItems": [],
+  "ignoredItems": [
+    "infernalexp:basalt_iron_ore"
+  ],
   "ignoredRecipeTypes": [
     "cucumber:shaped_tag"
   ],
