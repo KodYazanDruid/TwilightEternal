@@ -1,6 +1,3 @@
-
-//for(let entry of shuffledOreMap.entries()) console.log(entry)
-
 onEvent('block.right_click', event => {
     const { player, block, item, hand, server } = event
 

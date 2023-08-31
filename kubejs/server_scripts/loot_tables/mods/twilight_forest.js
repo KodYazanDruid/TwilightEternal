@@ -55,7 +55,7 @@ onEvent('lootjs', event => {
 function bundleGen() {
     let invArr = []
     global.storageBlockStacks.forEach(stk => {
-        if(stk.anyStackMatches(Ingredient.of(blStorage))) { return }
+        if(stk.anyStackMatches(Ingredient.of(global.blStorage))) { return }
         invArr.push(`{Count:1b,id:"${stk.getId()}"}`.replace("'", ""))
     })
     return Item.of('bundle', `{Items:[{Count:1b,id:"twilightforest:quest_ram_trophy"},${selectRandomElements(invArr, 8)}]}`)

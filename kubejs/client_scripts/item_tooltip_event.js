@@ -9,7 +9,7 @@ onEvent('item.tooltip', event => {
 
 onEvent('item.tooltip', event => {
   event.addAdvanced(Ingredient.getAll(), (item, a, text) => {
-    if(item === 'magicfeather:magicfeather') {
+    if (item === 'magicfeather:magicfeather') {
       var name = text.get(0)
       text.clear()
       text.add(0, name)
@@ -60,4 +60,20 @@ onEvent('item.tooltip', tooltip => {
       text.add(Text.of('NBT: ').append(Text.prettyPrintNbt(item.nbt)))
     }
   })
+})
+
+onEvent('postinit', _ => {
+  const ItemDescription = java('com.simibubi.create.foundation.item.ItemDescription')
+  const TooltipModifier = java('com.simibubi.create.foundation.item.TooltipModifier')
+  const Palette = java('com.simibubi.create.foundation.item.TooltipHelper$Palette')
+
+  const addTooltip = (item, palette) => {
+    TooltipModifier.REGISTRY.register(item, ItemDescription.create(item.item, palette))
+  }
+  addTooltip(Item.of('kubejs:enzymatic_essence_catalyst'), Palette.GREEN)
+  addTooltip(Item.of('industrialforegoing:block_breaker'), Palette.RED)
+  addTooltip(Item.of('industrialforegoing:block_placer'), Palette.RED)
+  addTooltip(Item.of('create:deployer'), Palette.RED)
+  addTooltip(Item.of('magicfeather:magicfeather'), Palette.PURPLE)
+  addTooltip(Item.of(dirt), Palette.GREEN)
 })

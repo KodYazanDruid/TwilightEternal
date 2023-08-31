@@ -6,7 +6,7 @@ onEvent('block.registry', event => {
         .tagBlock('minecraft:mineable/pickaxe')
         //.tagBoth("tconstruct:seared_blocks")
         .tagBlock("forge:needs_gold_tool")
-        .tagBlock("twilight:mossy_seared_blocks")
+        .tagBoth("twilight:mossy_seared_blocks")
         //.tagItem("tconstruct:smeltery")
 
     event.create('mossy_seared_cobble').material('stone').hardness(3).resistance(9).displayName('Mossy Seared Cobblestone')

@@ -8,4 +8,5 @@ onEvent('recipes', event => {
 	event.recipes.createCrushing(['infernalexp:glownuggets', Item.of('infernalexp:glownuggets').withChance(0.50).withCount(1), 'minecraft:glowstone_dust',Item.of('minecraft:glowstone_dust').withChance(0.50).withCount(1)], 'infernalexp:dimstone')
 	event.recipes.createCrushing(['3x infernalexp:glownuggets', Item.of('infernalexp:glownuggets').withChance(0.50).withCount(1)], 'infernalexp:dullstone')
 	event.recipes.createCrushing([Item.of('thermal:electrum_dust').withChance(0.4), Item.of('gold_nugget').withChance(0.6).withCount(2), Item.of(INF+':plastic').withChance(0.2)], 'thermaloot:variable_capacitor')
+	event.recipes.createCrushing([Item.of('18x iron_nugget'), Item.of('create:experience_nugget').withChance(0.75), Item.of('basalt').withChance(0.12)], 'infernalexp:basalt_iron_ore')
 })

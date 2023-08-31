@@ -3,9 +3,11 @@
     "minecraft",
     "kubejs",
     "crafttweaker",
-    "quark",
     "farmersdelight",
     "farmers_bundle",
+    "bundledelight",
+    "neapolitan",
+    "quark",
     "supplementaries",
     "create",
     "createdeco",
@@ -19,7 +21,8 @@
     "deepslate",
     "granite",
     "diorite",
-    "andesite"
+    "andesite",
+    "basalt"
   ],
   "tags": [
     "forge:nuggets/{material}",
@@ -36,9 +39,6 @@
     "forge:crops/{material}",
     "forge:storage_blocks/raw_{material}"
   ],
-  "__comment__": {
-    "$comment": "Manually added:rose_gold"
-  },
   "materials": [
     "aeternium",
     "aluminum",
@@ -106,6 +106,9 @@
     "chorus_fruit",
     "sweet_berries",
     "rice",
+    "strawberry",
+    "banana",
+    "adzuki",
 
     "ender_pearl"
   ],

@@ -23,11 +23,8 @@ onEvent('server.load', _ => {
     let rareIng = Ingredient.of(['ancient_debris', '#forge:ores/emerald', '#forge:ores/diamond'])
 
     let ores = shuffleArray(Ingredient.of('#forge:ores')
-        .filter(Ingredient.of(['twilightforest:raw_ironwood', 'twilightforest:armor_shard_cluster', 'thermal:sapphire_ore', 'thermal:ruby_ore', rareIng]).not())
+        .filter(Ingredient.of(['twilightforest:raw_ironwood', 'twilightforest:armor_shard_cluster', '#forge:ores/ruby', '#forge:ores/sapphire', rareIng]).not())
         .getItemIds().toArray())
-    /* let ores = shuffleArray(Ingredient.of('#forge:ores').filter(Ingredient.of('#forge:ores')
-        .filter(Ingredient.of([TF+':raw_ironwood', TF+':armor_shard_cluster', 'thermal:sapphire_ore', 'thermal:ruby_ore', rareIng])).not())
-        .getItemIds().toArray()) */
 
     let rareOres = shuffleArray(rareIng.getItemIds().toArray())
     let rareOresMap = new Map()

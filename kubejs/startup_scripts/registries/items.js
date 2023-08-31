@@ -1,6 +1,9 @@
 onEvent('item.registry', event => {
 	event.create('ironwood_nugget').displayName('Ironwood Nugget')
+		.tag('forge:nuggets')
+		.tag('forge:nuggets/ironwood')
 	event.create('crushed_ironwood').displayName('Crushed Ironwood')
+		.tag('create:crushed_raw_materials')
 	event.create('refined_fluix_mechanism').displayName('Refined Fluix Mechanism')
 	event.create('incomplete_refined_fluix_mechanism', 'create:sequenced_assembly').displayName('Incomplete Refined Fluix Mechanism')
 	event.create('tiny_coal').displayName('Tiny Coal')
@@ -20,4 +23,6 @@ onEvent('item.registry', event => {
 		.texture('twilightforest:items/lifedrain_scepter')
 		.maxDamage(12)
 		.unstackable()
+	event.create('raw_uranium').displayName('Raw Uranium')
+		.tag('create:crushed_raw_materials')
 })

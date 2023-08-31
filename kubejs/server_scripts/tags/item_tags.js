@@ -1,9 +1,10 @@
 const $AXE_DIG = java('net.minecraftforge.common.ToolAction').get('axe_dig')
 
 //Filter for #forge:storage_blocks
-let blStorage = []
-
 onEvent('tags.items', event => {
+    
+    let blStorage = []
+
     //Might be a better way to do this, but this works for now.
     const unifyTags = [
         ['carrot', 'farmersdelight:carrot_crate'],
@@ -46,6 +47,10 @@ onEvent('tags.items', event => {
         ['apple', 'farmers_bundle:crate_apple'],
         ['apple', 'quark:apple_crate'],
         ['apple', 'thermal:apple_block'],
+        ['strawberry', 'neapolitan:strawberry_basket'],
+        ['strawberry', 'thermal:strawberry_block'],
+        ['adzuki', 'neapolitan:adzuki_crate'],
+        ['adzuki', 'bundledelight:adzuki_bean_crate']
     ]
 
     const starter_candies = [
@@ -92,7 +97,6 @@ onEvent('tags.items', event => {
 
     colors.forEach(color => event.add(TF + ':banned_uncrafting_ingredients', 'minecraft:' + color + '_dye'))
 
-    event.add('create:crushed_ores', 'kubejs:crushed_ironwood')
     event.add('forge:blocks/bronze', 'thermal:bronze_block')
     event.add('forge:blocks/steel', 'thermal:steel_block')
 
@@ -130,10 +134,13 @@ onEvent('tags.items', event => {
     event.add('curios:magicfeather', 'magicfeather:magicfeather')
     event.add('forge:plates', 'createdeco:zinc_sheet')
     event.add('forge:slimeballs', 'thermal_extra:sticky_ball')
-    event.add('forge:ores', 'infernalexp:basalt_iron_ore')
-    event.add('forge:ores/iron', 'infernalexp:basalt_iron_ore')
     event.add('minecraft:iron_ores', 'infernalexp:basalt_iron_ore')
-    event.add('balm:ores', 'infernalexp:basalt_iron_ore')
+    event.add('forge:crops', 'neapolitan:strawberries')
+    event.add('forge:crops/strawberry', 'neapolitan:strawberries')
+    event.add('forge:crops', 'neapolitan:banana')
+    event.add('forge:crops/banana', 'neapolitan:banana')
+    event.add('forge:crops', 'neapolitan:adzuki_beans')
+    event.add('forge:crops/adzuki', 'neapolitan:adzuki_beans')
 
     event.add('sliceanddice:allowed_tools', '#farmersdelight:tools/knives')
     event.add('sliceanddice:allowed_tools', '#bookshelf:shears')
@@ -141,14 +148,14 @@ onEvent('tags.items', event => {
     event.add('sapience:piglins_barter', 'thermal:gold_coin')
     event.add('sapience:piglins_barter', 'create:golden_sheet')
 
-    Ingredient.of(/tools_complement:\w+helmet/).itemIds.forEach(helmet => event.add('twilight:starter_helmet', helmet))
+    //Ingredient.of(/tools_complement:\w+helmet/).itemIds.forEach(helmet => event.add('twilight:starter_helmet', helmet))
     Ingredient.of(/tools_complement:\w+chestplate/).itemIds.forEach(chestplate => event.add('twilight:starter_chestplate', chestplate))
-    Ingredient.of(/tools_complement:\w+leggings/).itemIds.forEach(leggings => event.add('twilight:starter_leggings', leggings))
+    //Ingredient.of(/tools_complement:\w+leggings/).itemIds.forEach(leggings => event.add('twilight:starter_leggings', leggings))
     Ingredient.of(/tools_complement:\w+boots/).itemIds.forEach(boots => event.add('twilight:starter_boots', boots))
 
-    event.add('twilight:starter_helmet', [CS+':zinc_helmet', CS+':brass_helmet'])
+    //event.add('twilight:starter_helmet', [CS+':zinc_helmet', CS+':brass_helmet'])
     event.add('twilight:starter_chestplate', [CS+':zinc_chestplate', CS+':brass_chestplate'])
-    event.add('twilight:starter_leggings', [CS+':zinc_leggings', CS+':brass_leggings'])
+    //event.add('twilight:starter_leggings', [CS+':zinc_leggings', CS+':brass_leggings'])
     event.add('twilight:starter_boots', [CS+':zinc_boots', CS+':brass_boots'])
 
     Ingredient.of(/\w+:\w+tea$/).itemIds.forEach(tea => event.add('twilight:starter_tea', tea))
@@ -190,4 +197,6 @@ onEvent('tags.items', event => {
     event.removeAllTagsFrom('thermal:onion_seeds')
     event.removeAllTagsFrom('thermal:tomato_seeds')
     event.removeAllTagsFrom('thermal:rice_seeds')
+
+    global.blStorage = blStorage
 })

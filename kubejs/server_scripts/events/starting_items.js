@@ -4,9 +4,9 @@ onEvent('player.logged_in', event => {
         player.stages.add('starting_items')
         player.give('tconstruct:hand_axe')
         player.give('tconstruct:pickaxe')
-        player.setHeadArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_helmet').itemIds))
+        //player.setHeadArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_helmet').itemIds))
         player.setChestArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_chestplate').itemIds))
-        player.setLegsArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_leggings').itemIds))
+        //player.setLegsArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_leggings').itemIds))
         player.setFeetArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_boots').itemIds))
         if(Math.random() >= 0.5) {
             player.give(Item.of(giveRandomFromList(Ingredient.of('#twilight:starter_meal').itemIds), 3))
