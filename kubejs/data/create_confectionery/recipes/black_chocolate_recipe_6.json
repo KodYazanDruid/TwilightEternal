@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+          "type": "forge:item_exists",
+          "item": "create_confectionery:black_chocolate_bricks_wall"
+        }
+    ],
+    "group": "create_confectionery",
+    "type": "create:mixing",
+    "ingredients": [
+      {
+        "item": "create_confectionery:black_chocolate_bricks_wall"
+      }
+    ],
+    "results": [
+      {
+        "fluid": "create_confectionery:black_chocolate",
+        "amount": 1000
+      }
+    ],
+    "heatRequirement": "heated"
+  }

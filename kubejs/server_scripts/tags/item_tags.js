@@ -1,8 +1,5 @@
-const $AXE_DIG = java('net.minecraftforge.common.ToolAction').get('axe_dig')
-
-//Filter for #forge:storage_blocks
 onEvent('tags.items', event => {
-    
+
     let blStorage = []
 
     //Might be a better way to do this, but this works for now.
@@ -54,11 +51,11 @@ onEvent('tags.items', event => {
     ]
 
     const starter_candies = [
-        'supplementaries:candy', 
-        'create_confectionery:candy_cane', 
-        'create_confectionery:honey_candy', 
-        FD+':melon_popsicle']
-    
+        'supplementaries:candy',
+        'create_confectionery:candy_cane',
+        'create_confectionery:honey_candy',
+        FD + ':melon_popsicle']
+
     const starter_meal = [
         'brewinandchewin:pizza_slice',
         'farmersdelight:stuffed_potato',
@@ -70,7 +67,7 @@ onEvent('tags.items', event => {
         'farmersdelight:salmon_roll',
         'thermal:sushi_maki',
         'farmersdelight:dumplings']
-        
+
     event.add('forge:mazestone', [
         TF + ':mazestone',
         TF + ':mazestone_brick',
@@ -142,9 +139,6 @@ onEvent('tags.items', event => {
     event.add('forge:crops', 'neapolitan:adzuki_beans')
     event.add('forge:crops/adzuki', 'neapolitan:adzuki_beans')
 
-    event.add('sliceanddice:allowed_tools', '#farmersdelight:tools/knives')
-    event.add('sliceanddice:allowed_tools', '#bookshelf:shears')
-
     event.add('sapience:piglins_barter', 'thermal:gold_coin')
     event.add('sapience:piglins_barter', 'create:golden_sheet')
 
@@ -154,12 +148,12 @@ onEvent('tags.items', event => {
     Ingredient.of(/tools_complement:\w+boots/).itemIds.forEach(boots => event.add('twilight:starter_boots', boots))
 
     //event.add('twilight:starter_helmet', [CS+':zinc_helmet', CS+':brass_helmet'])
-    event.add('twilight:starter_chestplate', [CS+':zinc_chestplate', CS+':brass_chestplate'])
+    event.add('twilight:starter_chestplate', [CS + ':zinc_chestplate', CS + ':brass_chestplate'])
     //event.add('twilight:starter_leggings', [CS+':zinc_leggings', CS+':brass_leggings'])
-    event.add('twilight:starter_boots', [CS+':zinc_boots', CS+':brass_boots'])
+    event.add('twilight:starter_boots', [CS + ':zinc_boots', CS + ':brass_boots'])
 
     Ingredient.of(/\w+:\w+tea$/).itemIds.forEach(tea => event.add('twilight:starter_tea', tea))
-    Ingredient.of(/\w+:\w+(juice|cider|custard)$/).itemIds.forEach(juice => event.add('twilight:starter_juice', juice))
+    Ingredient.of(/\w+:\w+(juice|cider|custard|coffee|milkshake)$/).itemIds.forEach(juice => event.add('twilight:starter_juice', juice))
     Ingredient.of(/\w+:\w+pie_slice$/).itemIds.forEach(pie => event.add('twilight:starter_pie', pie))
     Ingredient.of(/\w+:\w+cake_slice$/).itemIds.forEach(cake => event.add('twilight:starter_cake', cake))
     Ingredient.of(/\w+:\w+salad$/).itemIds.forEach(salad => event.add('twilight:starter_salad', salad))
@@ -179,19 +173,12 @@ onEvent('tags.items', event => {
         event.add(`forge:storage_blocks/${material}`, item)
     }
 
-    Ingredient.all.stacks.forEach(ingredient => {
-        var item = Item.of(ingredient)
-        if (item.getItemStack().canPerformAction($AXE_DIG)){
-            event.add('twilight:allowed_tools', item.getId())
-        }
-    })
-    
     blStorage.push('tconstruct:rose_gold_block')
     blStorage.push('thermal:ruby_block')
     blStorage.push('thermal:sapphire_block')
     unifyTags.forEach(entry => {
         addUnifyTag(entry[0], entry[1])
-        if(entry[1].includes('thermal')) blStorage.push(entry[1])
+        if (entry[1].includes('thermal')) blStorage.push(entry[1])
     })
 
     event.removeAllTagsFrom('thermal:onion_seeds')
@@ -199,4 +186,39 @@ onEvent('tags.items', event => {
     event.removeAllTagsFrom('thermal:rice_seeds')
 
     global.blStorage = blStorage
+    global.unifyTags = unifyTags
+})
+
+//Fixing recipes. Idk why it is here.
+onEvent('recipes', event => {
+    event.shaped(FD + ':beetroot_crate', [
+        'AAA',
+        'AAA',
+        'AAA'
+    ], {
+        A: '#forge:crops/beetroot'
+    }).id(FD + ':beetroot_crate')
+    event.shaped(FD + ':carrot_crate', [
+        'AAA',
+        'AAA',
+        'AAA'
+    ], {
+        A: '#forge:crops/carrot'
+    }).id(FD + ':carrot_crate')
+    event.shaped(FD + ':potato_crate', [
+        'AAA',
+        'AAA',
+        'AAA'
+    ], {
+        A: '#forge:crops/potato'
+    }).id(FD + ':potato_crate')
+
+    erId(event, 'farmers_bundle:recipe_bag_sugar')
+    erId(event, 'farmers_bundle:recipecrategoldenapple')
+    erId(event, 'farmers_bundle:recipe_crate_apple')
+    erId(event, 'farmers_bundle:recipe_crate_glowberry')
+    erId(event, 'farmers_bundle:recipe_crate_sweetberry')
+    erId(event, 'farmers_bundle:recipebalecane')
+    erId(event, 'farmers_bundle:recipebundlebamboo')
+    erId(event, 'farmers_bundle:recipecratecocoabean')
 })

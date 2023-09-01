@@ -1,0 +1,27 @@
+{
+    "conditions": [
+        {
+            "modid": "ecologics",
+            "type": "forge:mod_loaded"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+      {
+        "fluid": "create:chocolate",
+        "amount": 250
+      },
+      {
+        "item": "create_factory:cake_preparation"
+      },
+      {
+        "item": "ecologics:walnut"
+      }
+    ],
+    "results": [
+      {
+        "item": "create_factory:walnut_brownie"
+      }
+    ],
+    "heatRequirement": "heated"
+  }

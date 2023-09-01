@@ -1,0 +1,28 @@
+{
+    "conditions": [
+        {
+            "modid": "ecologics",
+            "type": "forge:mod_loaded"
+        }
+    ],
+    "type": "create:mixing",
+    "ingredients": [
+      {
+        "item": "minecraft:sugar"
+      },
+      {
+        "item": "ecologics:walnut"
+      },
+      {
+        "fluid": "create:chocolate",
+        "amount": 250
+      }
+    ],
+    "results": [
+      {
+        "fluid": "create_factory:spread",
+        "amount": 250
+      }
+    ],
+    "heatRequirement": "heated"
+  }
