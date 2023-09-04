@@ -30,4 +30,8 @@ onEvent('tags.blocks', event =>{
     for(let i of blocksS){
         mineWithShovel(i)
     }
+
+    let chestNBarrel = Ingredient.of([event.get("forge:chests").objectIds.toArray(), event.get("chipped:barrel").objectIds.toArray()])
+    let toExclude = Ingredient.of([Ingredient.of(event.get("forge:chests/trapped").objectIds.toArray()),"ender_chest", "aquaculture:neptunes_bounty", "framedblocks:framed_chest", "#lootr:containers"]).not()
+    event.add('twilight:patience_challenge_suitable', chestNBarrel.filter(toExclude).itemIds.toArray())
 })

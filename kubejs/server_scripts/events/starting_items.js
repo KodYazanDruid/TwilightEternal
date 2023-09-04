@@ -4,6 +4,7 @@ onEvent('player.logged_in', event => {
         player.stages.add('starting_items')
         player.give('tconstruct:hand_axe')
         player.give('tconstruct:pickaxe')
+        player.give('ftbquests:book')
         //player.setHeadArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_helmet').itemIds))
         player.setChestArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_chestplate').itemIds))
         //player.setLegsArmorItem(giveRandomFromList(Ingredient.of('#twilight:starter_leggings').itemIds))
@@ -16,7 +17,7 @@ onEvent('player.logged_in', event => {
         } 
         player.give(Item.of(giveRandomOfTwo(Ingredient.of('#twilight:starter_pie').itemIds, Ingredient.of('#twilight:starter_cake').itemIds), 2))
         player.give(Item.of(giveRandomOfTwo(Ingredient.of('#twilight:starter_tea').itemIds, Ingredient.of('#twilight:starter_juice').itemIds), 3))
-        player.give(Item.of(giveRandomFromList(Ingredient.of('#twilight:starter_candy').itemIds), 5))
+        player.give(Item.of(giveRandomOfTwo(Ingredient.of('#twilight:starter_candy').itemIds, Ingredient.of('#twilight:starter_ice_cream').itemIds), 2))
     }
 })
 /**

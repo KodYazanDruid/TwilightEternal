@@ -1,7 +1,9 @@
 onEvent('block.right_click', event => {
     const { player, block, item, hand, server } = event
-
-    if(item.id == 'miners_delight:copper_cup' && Ingredient.of('@tconstruct').getItemIds().contains(block.id)) event.cancel()
+//block.level.sendBlockUpdated(block.pos, block.blockState, block.blockState, 11)
+    if(item.id == 'miners_delight:copper_cup' && Ingredient.of('@tconstruct').getItemIds().contains(block.id)) {
+        event.cancel()
+    }
 
     if(Ingredient.of('#forge:shears').getItemIds().contains(item.id) 
             && Ingredient.of('#twilight:mossy_seared_blocks').getItemIds().contains(block.id)){
@@ -68,3 +70,23 @@ function facingPlace (event, x, y, z) {
         } 
     }
 }
+
+// add tis
+/**
+ * // at top of script
+const $FTBChunksAPI = Java.loadClass('dev.ftb.mods.ftbchunks.data.FTBChunksAPI')
+const $ChunkDimPos = Java.loadClass('dev.ftb.mods.ftblibrary.math.ChunkDimPos')
+
+//inside event
+const claimedChunksManager = $FTBChunksAPI.manager
+const claimedChunk = claimedChunksManager.getChunk(new $ChunkDimPos(event.player))
+if (claimedChunk != null) { // if its null the chunk isnt claimed
+  if (claimedChunk.teamData.isTeamMember(event.player.id)) {
+    event.player.tell('Welcome home') // they are the person who claimed that chunk, or they are part of that team
+  } else if (claimedChunk.teamData.isAlly(event.player.id)) {
+    event.player.tell('Hello friend') // they are allied to the person/team who clamied that hunk
+  else {
+    event.player.tell('GET OUTTA MY CLAIMED SWAMP') // its not their chunk, and they are not allied to the person whos chunk it is
+  }
+}
+ */

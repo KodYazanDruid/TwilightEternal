@@ -54,7 +54,10 @@ onEvent('tags.items', event => {
         'supplementaries:candy',
         'create_confectionery:candy_cane',
         'create_confectionery:honey_candy',
-        FD + ':melon_popsicle']
+        FD + ':melon_popsicle',
+        'neapolitan:mint_chocolate',
+        'neapolitan:strawberry_bean_bonbons'
+    ]
 
     const starter_meal = [
         'brewinandchewin:pizza_slice',
@@ -66,7 +69,9 @@ onEvent('tags.items', event => {
         'berry_good:glowgurt',
         'farmersdelight:salmon_roll',
         'thermal:sushi_maki',
-        'farmersdelight:dumplings']
+        'farmersdelight:dumplings',
+        'neapolitan:banana_bread'
+    ]
 
     event.add('forge:mazestone', [
         TF + ':mazestone',
@@ -138,7 +143,16 @@ onEvent('tags.items', event => {
     event.add('forge:crops/banana', 'neapolitan:banana')
     event.add('forge:crops', 'neapolitan:adzuki_beans')
     event.add('forge:crops/adzuki', 'neapolitan:adzuki_beans')
+    event.add('supplementaries:cookies', ['twilightdelight:torchberry_cookie', 'honeyexpansion:honey_cookie_sausage'])
+    event.add('twilight:cookies', ['twilightdelight:torchberry_cookie', 'honeyexpansion:honey_cookie_sausage', 'cookie', FD+':sweet_berry_cookie', FD+':honey_cookie', 'farmersrespite:green_tea_cookie'])
+    
+    let chestNBarrel = Ingredient.of([event.get("forge:chests").objectIds.toArray(), event.get("chipped:barrel").objectIds.toArray()])
+    let toExclude = Ingredient.of([Ingredient.of(event.get("forge:chests/trapped").objectIds.toArray()),"ender_chest", "aquaculture:neptunes_bounty", "framedblocks:framed_chest"]).not()
+    event.add('twilight:patience_challenge_suitable', chestNBarrel.filter(toExclude).itemIds.toArray())
 
+    event.add('forge:tools/chorundum', Ingredient.of(/^stalwart_dungeons:chorundum_(sword|pickaxe|shovel|axe|hoe)$/))
+    event.add('forge:tools/flux', Ingredient.of(/^redstone_arsenal:flux_(sword|pickaxe|shovel|axe|hammer|excavator|sickle)$/))
+    
     event.add('sapience:piglins_barter', 'thermal:gold_coin')
     event.add('sapience:piglins_barter', 'create:golden_sheet')
 
@@ -158,6 +172,7 @@ onEvent('tags.items', event => {
     Ingredient.of(/\w+:\w+cake_slice$/).itemIds.forEach(cake => event.add('twilight:starter_cake', cake))
     Ingredient.of(/\w+:\w+salad$/).itemIds.forEach(salad => event.add('twilight:starter_salad', salad))
     Ingredient.of(/\w+:\w+soup$/).itemIds.forEach(soup => event.add('twilight:starter_soup', soup))
+    Ingredient.of(/\w+:\w+ice_cream$/).itemIds.forEach(ice_cream => event.add('twilight:starter_ice_cream', ice_cream))
     starter_candies.forEach(candy => event.add('twilight:starter_candy', candy))
     starter_meal.forEach(meal => event.add('twilight:starter_meal', meal))
 

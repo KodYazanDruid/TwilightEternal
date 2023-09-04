@@ -1,0 +1,371 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:netherite_sword",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:netherite_pickaxe",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:netherite_shovel",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:netherite_axe",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "tools_complement:netherite_hammer",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "tools_complement:netherite_excavator",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "stalwart_dungeons:chorundum_sword",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "stalwart_dungeons:chorundum_pickaxe",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "stalwart_dungeons:chorundum_shovel",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "stalwart_dungeons:chorundum_axe",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "redstone_arsenal:flux_sword",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Energy:800000}"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "redstone_arsenal:flux_pickaxe",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Energy:800000}"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "redstone_arsenal:flux_shovel",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Energy:800000}"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "redstone_arsenal:flux_axe",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Energy:800000}"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "redstone_arsenal:flux_hammer",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Energy:800000}"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "redstone_arsenal:flux_excavator",
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 50
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Energy:800000}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:netherite_block",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "twilightforest:fiery_block",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:diamond_block",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 2,
+                "max": 3
+            },
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "thermal:signalum_coin",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 48,
+                                "max": 64
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "thermal:lumium_coin",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 48,
+                                "max": 64
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "thermal:enderium_coin",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 48,
+                                "max": 64
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "computercraft:computer_advanced",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "create:shadow_steel",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 8,
+                                "max": 16
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "create:refined_radiance",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 8,
+                                "max": 16
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "kubejs:independent_ore_prospector",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{Unbreakable:1}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:totem_of_undying",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
