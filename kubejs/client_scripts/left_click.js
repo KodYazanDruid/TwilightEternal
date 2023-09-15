@@ -1,0 +1,1 @@
+//onEvent('item.left_click', event => event.player.sendData('item_left_click', {Nbt: event.item.nbt, Id: event.item.id}))

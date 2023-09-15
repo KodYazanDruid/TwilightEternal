@@ -36,7 +36,7 @@ onEvent('item.right_click', event => {
  */
 function customBundleNbt(array, roll, el) {
     let invArr = []
-    let copy = [].concat(array.shuffle())
+    let copy = [].concat(shuffleArray(array))
 
     while (roll + el > 0) {
         let totalWeight = 0
@@ -48,7 +48,7 @@ function customBundleNbt(array, roll, el) {
             random -= i[2]
             if (random <= 0) {
                 let count = Array.isArray(i[1]) ? pickInRange(i[1][0] + Math.round(el / 2), i[1][1] + el) : i[1]
-                invArr.push(`{Count:${count}b,id:"${i[0]}"}`.replace("'", ""))
+                invArr.push(`{Count:${count},id:"${i[0]}"}`.replace("'", ""))
                 copy.splice(copy.indexOf(i), 1)
                 shuffleArray(copy)
                 break

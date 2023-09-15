@@ -1,14 +1,13 @@
-const challengeRE = /Challenge:"(\w+|\d+)"/
+const $Long = java('java.lang.Long')
 
 onEvent('block.right_click', event => {
     const { player, block, item, hand, server, level } = event
     if (player.isFake() || item.isEmpty() || item.id != 'supplementaries:key') return
-    if (challengeRE.test(item.nbt)) {
+    if (item?.nbt?.Challenge) {
         switch (item.nbt.Challenge) {
             case 'Patience':
-                //if (!block.hasTag('forge:chests') /* || !block.hasTag('chipped:barrel') */ || block.id == 'framedblocks:framed_chest' || block.id == 'minecraft:ender_chest') return
-                if (!block.hasTag('twilight:patience_challenge_suitable')) return
                 event.cancel()
+                if (!block.hasTag('twilight:patience_challenge_suitable')) return
                 if (block.hasTag('forge:chests/trapped')) {
                     error(player, server, block, "Chest must be normal!")
                     return
@@ -30,6 +29,31 @@ onEvent('block.right_click', event => {
             case 'Integrity':
                 break
             case 'Determination':
+                event.cancel()
+                break
+        }
+    }
+})
+
+onEvent('item.right_click', event => {
+    const { player, block, item, hand, server, level } = event
+    if (player.isFake() || item.isEmpty() || item.id != 'supplementaries:key') return
+    if (item?.nbt?.Challenge) {
+        switch (item.nbt.Challenge) {
+            case 'Determination':
+                event.cancel()
+                let seed = $Long(level.serverLevel.seed)
+                let random = $Random(seed)
+                let codeBySeed = (c) => [random.nextInt(c), random.nextInt(c), random.nextInt(c), 
+                    random.nextInt(c), random.nextInt(c), random.nextInt(c)]
+                let tag = item.nbt
+                if(!tag.display) tag.display = {}
+                if(!tag.display.Lore) tag.display.Lore = []
+                if(tag.display.Lore.length > 0) return
+                tag.Enchantments = [{}]
+                ptcSnd('twilightforest:protection', 'minecraft:block.note_block.bell', server, {x:player.x, y:player.y, z:player.z}, 1, 250)
+                tag.display.Lore.push('"§2Recipe sequence: '+codeBySeed(10).toString().replace(/,/g, ' ')+'"')
+                item.setNbt(tag)                
                 break
         }
     }
@@ -41,13 +65,25 @@ onEvent('block.place', event => {
     let player = entity.player
     let item = player.mainHandItem.id == block.item.id ? player.mainHandItem : player.offHandItem
     let prize = patienceLoot(block.id)
-    if (challengeRE.test(item)) {
+    if (item?.nbt?.Challenge) {
         if (typeof prize == 'string') server.runCommandSilent(`loot insert ${block.x} ${block.y} ${block.z} loot ${prize}`)
         else {
             failedLoot(block, prize)
         }
     }
 })
+
+/* onEvent('player.data_from_client.item_left_click', event => {
+    let tag = event.data.Nbt
+    let id = event.data.Id
+    if(!tag) tag = {}
+    if(!tag.display) tag.display = {}
+    if(!tag.display.Lore) tag.display.Lore = []
+    tag.display.Lore.push('"§aRight click on a suitable container to start the challenge."')
+    tag.display.Lore.push('" "')
+    tag.display.Lore.push('"§aYou can look into JEI to see the suitable containers by searching for §2$patience_challenge_suitable§a."')
+    event.player.mainHandItem = Item.of(id, tag)
+}) */
 
 function ptcSnd(particle, sound, server, block, speed, count) {
     server.runCommandSilent(`particle ${particle} ${block.x} ${block.y + 0.5} ${block.z} .5 .75 .5 ${speed} ${count} normal`)
@@ -76,7 +112,7 @@ function createPrize() {
         'thermal:copper_coin',
         'thermal:copper_coin',
         'thermal:copper_coin',
-        addNbtLore('paper', pickText()),
+        itemWithLore('paper', pickText()),
     ].concat(Ingredient.of('#twilight:cookies').stacks.toArray()), pickInRange(0, 2))
 }
 
@@ -89,3 +125,4 @@ const texts = [
     "§6Time does not make people mature, it ripens pears.",
 ]
 function pickText(){ return texts[~~(Math.random() * texts.length)] }
+

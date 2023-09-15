@@ -105,4 +105,7 @@ onEvent('recipes', event => {
       }
     ]
   }).id('toolbelt:pouch_via_sewing')
+
+  //event.printTypes()
+
 })

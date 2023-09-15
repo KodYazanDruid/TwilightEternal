@@ -1,15 +1,27 @@
 onEvent('recipes', event => {
     function cuttingBoard(output, item, tool) {
         event.custom({
-            "type": "farmersdelight:cutting",
-            "ingredients": jsonItemObjectBuilder(Array.of(item)),
-            "result": output,
-            "tool": tool.toJson()
-        }).id(FD+':cutting/'+item)
+            "ingredients": [
+                {
+                    "item": item
+                }
+            ],
+            "result": [
+                {
+                    "count": output.count,
+                    "item": output.id
+                }
+            ],
+            "tool": {
+                "item": tool
+            },
+            "type": "farmersdelight:cutting"
+        })
     }
-    /* Ingredient.of('#twilight:mossy_seared_blocks').getItemIds().forEach(id => {
-        let output = TCON + ':' + id.split(':mossy_')[1]
-        console.log(output)
-        cuttingBoard([Item.of(output), Item.of('twilightforest:moss_patch', 3).withChance(0.5)], id, Ingredient.of('#forge:shears'))
-    }) */
+
+    cuttingBoard({id:'alexsdelight:bison_mince', count:2}, 'alexsdelight:raw_bison', 'twilightdelight:fiery_knife')
+    cuttingBoard({id:'alexsdelight:cooked_catfish_slice', count:2}, 'alexsmobs:raw_catfish', 'twilightdelight:fiery_knife')
+    cuttingBoard({id:'alexsdelight:cooked_bunfungus_drumstick', count:2}, 'alexsdelight:raw_bunfungus', 'twilightdelight:fiery_knife')
+    cuttingBoard({id:'alexsdelight:cooked_loose_moose_rib', count:2}, 'alexsmobs:moose_ribs', 'twilightdelight:fiery_knife')
+    cuttingBoard({id:'alexsdelight:cooked_kangaroo_shank', count:2}, 'alexsmobs:kangaroo_meat', 'twilightdelight:fiery_knife')
 })

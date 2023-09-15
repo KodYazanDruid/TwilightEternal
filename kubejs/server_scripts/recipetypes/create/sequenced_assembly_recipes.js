@@ -21,7 +21,7 @@ onEvent('recipes', event => {
     event.recipes.createSequencedAssembly(fluix_mech, 'create:precision_mechanism', [
         event.recipes.createDeploying(inc_fluix_mech, [inc_fluix_mech, 'ae2:fluix_pearl']),
         event.recipes.createPressing(inc_fluix_mech, inc_fluix_mech),
-        event.recipes.createFilling(inc_fluix_mech, [inc_fluix_mech, Fluid.of('minecraft:lava', 1000)]),
+        event.recipes.createFilling(inc_fluix_mech, [inc_fluix_mech, Fluid.of('twilightforest:fiery_essence', 250)]),
         event.recipes.createPressing(inc_fluix_mech, inc_fluix_mech)
     ]).transitionalItem(inc_fluix_mech).loops(4)
 

@@ -12,3 +12,10 @@
     //melon_husk.mergeFullNBT('{customLootTableNBtPropertyName:"melon_husk"}')
     melon_husk.spawn()
 }) */
+ onEvent('item.right_click', event => {
+    const { entity, player, item, hand } = event
+    if(item.id == EEt`starsteel_ingot`){
+        console.log(player.fullNBT.ForgeCaps['enlightened_end:player_variables'].radiation)
+    }
+
+ })

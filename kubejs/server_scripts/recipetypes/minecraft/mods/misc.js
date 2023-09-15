@@ -46,20 +46,19 @@ onEvent('recipes', event =>{
     erOutput('travel_anchors:travel_staff')
     erOutput('torchmaster:feral_flare_lantern')
     erOutput('torchmaster:megatorch')
-    erOutput(DD+':industrial_iron_billet')
-    erOutput(AP+':plating_block')
+    erOutput(DDt`industrial_iron_billet`)
+    erOutput(APt`plating_block`)
     erOutput('magicfeather:magicfeather')
     erId('extractinator:extractinating/cobblestone')
     erId('extractinator:extractinating/stone')
     erOutput('chunkloaders:single_chunk_loader')
     erOutput('backpacked:backpack')
     erOutput('quark:gold_bars')
-    erId(AP+':bone_meal')
-    erId(CA+':digital_adapter')
+    erId(APt`bone_meal`)
+    erId(CAt`digital_adapter`)
     event.remove({mod: 'portality'})
-    for(let i of toolsVanilla){
-        erOutput(CS+':copper_'+i)
-    }
+    for(let i of toolsVanilla){ erOutput(CS+':copper_'+i) }
+    erId(UEt`end_crystal_via_chiseled_glass`)
 
     //Recipes
     event.shapeless('8x kubejs:tiny_coal', 'minecraft:coal')
@@ -73,7 +72,7 @@ onEvent('recipes', event =>{
     event.shapeless(TF+':fiery_ingot', '9x kubejs:fiery_nugget')
     event.shapeless('9x kubejs:knightmetal_nugget', TF+':knightmetal_ingot')
     event.shapeless(TF+':knightmetal_ingot', '9x kubejs:knightmetal_nugget')
-
+    event.shapeless(UEt`gilded_pearl`, ['ender_pearl', IEt`molten_gold_cluster`]).id(UEt`upgrade_to_gilded`)
     //To fix a bug that prevents stacking torches
     event.shapeless('minecraft:torch', 'minecraft:torch')
     
@@ -81,7 +80,7 @@ onEvent('recipes', event =>{
     moduleCraft('fluids', 'thermal:fluid_cell')
     moduleCraft('energy', 'thermal:energy_cell')
     moduleCraft('interdimensional', 'ae2:quantum_ring')
-   
+   genericFour(UEt`teleportation_anchor`, [IEt`molten_gold_cluster`, 'createdeco:netherite_sheet', 'travel_anchors:travel_anchor'], UEt`teleportation_anchor`)
     for(let i of snads) {
         let snadj =''
         if(i=='suol_s'){
@@ -91,6 +90,8 @@ onEvent('recipes', event =>{
         }
         genericFour('snad:'+i+'nad', ['create:tree_fertilizer', 'thermal:phytogro', 'minecraft:'+snadj+'and'], 'snad:'+i+'nad')
     }
+
+
     event.shaped('naturescompass:naturescompass', [
         'SLS',
         'LCL',
@@ -100,6 +101,7 @@ onEvent('recipes', event =>{
         L: '#'+TCON+':slimy_logs',
         C: 'minecraft:compass'
     })
+
     event.shaped('explorerscompass:explorerscompass', [
         'MDH',
         'DCD',

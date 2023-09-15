@@ -156,18 +156,11 @@ onEvent('tags.items', event => {
     event.add('sapience:piglins_barter', 'thermal:gold_coin')
     event.add('sapience:piglins_barter', 'create:golden_sheet')
 
-    //Ingredient.of(/tools_complement:\w+helmet/).itemIds.forEach(helmet => event.add('twilight:starter_helmet', helmet))
-    Ingredient.of(/tools_complement:\w+chestplate/).itemIds.forEach(chestplate => event.add('twilight:starter_chestplate', chestplate))
-    //Ingredient.of(/tools_complement:\w+leggings/).itemIds.forEach(leggings => event.add('twilight:starter_leggings', leggings))
-    Ingredient.of(/tools_complement:\w+boots/).itemIds.forEach(boots => event.add('twilight:starter_boots', boots))
-
-    //event.add('twilight:starter_helmet', [CS+':zinc_helmet', CS+':brass_helmet'])
-    event.add('twilight:starter_chestplate', [CS + ':zinc_chestplate', CS + ':brass_chestplate'])
-    //event.add('twilight:starter_leggings', [CS+':zinc_leggings', CS+':brass_leggings'])
-    event.add('twilight:starter_boots', [CS + ':zinc_boots', CS + ':brass_boots'])
+    Ingredient.of(/(dustrial_decor|create_sa|tools_complement):\w+_chestplate/).filter(Ingredient.of([event.get('create_sa:fillable').objectIds.toArray(), event.get('create_sa:fuelable').objectIds.toArray()]).not()).itemIds.forEach(chestplate => event.add('twilight:starter_chestplate', chestplate))
+    Ingredient.of(/(dustrial_decor|create_sa|tools_complement):\w+_boots/).filter(Ingredient.of('create_sa:slime_boots').not()).itemIds.forEach(boots => event.add('twilight:starter_boots', boots))
 
     Ingredient.of(/\w+:\w+tea$/).itemIds.forEach(tea => event.add('twilight:starter_tea', tea))
-    Ingredient.of(/\w+:\w+(juice|cider|custard|coffee|milkshake)$/).itemIds.forEach(juice => event.add('twilight:starter_juice', juice))
+    Ingredient.of(/\w+:\w+(juice|cider|custard|coffee|milkshake|drink)$/).itemIds.forEach(juice => event.add('twilight:starter_juice', juice))
     Ingredient.of(/\w+:\w+pie_slice$/).itemIds.forEach(pie => event.add('twilight:starter_pie', pie))
     Ingredient.of(/\w+:\w+cake_slice$/).itemIds.forEach(cake => event.add('twilight:starter_cake', cake))
     Ingredient.of(/\w+:\w+salad$/).itemIds.forEach(salad => event.add('twilight:starter_salad', salad))

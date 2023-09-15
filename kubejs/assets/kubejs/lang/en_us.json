@@ -1,0 +1,28 @@
+{
+    "block.twilight.rune_embedder": "Rune Embedder",
+    "block.twilight.draconic_rtg": "Draconic Radioisotope Thermoelectric Generator",
+    
+    "multiblocked.recipe_map.rune": "Rune Embedder",
+    "multiblocked.recipe_map.generation": "Draconic Radioisotope Thermoelectric Generator",
+    
+    "curios.identifier.magicfeather": "Magic Feather",
+    "curios.identifier.backpack": "Backpack",
+
+    "item.kubejs.enzymatic_essence_catalyst.tooltip": "Enzymatic Essence Catalsty",
+    "item.kubejs.enzymatic_essence_catalyst.tooltip.summary": "Used in _Mixing Recipes_ to convert _Essence_ and _Experience_ into each other.",
+    "block.industrialforegoing.block_breaker.tooltip": "Breaker",
+    "block.industrialforegoing.block_breaker.tooltip.summary": "Be sure to allow _Fake Players_ on FTB Chunks properties in your team settings. If you want to just enable _Industrial Foregoing_ machines, add _[IF]_ to the _Allied Fake Player Names/IDs_ list.",
+    "block.industrialforegoing.block_placer.tooltip": "Placer",
+    "block.industrialforegoing.block_placer.tooltip.summary": "Be sure to allow _Fake Players_ on FTB Chunks properties in your team settings. If you want to just enable _Industrial Foregoing_ machines, add _[IF]_ to the _Allied Fake Player Names/IDs_ list.",
+    "block.create.deployer.tooltip": "Deployer",
+    "block.create.deployer.tooltip.summary": "Be sure to allow _Fake Players_ on FTB Chunks properties in your team settings. If you want to just enable _deployer_, add _Deployer_ to the _Allied Fake Player Names/IDs_ list.",
+    "item.magicfeather.magicfeather.tooltip": "Magic Feather",
+    "item.magicfeather.magicfeather.tooltip.summary": "This item can be placed on the _Curio_ slot in its own slot. It will allow you to fly within the active beacon range.",
+    "item.abnormals_delight.adzuki_cake_slice.tooltip": "Yummy!",
+    "item.abnormals_delight.adzuki_cake_slice.tooltip.summary": "Yummy!",
+    "item.minecraft.diamond.tooltip": "REEE",
+    "item.minecraft.diamond.tooltip.summary": "Bleh. _BLEH_",
+
+    "block.minecraft.stone.tooltip": "Generates when Flowing Lava touches a Source of Water.",
+    "block.minecraft.stone.tooltip.summary": "Generates when Flowing _Lava_ touches a Source of Water."
+}
