@@ -2,12 +2,13 @@ const INF = 'industrialforegoing'
 const TCOMP = 'tools_complement'
 const TCON = 'tconstruct'
 const CS = 'create_sa'
+const CDD = 'create_dd'
 const toolsVanilla = ['helmet', 'chestplate', 'leggings', 'boots', 'sword', 'pickaxe', 'axe', 'shovel', 'hoe']
 
 onEvent('jei.hide.items', event => {
     const conveyorTypes = ['extraction', 'insertion', 'detection', 'bouncing', 'dropping', 'blinking', 'splitting']
     const blackHoleTypes = ['common', 'pity', 'simple', 'advanced', 'supreme']
-
+    const sailTypes = ['splashing', 'haunting', 'smoking', 'blasting', 'superheating', 'freezing']
     function conveyorHide(type){
         event.hide(INF+':conveyor_'+type+'_upgrade')
     }
@@ -23,6 +24,9 @@ onEvent('jei.hide.items', event => {
     })
     blackHoleTypes.forEach(e =>{
         blackHoleRemove(e)
+    })
+    sailTypes.forEach(e =>{
+        event.hide(CDD+':'+e+'_sail')
     })
 })
 
@@ -45,6 +49,9 @@ onEvent('jei.hide.items', event => {
     event.hide('thermal:onion_seeds')
     event.hide('thermal:tomato_seeds')
     event.hide('thermal:rice_seeds')
+    event.hide(CDD+':accelerator_motor')
+    event.hide(CDD+':kinetic_motor')
+    event.hide(CDD+':coal_piece')
 })
 
 onEvent('jei.hide.fluids', event => {

@@ -6,6 +6,8 @@ onEvent('recipes', event => {
     event.recipes.createMixing('2x '+TCON+':pig_iron_ingot', ['iron_ingot', 'honey_bottle', '2x '+TCON+':blood_slime_ball']).id(CA+':compat/tconstruct/pig_iron')
     erId(event, CA+':compat/tconstruct/pig_iron_2')
     event.recipes.createMixing('2x thermal:rose_gold_ingot', ['copper_ingot', 'gold_ingot']).id(CA+':compat/tconstruct/rose_gold')
+    event.recipes.createMixing('2x '+TCONt`hepatizon_ingot`, ['2x copper_ingot', TCONt`cobalt_ingot`, 'quartz_block']).superheated().id(CAt`compat/tconstruct/hepatizon`)
+    event.recipes.createMixing('2x '+CDDt`bronze_ingot`, ['4x thermal:bronze_ingot', 'create:zinc_ingot']).superheated()
 
     //Unify recipes
     event.recipes.createMixing([Fluid.of(INF+':essence'), 'kubejs:enzymatic_essence_catalyst'], [Fluid.of('cofh_core:experience'), 'kubejs:enzymatic_essence_catalyst'])

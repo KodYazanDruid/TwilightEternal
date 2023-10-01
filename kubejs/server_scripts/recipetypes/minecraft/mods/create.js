@@ -12,17 +12,20 @@ onEvent('recipes', event =>{
         event.remove({type: type})
     }
     //Removed Recipes
-    erId('create:crushing/uranium_ore')
     erOutput('create_sa:slime_helmet')
     erOutput('create_sa:slime_boots')
     erOutput('createdeco:gold_bars')
     erOutput('createchunkloading:chunk_loader')
     erOutput('chunkloaders:basic_chunk_loader')
     erOutput('create_enchantment_industry:enchanting_guide')
-    erId(CA+':crafting/large_connector_gold')
+    erOutput(CDDt`bronze_drill`)
+    erOutput(CDDt`accelerator_motor`)
+    erOutput(CDDt`kinetic_motor`)
+    erOutput(CDDt`coal_piece`)
+    erId(CAt`crafting/large_connector_gold`)
+    Array.of('splashing', 'haunting', 'smoking', 'blasting', 'superheating', 'freezing').forEach(element => erOutput(CDD+':'+element+'_sail'))
 
     //Recipes
-
     event.custom({
         "type":"createaddition:rolling",
         "input": {
@@ -33,7 +36,6 @@ onEvent('recipes', event =>{
             "count": 1
         }
     }).id('createaddition:rolling/straw')
-
     event.shaped('create_sa:slime_helmet', [
         ' S ',
         'FHF',
@@ -119,4 +121,25 @@ onEvent('recipes', event =>{
         A: 'create:andesite_alloy',
         S: '#forge:slimeballs'
     }).id(CA+':crafting/large_connector_electrum')
+    event.shaped(CDDt`hydraulic_press`, [
+        ' S ',
+        'HPH',
+        ' B '
+    ], {
+        S: CDDt`sealed_mechanism`,
+        H: CDDt`hydraulic_casing`,
+        P: 'create:mechanical_press',
+        B: CDDt`bronze_block`
+    }).id(CDDt`crafting/hydraulic_press`)
+    event.shaped(CDDt`bronze_saw`, [
+        ' C ',
+        'PSP',
+        ' B '
+    ], {
+        C: CDDt`bronze_casing`,
+        P: 'thermal:steel_plate',
+        S: 'create:mechanical_saw',
+        B: CDDt`bronze_block`
+    }).id(CDDt`crafting/bronze_saw`)
+    
 })

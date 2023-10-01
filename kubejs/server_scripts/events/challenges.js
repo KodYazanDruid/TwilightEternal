@@ -35,6 +35,17 @@ onEvent('block.right_click', event => {
     }
 })
 
+let toolTypes = [
+    'Sword',
+    'Pickaxe',
+    'Axe',
+    'Shovel',
+    'Hoe',
+    'Knife',
+    'Hammer',
+    'Excavator',
+    'Sickle'
+]
 onEvent('item.right_click', event => {
     const { player, block, item, hand, server, level } = event
     if (player.isFake() || item.isEmpty() || item.id != 'supplementaries:key') return
@@ -43,17 +54,27 @@ onEvent('item.right_click', event => {
             case 'Determination':
                 event.cancel()
                 let seed = $Long(level.serverLevel.seed)
-                let random = $Random(seed)
-                let codeBySeed = (c) => [random.nextInt(c), random.nextInt(c), random.nextInt(c), 
-                    random.nextInt(c), random.nextInt(c), random.nextInt(c)]
+                let lsb = $Long(player.id.leastSignificantBits)
+                let random = $Random($Long(seed + lsb + ''))
+                let codeBySeed = (c) => {
+                    let uset = new Set()
+                    while(uset.size < 6) uset.add(random.nextInt(c))
+                    return Array.from(uset)
+                }
                 let tag = item.nbt
-                if(!tag.display) tag.display = {}
-                if(!tag.display.Lore) tag.display.Lore = []
-                if(tag.display.Lore.length > 0) return
+                if (!tag.display) tag.display = {}
+                if (!tag.display.Lore) tag.display.Lore = []
+                if (tag.display.Lore.length > 0) return
+                tag.DeterminationChallengeTool = []
                 tag.Enchantments = [{}]
-                ptcSnd('twilightforest:protection', 'minecraft:block.note_block.bell', server, {x:player.x, y:player.y, z:player.z}, 1, 250)
-                tag.display.Lore.push('"§2Recipe sequence: '+codeBySeed(10).toString().replace(/,/g, ' ')+'"')
-                item.setNbt(tag)                
+                ptcSnd('twilightforest:protection', 'minecraft:block.note_block.bell', server, { x: player.x, y: player.y, z: player.z }, 1, 250)
+                tag.display.Lore.push('"§2Tools List: "')
+                codeBySeed(toolTypes.length).forEach(i => {
+                    tag.display.Lore.push(`"§a${toolTypes[i]}"`)
+                    toolTypes[i] == 'Knife' ? tag.DeterminationChallengeTool.push('forge:tools/knives') :tag.DeterminationChallengeTool.push(`forge:tools/${toolTypes[i].toLowerCase()}s`)
+                })
+
+                item.setNbt(tag)
                 break
         }
     }
@@ -124,5 +145,5 @@ const texts = [
     "§6Şu anda okuduğunuz bu cümle Türkçe\\'dir.",
     "§6Time does not make people mature, it ripens pears.",
 ]
-function pickText(){ return texts[~~(Math.random() * texts.length)] }
+function pickText() { return texts[~~(Math.random() * texts.length)] }
 

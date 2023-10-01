@@ -1,21 +1,21 @@
-onEvent('recipes', event =>{
+onEvent('recipes', event => {
     const snads = ['s', 'red_s', 'suol_s']
     let fullAkashicTome = Item.of('akashictome:tome', '{"akashictome:data":{cookingforblockheads:{Count:1b,id:"cookingforblockheads:no_filter_edition"},ftbquests:{Count:1b,id:"ftbquests:book"},industrialforegoing:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"industrialforegoing:industrial_foregoing"}},kubejs:{Count:1b,id:"kubejs:create_manual"},pfm:{Count:1b,id:"pfm:furniture_book"},sebastrnlib:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"sebastrnlib:sebastrn_mods_guide_book"}},solcarrot:{Count:1b,id:"solcarrot:food_book"},thermal:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"thermal:guidebook"}},twilightforest:{Count:1b,id:"patchouli:guide_book",tag:{"patchouli:book":"twilightforest:guide"}}},"akashictome:is_morphing":1b}')
 
-    function erOutput(item, type){
-        event.remove({output: item, type: type})
+    function erOutput(item, type) {
+        event.remove({ output: item, type: type })
     }
-    function erInput(item, type){
-        event.remove({input: item, type: type})
+    function erInput(item, type) {
+        event.remove({ input: item, type: type })
     }
-    function erId(id){
-        event.remove({id: id})
+    function erId(id) {
+        event.remove({ id: id })
     }
-    function erType(type){
-        event.remove({type: type})
+    function erType(type) {
+        event.remove({ type: type })
     }
-    function moduleCraft(type, item){
-        event.shaped('portality:module_'+type, [
+    function moduleCraft(type, item) {
+        event.shaped('portality:module_' + type, [
             ' S ',
             'TFT',
             ' C '
@@ -26,7 +26,7 @@ onEvent('recipes', event =>{
             C: item
         })
     }
-    function genericFour(output, itemArray, id){
+    function genericFour(output, itemArray, id) {
         event.shaped(output, [
             'ABA',
             'BCB',
@@ -56,8 +56,8 @@ onEvent('recipes', event =>{
     erOutput('quark:gold_bars')
     erId(APt`bone_meal`)
     erId(CAt`digital_adapter`)
-    event.remove({mod: 'portality'})
-    for(let i of toolsVanilla){ erOutput(CS+':copper_'+i) }
+    event.remove({ mod: 'portality' })
+    for (let i of toolsVanilla) { erOutput(CS + ':copper_' + i) }
     erId(UEt`end_crystal_via_chiseled_glass`)
 
     //Recipes
@@ -66,31 +66,31 @@ onEvent('recipes', event =>{
     event.shapeless('minecraft:coal', '8x kubejs:tiny_coal')
     event.shapeless('minecraft:charcoal', '8x kubejs:tiny_charcoal')
     event.shapeless('portality:teleportation_token', ['minecraft:name_tag', 'ae2:basic_card', 'minecraft:blue_dye', 'minecraft:blue_dye', 'minecraft:black_dye'])
-    event.shapeless(TCON+':necrotic_bone', AP+':withered_bone')
-    event.shapeless(AP+':withered_bone', TCON+':necrotic_bone')
-    event.shapeless('9x kubejs:fiery_nugget', TF+':fiery_ingot')
-    event.shapeless(TF+':fiery_ingot', '9x kubejs:fiery_nugget')
-    event.shapeless('9x kubejs:knightmetal_nugget', TF+':knightmetal_ingot')
-    event.shapeless(TF+':knightmetal_ingot', '9x kubejs:knightmetal_nugget')
+    event.shapeless(TCON + ':necrotic_bone', AP + ':withered_bone')
+    event.shapeless(AP + ':withered_bone', TCON + ':necrotic_bone')
+    event.shapeless('9x kubejs:fiery_nugget', TF + ':fiery_ingot')
+    event.shapeless(TF + ':fiery_ingot', '9x kubejs:fiery_nugget')
+    event.shapeless('9x kubejs:knightmetal_nugget', TF + ':knightmetal_ingot')
+    event.shapeless(TF + ':knightmetal_ingot', '9x kubejs:knightmetal_nugget')
     event.shapeless(UEt`gilded_pearl`, ['ender_pearl', IEt`molten_gold_cluster`]).id(UEt`upgrade_to_gilded`)
     //To fix a bug that prevents stacking torches
     event.shapeless('minecraft:torch', 'minecraft:torch')
-    
+
     moduleCraft('items', 'ae2:sky_stone_chest')
     moduleCraft('fluids', 'thermal:fluid_cell')
     moduleCraft('energy', 'thermal:energy_cell')
     moduleCraft('interdimensional', 'ae2:quantum_ring')
-   genericFour(UEt`teleportation_anchor`, [IEt`molten_gold_cluster`, 'createdeco:netherite_sheet', 'travel_anchors:travel_anchor'], UEt`teleportation_anchor`)
-    for(let i of snads) {
-        let snadj =''
-        if(i=='suol_s'){
+    genericFour(UEt`teleportation_anchor`, [IEt`molten_gold_cluster`, '#forge:plates/netherite', 'travel_anchors:travel_anchor'], UEt`teleportation_anchor`)
+    genericFour(KJSt`lead_shielding`, ['thermal:hazmat_fabric', '#forge:plates/lead', EEt`depleted_irradium_bar`], 'twilight:lead_shielding')
+    for (let i of snads) {
+        let snadj = ''
+        if (i == 'suol_s') {
             snadj = 'soul_s'
-        }else {
+        } else {
             snadj = i
         }
-        genericFour('snad:'+i+'nad', ['create:tree_fertilizer', 'thermal:phytogro', 'minecraft:'+snadj+'and'], 'snad:'+i+'nad')
+        genericFour('snad:' + i + 'nad', ['create:tree_fertilizer', 'thermal:phytogro', 'minecraft:' + snadj + 'and'], 'snad:' + i + 'nad')
     }
-
 
     event.shaped('naturescompass:naturescompass', [
         'SLS',
@@ -98,7 +98,7 @@ onEvent('recipes', event =>{
         'SLS'
     ], {
         S: 'minecraft:flowering_azalea',
-        L: '#'+TCON+':slimy_logs',
+        L: '#' + TCON + ':slimy_logs',
         C: 'minecraft:compass'
     })
 
@@ -107,9 +107,9 @@ onEvent('recipes', event =>{
         'DCD',
         'QDN'
     ], {
-        M: TCON+':manyullyn_ingot',
-        H: TCON+':hepatizon_ingot',
-        Q: TCON+':queens_slime_ingot',
+        M: TCON + ':manyullyn_ingot',
+        H: TCON + ':hepatizon_ingot',
+        Q: TCON + ':queens_slime_ingot',
         N: 'minecraft:netherite_ingot',
         D: '#forge:deepslate',
         C: 'ae2:sky_compass'
@@ -121,8 +121,8 @@ onEvent('recipes', event =>{
     ], {
         C: 'create:cogwheel',
         P: 'create:mechanical_piston',
-        M: INF+':machine_frame_simple',
-        N: AP+':nether_brass_chain',
+        M: INF + ':machine_frame_simple',
+        N: AP + ':nether_brass_chain',
         B: 'create:basin',
         Z: 'create:zinc_block'
     })
@@ -171,7 +171,7 @@ onEvent('recipes', event =>{
         'DFD',
         'ICI'
     ], {
-        I: DD+':industrial_iron_billet',
+        I: DD + ':industrial_iron_billet',
         E: 'ae2:engineering_processor',
         D: 'thermal:steel_plate',
         F: 'thermal:energy_cell_frame',
@@ -209,7 +209,7 @@ onEvent('recipes', event =>{
         W: '#forge:plates/gold',
         R: 'create:brass_block'
     })
-    event.shaped('8x '+AP+':plating_block', [
+    event.shaped('8x ' + AP + ':plating_block', [
         'NPN',
         'PSP',
         'NPN'
@@ -224,7 +224,7 @@ onEvent('recipes', event =>{
         'CCC'
     ], {
         M: Item.of('minecraft:enchanted_book').enchant('minecraft:mending', 1),
-        K: TF+':knightmetal_ingot',
+        K: TF + ':knightmetal_ingot',
         E: 'minecraft:enchanting_table',
         C: '#quark:corundum'
     })
@@ -260,14 +260,14 @@ onEvent('recipes', event =>{
         C: 'ironchest:iron_chest',
         B: 'supplementaries:rope'
     })
-    
-    event.shaped(TT+':chisel', [
+
+    event.shaped(TT + ':chisel', [
         'F',
         'S'
     ], {
         F: 'minecraft:flint',
         S: Item.of('tconstruct:tool_handle', '{Material:"tconstruct:wood"}')
-    }).id(TT+':chisel')
+    }).id(TT + ':chisel')
 
     event.shaped(fullAkashicTome, [
         'IAC',
@@ -275,7 +275,7 @@ onEvent('recipes', event =>{
         'GAZ'
     ], {
         I: 'minecraft:iron_ingot',
-        A:  FD+':canvas',
+        A: FD + ':canvas',
         C: 'minecraft:copper_ingot',
         B: 'akashictome:tome',
         G: 'minecraft:gold_ingot',
@@ -288,17 +288,17 @@ onEvent('recipes', event =>{
         'ES '
     ], {
         E: 'minecraft:emerald',
-        S: TCON+':earth_slime_crystal',
+        S: TCON + ':earth_slime_crystal',
         N: 'create:experience_nugget'
     })
 
-    event.shaped(CEI+':experience_rotor', [
+    event.shaped(CEI + ':experience_rotor', [
         ' Z ',
         'ZCZ',
         ' Z '
     ], {
         Z: 'create:zinc_ingot',
         C: 'kubejs:enzymatic_essence_catalyst'
-    }).id(CEI+':crafting/experience_rotor')
-    
+    }).id(CEI + ':crafting/experience_rotor')
+
 })

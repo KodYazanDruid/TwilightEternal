@@ -55,7 +55,7 @@ onEvent('recipes', event =>{
         'LIL'
     ], {
         L: '#minecraft:logs',
-        I: TF+':ironwood_ingot',
+        I: 'thermal:silver_ingot',
         B: 'create:brass_casing'
     })
     event.shaped(INF+':block_placer', [

@@ -19,6 +19,8 @@ const CCR = 'computercraft'
 const EE = 'enlightened_end'
 const UE = 'unusualend'
 const IE = 'infernalexp'
+const KJS = 'kubejs'
+const CDD = 'create_dd'
 
 const INFt = (id) => `${INF}:${id}`
 const TFt = (id) => `${TF}:${id}`
@@ -40,6 +42,8 @@ const CCRt = (id) => `${CCR}:${id}`
 const EEt = (id) => `${EE}:${id}`
 const UEt = (id) => `${UE}:${id}`
 const IEt = (id) => `${IE}:${id}`
+const KJSt = (id) => `${KJS}:${id}`
+const CDDt = (id) => `${CDD}:${id}`
 
 const colors = ['white', 'orange', 'magenta', 'light_blue', 'yellow', 'lime', 'pink', 'gray', 'light_gray', 'cyan', 'purple', 'blue', 'brown', 'green', 'red', 'black']
 const dyenamiColors = ['peach', 'aquamarine', 'fluorescent', 'mint', 'maroon', 'bubblegum', 'lavender', 'cherenkov']

@@ -85,7 +85,7 @@ onEvent('lootjs', event => {
     ]
     event.addLootTableModifier('minecraft:chests/simple_dungeon')
         .removeLoot(Ingredient.getAll().filter(ignoreSD).not())
-        .addLoot(LootEntry.of(FD+':rope').limitCount([8, 22]))
+        .addLoot(LootEntry.of(FD + ':rope').limitCount([8, 22]))
         .pool(pool => {
             pool.randomChance(0.65)
             pool.addWeightedLoot([
@@ -107,7 +107,7 @@ onEvent('lootjs', event => {
         })
         .addWeightedLoot(2, arrayToLoot(Ingredient.of('#forge:seeds').getStacks(), 4, 7))
         .addWeightedLoot([2, 3], true, [
-            LootEntry.of('bone').limitCount([3, 6]), 
+            LootEntry.of('bone').limitCount([3, 6]),
             LootEntry.of('rotten_flesh').limitCount([3, 6]),
             LootEntry.of('gunpowder').limitCount([3, 6]),
             LootEntry.of('string').limitCount([3, 6]),
@@ -117,10 +117,10 @@ onEvent('lootjs', event => {
         .pool(pool => {
             pool.randomChance(0.4)
             pool.addWeightedLoot([
-                LootEntry.of(TCON+':sky_slime_grass_seeds').limitCount([1, 4]).withChance(0.6),
-                LootEntry.of(TCON+':earth_slime_grass_seeds').limitCount([1, 2]).withChance(0.7),
-                LootEntry.of(TCON+':sky_slime_sapling').limitCount([1, 2]).withChance(0.8),
-                LootEntry.of(TCON+':earth_slime_sapling').withChance(0.9)
+                LootEntry.of(TCON + ':sky_slime_grass_seeds').limitCount([1, 4]).withChance(0.6),
+                LootEntry.of(TCON + ':earth_slime_grass_seeds').limitCount([1, 2]).withChance(0.7),
+                LootEntry.of(TCON + ':sky_slime_sapling').limitCount([1, 2]).withChance(0.8),
+                LootEntry.of(TCON + ':earth_slime_sapling').withChance(0.9)
             ])
         })
         .pool(pool => {
@@ -153,6 +153,72 @@ onEvent('lootjs', event => {
         .apply(ctx => {
             ctx.addLoot(LootEntry.of(selectRandomElement(Ingredient.of('#minecraft:creeper_drop_music_discs').itemIds.toArray())).withChance(0.37))
         })
+
+    // Nether Fortress
+    event.addLootTableModifier('minecraft:chests/nether_bridge')
+        .removeLoot(Ingredient.all)
+        .addWeightedLoot(2, [
+            LootEntry.of('minecraft:golden_sword').enchantRandomly().limitCount([1, 1]),
+            LootEntry.of('minecraft:golden_chestplate').enchantRandomly().limitCount([1, 1]),
+            LootEntry.of('minecraft:golden_leggings').enchantRandomly().limitCount([1, 1]),
+            LootEntry.of('minecraft:golden_boots').enchantRandomly().limitCount([1, 1]),
+            LootEntry.of('minecraft:golden_helmet').enchantRandomly().limitCount([1, 1])
+        ])
+        .addWeightedLoot(2, true, [
+            LootEntry.of('gold_ingot').limitCount([2, 4]),
+            LootEntry.of('iron_ingot').limitCount([3, 6]),
+            LootEntry.of('tconstruct:cobalt_nugget').limitCount([6, 9]),
+            LootEntry.of('stalwart_dungeons:raw_tungsten').limitCount([2, 4])
+        ])
+        .addWeightedLoot(2, [
+            LootEntry.of('nethersdelight:nether_skewer').limitCount([3, 5]),
+            LootEntry.of('nethersdelight:hoglin_sirloin').limitCount([2, 4]),
+            LootEntry.of('nethersdelight:strider_moss_stew').limitCount([2, 6]),
+            LootEntry.of('nethersdelight:strider_slice').limitCount([3, 7]),
+            LootEntry.of('nethersdelight:hoglin_ear').limitCount([3, 8])
+        ])
+        .pool(pool => {
+            pool.randomChance(0.75)
+            pool.addWeightedLoot([2, 4], [
+                LootEntry.of('saddle'),
+                LootEntry.of('name_tag'),
+                LootEntry.of('flint_and_steel'),
+                LootEntry.of('supplementaries:bomb_blue'),
+                LootEntry.of('quark:blank_rune').limitCount([2, 3]),
+                LootEntry.of('golden_apple').limitCount([1, 3]),
+                LootEntry.of('obsidian').limitCount([2, 4]),
+                LootEntry.of('quark:ancient_tome')
+            ])
+        })
+        .pool(pool => {
+            pool.randomChance(0.75)
+            pool.addWeightedLoot(2, [
+                LootEntry.of('nether_wart').limitCount([2, 4]),
+                LootEntry.of('tconstruct:blood_slime_grass_seeds').limitCount([1, 4])
+            ])
+        })
+        .pool(pool => {
+            pool.randomChance(0.65)
+            pool.addWeightedLoot([
+                LootEntry.of('iron_horse_armor').enchantRandomly().withChance(0.3),
+                LootEntry.of('golden_horse_armor').enchantRandomly().withChance(0.4),
+                LootEntry.of('diamond_horse_armor').enchantRandomly().withChance(0.2)
+            ])
+        })
+        .pool(pool => {
+            pool.randomChance(0.3)
+            pool.addLoot(LootEntry.of('diamond').limitCount([1, 3]))
+        })
+        .apply(ctx => {
+            ctx.findLoot('quark:ancient_tome').forEach(stk => stk.setNbt(genTomeNbt()))
+            ctx.addLoot(LootEntry.of('thermaloot:single_capacitor'))
+        })
+
+
+    //Replace blank rune with rainbow rune
+    event.addLootTypeModifier(LootType.ENTITY, LootType.BLOCK, LootType.CHEST, LootType.FISHING)
+        .replaceLoot('quark:blank_rune', 'quark:rainbow_rune', true)
+
 })
 
 let itemChance = (item, chance) => { return Item.of(item).withChance(chance) }

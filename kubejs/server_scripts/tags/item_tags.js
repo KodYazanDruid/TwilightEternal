@@ -1,5 +1,4 @@
 onEvent('tags.items', event => {
-
     let blStorage = []
 
     //Might be a better way to do this, but this works for now.
@@ -47,7 +46,14 @@ onEvent('tags.items', event => {
         ['strawberry', 'neapolitan:strawberry_basket'],
         ['strawberry', 'thermal:strawberry_block'],
         ['adzuki', 'neapolitan:adzuki_crate'],
-        ['adzuki', 'bundledelight:adzuki_bean_crate']
+        ['adzuki', 'bundledelight:adzuki_bean_crate'],
+        ['raw_irradium', EEt`raw_irradium_block`],
+        ['raw_bismuth', EEt`raw_bismuth_block`],
+        ['bismuth', EEt`bismuth_block`],
+        ['irradium', EEt`irradium_block`],
+        ['depleted_irradium', EEt`depleted_irradium_block`],
+        ['adamantite', EEt`adamantite_block`],
+        ['starsteel', EEt`starsteel_block`]
     ]
 
     const starter_candies = [
@@ -94,7 +100,8 @@ onEvent('tags.items', event => {
         TCON + ':sledge_hammer',
         INF + ':pink_slime',
         'minecraft:turtle_egg',
-        'ae2:ender_dust'
+        'ae2:ender_dust',
+        'quark:blank_rune'
     ])
 
     colors.forEach(color => event.add(TF + ':banned_uncrafting_ingredients', 'minecraft:' + color + '_dye'))
@@ -105,7 +112,7 @@ onEvent('tags.items', event => {
     event.remove('curios:charm', 'magicfeather:magicfeather')
 
     event.remove(TF + ':portal/activator', '#forge:gems/diamond')
-    event.add(TF + ':portal/activator', 'ae2:engineering_processor')
+    event.add(TF + ':portal/activator', 'ae2:spatial_cell_component_2')
 
     //Purging extractinator's tags.
     event.removeAll('extractinator:common_drops')
@@ -144,17 +151,30 @@ onEvent('tags.items', event => {
     event.add('forge:crops', 'neapolitan:adzuki_beans')
     event.add('forge:crops/adzuki', 'neapolitan:adzuki_beans')
     event.add('supplementaries:cookies', ['twilightdelight:torchberry_cookie', 'honeyexpansion:honey_cookie_sausage'])
-    event.add('twilight:cookies', ['twilightdelight:torchberry_cookie', 'honeyexpansion:honey_cookie_sausage', 'cookie', FD+':sweet_berry_cookie', FD+':honey_cookie', 'farmersrespite:green_tea_cookie'])
-    
+    event.add('twilight:cookies', ['twilightdelight:torchberry_cookie', 'honeyexpansion:honey_cookie_sausage', 'cookie', FD + ':sweet_berry_cookie', FD + ':honey_cookie', 'farmersrespite:green_tea_cookie'])
+    event.add('twilight:forging_tool', 'stalwart_dungeons:netherite_hammer')
+    event.add('forge:ores', [EEt`malachite_ore`, EEt`irradium_ore`, EEt`bismuth_ore`])
+
     let chestNBarrel = Ingredient.of([event.get("forge:chests").objectIds.toArray(), event.get("chipped:barrel").objectIds.toArray()])
-    let toExclude = Ingredient.of([Ingredient.of(event.get("forge:chests/trapped").objectIds.toArray()),"ender_chest", "aquaculture:neptunes_bounty", "framedblocks:framed_chest"]).not()
+    let toExclude = Ingredient.of([Ingredient.of(event.get("forge:chests/trapped").objectIds.toArray()), "ender_chest", "aquaculture:neptunes_bounty", "framedblocks:framed_chest"]).not()
     event.add('twilight:patience_challenge_suitable', chestNBarrel.filter(toExclude).itemIds.toArray())
 
     event.add('forge:tools/chorundum', Ingredient.of(/^stalwart_dungeons:chorundum_(sword|pickaxe|shovel|axe|hoe)$/))
     event.add('forge:tools/flux', Ingredient.of(/^redstone_arsenal:flux_(sword|pickaxe|shovel|axe|hammer|excavator|sickle)$/))
     
+    let blTools = Ingredient.of(['@tconstruct', '@tinkers_reforged']).not()
+    event.add('forge:tools/sickles', Ingredient.of(/\w+:\w+_sickle$/))
+    Ingredient.of(/\w+:\w+_sword$/).filter(blTools).itemIds.forEach(sword => event.add('forge:tools/swords', sword))
+    Ingredient.of(/\w+:\w+_pickaxe$/).filter(blTools).itemIds.forEach(pickaxe => event.add('forge:tools/pickaxes', pickaxe))
+    Ingredient.of(/\w+:\w+_axe$/).filter(blTools).itemIds.forEach(axe => event.add('forge:tools/axes', axe))
+    Ingredient.of(/\w+:\w+_shovel$/).filter(blTools).itemIds.forEach(shovel => event.add('forge:tools/shovels', shovel))
+    Ingredient.of(/\w+:\w+_hoe$/).filter(blTools).itemIds.forEach(hoe => event.add('forge:tools/hoes', hoe))
+    Ingredient.of(/\w+:\w+_excavator$/).filter(Ingredient.of(['@redstone_arsenal', '@tools_complement'])).itemIds.forEach(excavator => event.add('forge:tools/excavators', excavator))
+    Ingredient.of(/\w+:\w+_hammer$/).filter(Ingredient.of(['@redstone_arsenal', '@stalwart_dungeons', '@tools_complement'])).itemIds.forEach(hammer => event.add('forge:tools/hammers', hammer))
+    Ingredient.of(/\w+:\w+_(knife|dagger)$/).itemIds.forEach(knife => event.add('forge:tools/knives', knife))
+
     event.add('sapience:piglins_barter', 'thermal:gold_coin')
-    event.add('sapience:piglins_barter', 'create:golden_sheet')
+    event.add('sapience:piglins_barter', Ingredient.of('#forge:plates/gold').itemIds.toArray())
 
     Ingredient.of(/(dustrial_decor|create_sa|tools_complement):\w+_chestplate/).filter(Ingredient.of([event.get('create_sa:fillable').objectIds.toArray(), event.get('create_sa:fuelable').objectIds.toArray()]).not()).itemIds.forEach(chestplate => event.add('twilight:starter_chestplate', chestplate))
     Ingredient.of(/(dustrial_decor|create_sa|tools_complement):\w+_boots/).filter(Ingredient.of('create_sa:slime_boots').not()).itemIds.forEach(boots => event.add('twilight:starter_boots', boots))
@@ -169,7 +189,25 @@ onEvent('tags.items', event => {
     starter_candies.forEach(candy => event.add('twilight:starter_candy', candy))
     starter_meal.forEach(meal => event.add('twilight:starter_meal', meal))
 
-    Ingredient.of(/\w+:\w+knife$/).itemIds.forEach(knife => event.add('forge:tools/knives', knife))
+
+    Ingredient.getAll().itemIds.forEach(id => {
+        if(global.canEquip(id, EquipmentSlot.HEAD, null)) {
+            event.add('twilight:head_wearable', id)
+            event.add('twilight:wearable', id)
+        }
+        if(global.canEquip(id, EquipmentSlot.CHEST, null)) {
+            event.add('twilight:chest_wearable', id)
+            event.add('twilight:wearable', id)
+        }
+        if(global.canEquip(id, EquipmentSlot.LEGS, null)) {
+            event.add('twilight:legs_wearable', id)
+            event.add('twilight:wearable', id)
+        }
+        if(global.canEquip(id, EquipmentSlot.FEET, null)) {
+            event.add('twilight:feet_wearable', id)
+            event.add('twilight:wearable', id)
+        }
+    })
 
     for (let i of colors) {
         event.add('comforts:sleeping_bags', 'comforts:sleeping_bag_' + i)

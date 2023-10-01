@@ -102,5 +102,4 @@ onEvent('recipes', event => {
         "cooling_time": 50
       }).id('tinkers_reforged:materials/metal/electrical_copper')
 
-
 })

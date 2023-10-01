@@ -1,14 +1,13 @@
-//requires: lmft
 const tfep = TF + ':entities/'
 const tfsp = TF + ':structures/'
 
 onEvent('lootjs', event => {
     event.addLootTableModifier(tfep + 'questing_ram_rewards')
-        .removeLoot(Ingredient.getAll())
+        .removeLoot(Ingredient.all)
         .addLoot(TF + ':crumble_horn')
-        .apply(ctx => ctx.addLoot(bundleGen()))
-
-    event.addLootTableModifier(tfep + 'naga')    
+        .apply(ctx => {ctx.addLoot(bundleGen()); console.log('rolled')})
+        
+    event.addLootTableModifier(tfep + 'naga')
         .pool(p => {
             p.addLoot(LootEntry.of(TF + ':liveroot').limitCount([1, 2]))
             p.addLoot(LootEntry.of(TF + ':raw_ironwood').limitCount([2, 5]))

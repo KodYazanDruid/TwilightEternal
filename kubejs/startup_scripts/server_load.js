@@ -1,3 +1,4 @@
+//Priority: 2
 onEvent('server.load', _ => {
     let shuffledOreMap
 
@@ -16,6 +17,7 @@ onEvent('server.load', _ => {
 
     let shuffleArray = (array) => global.shuffleArray(array)
 
+    console.log('Loading Server...')
     /**
      * 
      * Block right click.
@@ -160,8 +162,10 @@ onEvent('server.load', _ => {
         Ingredient.of('@aquaculture'),
         Ingredient.of('@twilightforest'),
         Ingredient.of('@ae2'),
-        Ingredient.of('@architects_palette')
-    ]).getStacks()
+        Ingredient.of('@architects_palette'),
+        Ingredient.of('@create_dd'),
+        Ingredient.of('@enlightened_end')
+    ]).filter(Ingredient.of('create_dd:leather_block').not()).getStacks()
 
     global.shuffledOreMap = shuffledOreMap
 

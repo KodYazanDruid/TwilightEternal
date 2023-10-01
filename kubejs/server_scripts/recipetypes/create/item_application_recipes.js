@@ -16,5 +16,6 @@ onEvent('recipes', event => {
     applicationRecipe(['#forge:stripped_wood', 'create:refined_radiance'], 'create:refined_radiance_casing')
     applicationRecipe(['thermal:fluid_duct', '#thermal:glass/hardened'], 'thermal:fluid_duct_windowed')
     applicationRecipe(['create:brass_casing', CCR+':wired_modem'], CA+':digital_adapter')
+    applicationRecipe(['create:mechanical_drill', CDDt`bronze_block`], CDDt`bronze_drill`)
 
 })

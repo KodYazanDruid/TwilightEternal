@@ -20,4 +20,7 @@ onEvent('item.modification', event => {
             food.hunger(0.5).saturation(.5).meat(true)
         }
     })
+    /* event.modify('industrialforegoing:infinity_hammer', item => {
+        item.attackSpeed = -3.25
+    }) */
 })

@@ -18,4 +18,5 @@ onEvent('recipes', event => {
         event.smithing(Item.of(INF+':range_addon'+i, '{TitaniumAugment:{Range:'+i+'.0f}}'), 'kubejs:range_addon_base', rangeAddons.get(i)).id('twilight:smithing/range_addon'+i)
     }
     event.smithing('thermal:xp_crystal', 'minecraft:amethyst_shard', 'create_sa:heap_of_experience')
+
 })

@@ -1,0 +1,39 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "biggerreactors:uranium_ore",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        },
+                        {
+                            "function": "minecraft:looting_enchant",
+                            "count": {
+                                "type": "uniform",
+                                "min": 0,
+                                "max": 1
+                            }
+                        }
+                    ],
+                    "conditions": [
+                        {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                            "nbt": "{KubeJSPersistentData:{Radiated:1b}}"
+                          }
+                        }
+                      ]
+                }
+            ]
+        }
+    ]
+}
