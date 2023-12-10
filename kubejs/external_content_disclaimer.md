@@ -1,5 +1,6 @@
 Repurposed Structures compat datapacks are not made by me, they are made by the telepathicgrunt.
 When Dungeons Arise loot tweak datapack is made by Aureljz
+Supplementaries soft fluid compat is made by levv_73
 
 Tool Belt Retextured by Ranoddi
 Create Computers by EndRage

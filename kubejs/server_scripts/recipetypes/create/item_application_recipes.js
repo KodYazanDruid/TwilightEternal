@@ -7,7 +7,7 @@ onEvent('recipes', event => {
           }).id('twilight:item_application/'+output.replace(":","/"))
     }
 
-    applicationRecipe(['kubejs:crude_controller', 'kubejs:refined_fluix_mechanism'], 'ae2:controller')
+    applicationRecipe(['kubejs:crude_controller', CDDt`integrated_mechanism`], 'ae2:controller')
     applicationRecipe(['minecraft:beacon', 'ae2:spatial_anchor'], 'createchunkloading:chunk_loader')
     applicationRecipe(['minecraft:stone', 'biggerreactors:uranium_dust'], 'kubejs:impure_uranium')
     applicationRecipe(['#forge:stripped_logs', 'create:shadow_steel'], 'create:shadow_steel_casing')

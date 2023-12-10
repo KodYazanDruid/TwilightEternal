@@ -1,0 +1,11 @@
+{
+  "name": "voline",
+  "progressTexture": "multiblocked:textures/gui/progress_bar_arrow.png",
+  "fuelTexture": "multiblocked:textures/gui/progress_bar_fuel.png",
+  "recipes": [
+    {
+      "uid": "5f1ab2c2-02c8-44d5-ab65-6c02527a91e8",
+      "duration": 1
+    }
+  ]
+}

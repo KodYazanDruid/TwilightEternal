@@ -1,5 +1,5 @@
-const inc_fluix_mech = 'kubejs:incomplete_refined_fluix_mechanism'
-const fluix_mech = 'kubejs:refined_fluix_mechanism'
+//const inc_fluix_mech = 'kubejs:incomplete_refined_fluix_mechanism'
+//const fluix_mech = 'kubejs:refined_fluix_mechanism'
 
 const processors = ['calculation', 'logic', 'engineering']
 
@@ -18,26 +18,10 @@ onEvent('recipes', event => {
     }
     processors.forEach(processorRecipe)
 
-    event.recipes.createSequencedAssembly(fluix_mech, 'create:precision_mechanism', [
+    /* event.recipes.createSequencedAssembly(fluix_mech, 'create:precision_mechanism', [
         event.recipes.createDeploying(inc_fluix_mech, [inc_fluix_mech, 'ae2:fluix_pearl']),
         event.recipes.createPressing(inc_fluix_mech, inc_fluix_mech),
         event.recipes.createFilling(inc_fluix_mech, [inc_fluix_mech, Fluid.of('twilightforest:fiery_essence', 250)]),
         event.recipes.createPressing(inc_fluix_mech, inc_fluix_mech)
-    ]).transitionalItem(inc_fluix_mech).loops(4)
-
-    event.recipes.createSequencedAssembly([
-        Item.of('thermal:fluid_duct').withChance(85.0),
-        Item.of('thermal:bronze_plate').withChance(5.0),
-        Item.of('thermal:cured_rubber').withChance(5.0),
-        Item.of(TF+':armor_shard_cluster').withChance(5.0),
-        ], 'create:fluid_pipe', [
-        event.recipes.createDeploying('create:fluid_pipe', ['create:fluid_pipe', 'thermal:cured_rubber']),
-        event.recipes.createDeploying('create:fluid_pipe', ['create:fluid_pipe', 'thermal:bronze_plate']),
-        event.recipes.createPressing('create:fluid_pipe', 'create:fluid_pipe'),
-        event.recipes.createDeploying('create:fluid_pipe', ['create:fluid_pipe', 'thermal:cured_rubber']),
-        event.recipes.createFilling('create:fluid_pipe', ['create:fluid_pipe', Fluid.of(INF+':latex', 1000)]),
-        event.recipes.createDeploying('create:fluid_pipe', ['create:fluid_pipe', Item.of('tconstruct:tool_binding', '{Material:"twilightforest:knightmetal"}')]),
-        event.recipes.createPressing('create:fluid_pipe', 'create:fluid_pipe')
-    ]).transitionalItem('create:fluid_pipe').loops(4)
-
+    ]).transitionalItem(inc_fluix_mech).loops(4) */
 })

@@ -13,6 +13,17 @@ onEvent('server.load', _ => {
     let minecraftPrize = []
     let foregoingPrize = []
 
+    let basic_helmet_loot = ['create_sa:zinc_helmet', 'iron_helmet']
+    let basic_chestplate_loot = ['create_sa:zinc_chestplate', 'iron_chestplate']
+    let basic_leggings_loot = ['create_sa:zinc_leggings', 'iron_leggings']
+    let basic_boots_loot = ['create_sa:zinc_boots', 'iron_boots']
+    let basic_sword_loot = ['create_sa:zinc_sword', 'iron_sword']
+    let basic_pickaxe_loot = ['create_sa:zinc_pickaxe', 'iron_pickaxe']
+    let basic_axe_loot = ['create_sa:zinc_axe', 'iron_axe']
+    let basic_shovel_loot = ['create_sa:zinc_shovel', 'iron_shovel']
+    let basic_hoe_loot = ['create_sa:zinc_hoe', 'iron_hoe']
+
+
     let storageBlockStacks
 
     let shuffleArray = (array) => global.shuffleArray(array)
@@ -25,7 +36,15 @@ onEvent('server.load', _ => {
     let rareIng = Ingredient.of(['ancient_debris', '#forge:ores/emerald', '#forge:ores/diamond'])
 
     let ores = shuffleArray(Ingredient.of('#forge:ores')
-        .filter(Ingredient.of(['twilightforest:raw_ironwood', 'twilightforest:armor_shard_cluster', '#forge:ores/ruby', '#forge:ores/sapphire', rareIng]).not())
+        .filter(Ingredient.of([
+            'twilightforest:raw_ironwood',
+            'twilightforest:armor_shard_cluster',
+            '#forge:ores/ruby',
+            '#forge:ores/sapphire',
+            'create_dd:tin_ore',
+            'create_dd:deepslate_tin_ore',
+            rareIng
+        ]).not())
         .getItemIds().toArray())
 
     let rareOres = shuffleArray(rareIng.getItemIds().toArray())
@@ -167,6 +186,17 @@ onEvent('server.load', _ => {
         Ingredient.of('@enlightened_end')
     ]).filter(Ingredient.of('create_dd:leather_block').not()).getStacks()
 
+    //basic lootables
+    let tcomp_helmets = Ingredient.of('#twilight:head_wearable').filter('@tools_complement').itemIds
+    let tcomp_chestplates = Ingredient.of('#twilight:chest_wearable').filter('@tools_complement').itemIds
+    let tcomp_leggings = Ingredient.of('#twilight:legs_wearable').filter('@tools_complement').itemIds
+    let tcomp_boots = Ingredient.of('#twilight:feet_wearable').filter('@tools_complement').itemIds
+    let tcomp_swords = Ingredient.of('#forge:tools/swords').filter('@tools_complement').itemIds
+    let tcomp_pickaxes = Ingredient.of('#forge:tools/pickaxes').filter('@tools_complement').itemIds
+    let tcomp_axes = Ingredient.of('#forge:tools/axes').filter('@tools_complement').itemIds
+    let tcomp_shovels = Ingredient.of('#forge:tools/shovels').filter('@tools_complement').itemIds
+    let tcomp_hoes = Ingredient.of('#forge:tools/hoes').filter('@tools_complement').itemIds
+
     global.shuffledOreMap = shuffledOreMap
 
     global.createPrize = createPrize
@@ -179,6 +209,16 @@ onEvent('server.load', _ => {
     global.minecraftMats = minecraftMats
     global.minecraftPrize = minecraftPrize
     global.foregoingPrize = foregoingPrize
+
+    global.basic_helmet_loot = basic_helmet_loot.concat(tcomp_helmets)
+    global.basic_chestplate_loot = basic_chestplate_loot.concat(tcomp_chestplates)
+    global.basic_leggings_loot = basic_leggings_loot.concat(tcomp_leggings)
+    global.basic_boots_loot = basic_boots_loot.concat(tcomp_boots)
+    global.basic_sword_loot = basic_sword_loot.concat(tcomp_swords)
+    global.basic_pickaxe_loot = basic_pickaxe_loot.concat(tcomp_pickaxes)
+    global.basic_axe_loot = basic_axe_loot.concat(tcomp_axes)
+    global.basic_shovel_loot = basic_shovel_loot.concat(tcomp_shovels)
+    global.basic_hoe_loot = basic_hoe_loot.concat(tcomp_hoes)
 
     global.storageBlockStacks = storageBlockStacks
 })

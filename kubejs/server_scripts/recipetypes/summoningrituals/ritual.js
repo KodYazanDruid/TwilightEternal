@@ -21,3 +21,8 @@ onEvent('recipes', event =>{
         .input('4x minecraft:nether_gold_ore', '8x minecraft:porkchop', 'minecraft:crying_obsidian', EGG)
         .mobOutput(SummoningOutput.mob('minecraft:piglin'))
 })
+
+/* onEvent('summoningrituals.start', event => {
+    const { level , player } = event
+    Utils.server.getPlayer().dimen
+}) */

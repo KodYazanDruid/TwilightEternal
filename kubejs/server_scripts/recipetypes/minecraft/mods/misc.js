@@ -56,6 +56,8 @@ onEvent('recipes', event => {
     erOutput('quark:gold_bars')
     erId(APt`bone_meal`)
     erId(CAt`digital_adapter`)
+    erId('farmers_bundle:recipecrateegg')
+    erId(FDt`fried_egg_from_campfire_cooking`)
     event.remove({ mod: 'portality' })
     for (let i of toolsVanilla) { erOutput(CS + ':copper_' + i) }
     erId(UEt`end_crystal_via_chiseled_glass`)
@@ -73,7 +75,7 @@ onEvent('recipes', event => {
     event.shapeless('9x kubejs:knightmetal_nugget', TF + ':knightmetal_ingot')
     event.shapeless(TF + ':knightmetal_ingot', '9x kubejs:knightmetal_nugget')
     event.shapeless(UEt`gilded_pearl`, ['ender_pearl', IEt`molten_gold_cluster`]).id(UEt`upgrade_to_gilded`)
-    //To fix a bug that prevents stacking torches
+    //Fixes a bug that prevents stacking torches
     event.shapeless('minecraft:torch', 'minecraft:torch')
 
     moduleCraft('items', 'ae2:sky_stone_chest')
@@ -91,6 +93,8 @@ onEvent('recipes', event => {
         }
         genericFour('snad:' + i + 'nad', ['create:tree_fertilizer', 'thermal:phytogro', 'minecraft:' + snadj + 'and'], 'snad:' + i + 'nad')
     }
+
+    global.mossySmelteryBlocks.forEach(id => event.shapeless(id, [TCON + ':' + id.split(':mossy_')[1], '3x #twilight:moss_components']))
 
     event.shaped('naturescompass:naturescompass', [
         'SLS',
@@ -173,7 +177,7 @@ onEvent('recipes', event => {
     ], {
         I: DD + ':industrial_iron_billet',
         E: 'ae2:engineering_processor',
-        D: 'thermal:steel_plate',
+        D: '#forge:plates/steel',
         F: 'thermal:energy_cell_frame',
         C: 'ae2:calculation_processor'
     })
@@ -246,7 +250,7 @@ onEvent('recipes', event => {
     ], {
         C: 'create:railway_casing',
         G: 'thermal:lumium_gear',
-        P: 'thermal:enderium_plate',
+        P: '#forge:plates/enderium',
         F: 'ae2:fluix_crystal'
     })
     event.shaped('backpacked:backpack', [

@@ -53,7 +53,12 @@ onEvent('tags.items', event => {
         ['irradium', EEt`irradium_block`],
         ['depleted_irradium', EEt`depleted_irradium_block`],
         ['adamantite', EEt`adamantite_block`],
-        ['starsteel', EEt`starsteel_block`]
+        ['starsteel', EEt`starsteel_block`],
+        ['leather', 'quark:bonded_leather'],
+        ['overcharged_alloy_block', CDDt`overcharged_alloy_block`],
+        ['blaze_gold_block', CDDt`blaze_gold_block`],
+        ['egg_crate', 'farmers_bundle:crate_egg'],
+        ['egg_crate', 'incubation:chicken_egg_crate']
     ]
 
     const starter_candies = [
@@ -125,10 +130,8 @@ onEvent('tags.items', event => {
     event.removeAll('sapience:piglins_barter_cheap')
     event.removeAll('sapience:piglins_barter_expensive')
 
+    function extract(id, type, items) { event.add(`twilight:extract_${id}_${type}`, items) }
 
-    function extract(id, type, items) {
-        event.add(`twilight:extract_${id}_${type}`, items)
-    }
     extract('minecraft', 'raw', ['minecraft:raw_iron', 'minecraft:raw_copper', 'minecraft:raw_gold'])
     extract('thermal', 'raw', ['thermal:raw_tin', 'thermal:raw_nickel', 'thermal:raw_lead', 'thermal:raw_silver'])
     extract('thermal', 'dust', ['thermal:apatite_dust', 'thermal:cinnabar_dust', 'thermal:niter_dust', 'thermal:sulfur_dust'])
@@ -150,10 +153,22 @@ onEvent('tags.items', event => {
     event.add('forge:crops/banana', 'neapolitan:banana')
     event.add('forge:crops', 'neapolitan:adzuki_beans')
     event.add('forge:crops/adzuki', 'neapolitan:adzuki_beans')
-    event.add('supplementaries:cookies', ['twilightdelight:torchberry_cookie', 'honeyexpansion:honey_cookie_sausage'])
-    event.add('twilight:cookies', ['twilightdelight:torchberry_cookie', 'honeyexpansion:honey_cookie_sausage', 'cookie', FD + ':sweet_berry_cookie', FD + ':honey_cookie', 'farmersrespite:green_tea_cookie'])
     event.add('twilight:forging_tool', 'stalwart_dungeons:netherite_hammer')
-    event.add('forge:ores', [EEt`malachite_ore`, EEt`irradium_ore`, EEt`bismuth_ore`])
+    event.add('twilight:tnts', ['tnt', EEt`nuclear_bomb`])
+    event.add('twilight:cakes', 'cake')
+    event.add('twilight:starter_cake', FDt`cake_slice`)
+    event.add('forge:concrete_powders', 'pfm:raw_concrete_powder')
+    event.add('forge:concrete_powder', 'pfm:raw_concrete_powder')
+    event.add('forge:raw/rubber', ['thermal:rubber', CDDt`raw_rubber`])
+    event.add('forge:cured/rubber', ['thermal:cured_rubber', CDDt`rubber`])
+    event.add('forge:eggs/cooked', '#forge:cooked_eggs')
+
+    event.add('tconstruct:seared_blocks', global.mossySmelteryBlocks)
+    event.add('tconstruct:smeltery', global.mossySmelteryBlocks)
+    event.add('tconstruct:smeltery_bricks', global.mossySmelteryBlocks)
+    event.add('tconstruct:structure_debug/smeltery', global.mossySmelteryBlocks)
+
+    event.add('twilight:moss_components', ['quark:moss_paste', TFt`moss_patch`, 'moss_block'])
 
     let chestNBarrel = Ingredient.of([event.get("forge:chests").objectIds.toArray(), event.get("chipped:barrel").objectIds.toArray()])
     let toExclude = Ingredient.of([Ingredient.of(event.get("forge:chests/trapped").objectIds.toArray()), "ender_chest", "aquaculture:neptunes_bounty", "framedblocks:framed_chest"]).not()
@@ -161,7 +176,7 @@ onEvent('tags.items', event => {
 
     event.add('forge:tools/chorundum', Ingredient.of(/^stalwart_dungeons:chorundum_(sword|pickaxe|shovel|axe|hoe)$/))
     event.add('forge:tools/flux', Ingredient.of(/^redstone_arsenal:flux_(sword|pickaxe|shovel|axe|hammer|excavator|sickle)$/))
-    
+
     let blTools = Ingredient.of(['@tconstruct', '@tinkers_reforged']).not()
     event.add('forge:tools/sickles', Ingredient.of(/\w+:\w+_sickle$/))
     Ingredient.of(/\w+:\w+_sword$/).filter(blTools).itemIds.forEach(sword => event.add('forge:tools/swords', sword))
@@ -184,26 +199,58 @@ onEvent('tags.items', event => {
     Ingredient.of(/\w+:\w+pie_slice$/).itemIds.forEach(pie => event.add('twilight:starter_pie', pie))
     Ingredient.of(/\w+:\w+cake_slice$/).itemIds.forEach(cake => event.add('twilight:starter_cake', cake))
     Ingredient.of(/\w+:\w+salad$/).itemIds.forEach(salad => event.add('twilight:starter_salad', salad))
-    Ingredient.of(/\w+:\w+soup$/).itemIds.forEach(soup => event.add('twilight:starter_soup', soup))
+    Ingredient.of(/\w+:\w+soup$/).filter(Ingredient.of('oceansdelight:guardian_soup').not()).itemIds.forEach(soup => event.add('twilight:starter_soup', soup))
     Ingredient.of(/\w+:\w+ice_cream$/).itemIds.forEach(ice_cream => event.add('twilight:starter_ice_cream', ice_cream))
+    Ingredient.of(/\w+:\w+tnt$/).itemIds.forEach(tnt => event.add('twilight:tnts', tnt))
+    Ingredient.of(/\w+:\w+cake$/).filter(Ingredient.of(['@create', '@tconstruct', '@create_factory', 'exquisito:battenberg_cake']).not()).itemIds.forEach(cake => { if (!cake.includes('incomplete')) event.add('twilight:cakes', cake) })
+    Ingredient.of(/\w+:\w+cookie$/).itemIds.forEach(cookie => event.add('twilight:cookies', cookie))
     starter_candies.forEach(candy => event.add('twilight:starter_candy', candy))
     starter_meal.forEach(meal => event.add('twilight:starter_meal', meal))
 
+    event.add('twilight:cookies', ['endersdelight:uncanny_cookies', 'cookie'])
+    event.add('supplementaries:cookies', '#twilight:cookies')
+
+    let tag_nuggets = [
+        EEt`adamantite_nugget`, EEt`starsteel_nugget`, EEt`bismuth_nugget`
+    ].forEach(nugget => {
+        event.add('forge:nuggets', nugget)
+        event.add('forge:nuggets/' + new ResourceLocation(nugget).getPath().split('_').slice(0, -1).join('_'), nugget)
+    })
+    /* let tag_ingots = [
+
+    ].forEach(ingot => {
+        event.add('forge:ingots', ingot)
+        event.add('forge:ingots/' + new ResourceLocation(ingot).getPath().split('_').slice(0, -1).join('_'), ingot)
+    }) */
+    let tag_ores = [
+        EEt`malachite_ore`,
+        EEt`irradium_ore`,
+        EEt`bismuth_ore`,
+        "stalwart_dungeons:chorundum_ore",
+        "stalwart_dungeons:tungsten_ore"
+    ].forEach(ore => {
+        event.add('forge:ores', ore)
+        event.add('forge:ores/' + new ResourceLocation(ore).getPath().split('_').slice(0, -1).join('_'), ore)
+    })
+    dyenamiColors.forEach(color => {
+        event.add('forge:concrete_powders', 'dyenamics:' + color + '_concrete_powder')
+        event.add('forge:concrete_powder', 'dyenamics:' + color + '_concrete_powder')
+    })
 
     Ingredient.getAll().itemIds.forEach(id => {
-        if(global.canEquip(id, EquipmentSlot.HEAD, null)) {
+        if (global.canEquip(id, EquipmentSlot.HEAD, null)) {
             event.add('twilight:head_wearable', id)
             event.add('twilight:wearable', id)
         }
-        if(global.canEquip(id, EquipmentSlot.CHEST, null)) {
+        if (global.canEquip(id, EquipmentSlot.CHEST, null)) {
             event.add('twilight:chest_wearable', id)
             event.add('twilight:wearable', id)
         }
-        if(global.canEquip(id, EquipmentSlot.LEGS, null)) {
+        if (global.canEquip(id, EquipmentSlot.LEGS, null)) {
             event.add('twilight:legs_wearable', id)
             event.add('twilight:wearable', id)
         }
-        if(global.canEquip(id, EquipmentSlot.FEET, null)) {
+        if (global.canEquip(id, EquipmentSlot.FEET, null)) {
             event.add('twilight:feet_wearable', id)
             event.add('twilight:wearable', id)
         }
@@ -212,6 +259,15 @@ onEvent('tags.items', event => {
     for (let i of colors) {
         event.add('comforts:sleeping_bags', 'comforts:sleeping_bag_' + i)
         event.add('comforts:hammocks', 'comforts:hammock_' + i)
+        event.add('twilight:chair', 'interiors:' + i + '_chair')
+        event.add('twilight:floor_chair', 'interiors:' + i + '_floor_chair')
+    }
+    for (let i of dyenamiColors) {
+        event.add('comforts:sleeping_bags', DNF + ':comforts_' + i + '_sleeping_bag')
+        event.add('comforts:hammocks', DNF + ':comforts_' + i + '_hammock')
+        event.add('twilight:chair', KJS + ':' + i + '_chair')
+        event.add('twilight:floor_chair', KJS + ':' + i + '_floor_chair')
+        event.add('forge:shulker_boxes', 'dyenamics:' + i + '_shulker_box')
     }
 
     function addUnifyTag(material, item) {

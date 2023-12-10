@@ -59,4 +59,5 @@ onEvent("recipes", event => {
             console.log('Found '+itemSauce+' in '+r.getId())
         }
     }) */
+    //event.printTypes()
 })

@@ -98,4 +98,6 @@ onEvent('recipes', event =>{
         {"item": "ae2:fluix_crystal"}
 
     ], [INF+':latex', '1000'], ['kubejs:range_addon_base', 1], 100)
+
+    dissolutionChamber([{"item": "minecraft:glass_bottle"}], ['cofh_core:experience', '250'], ['minecraft:experience_bottle', 1], 5)
 })

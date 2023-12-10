@@ -85,4 +85,30 @@ onEvent('recipes', event =>{
         S: 'thermal:signalum_gear',
         R: 'thermal:rf_coil'
     })
+    event.shaped('2x thermal:fluid_duct', [
+        'SPS',
+        ' M '
+    ], {
+        S: '#forge:plates/strong_bronze',
+        P: 'create:fluid_pipe',
+        M: CDDt`sealed_mechanism`
+    }).id('thermal:fluid_duct')
+    event.shaped('2x thermal:servo_attachment', [
+        'NPN',
+        'SRS'
+    ], {
+        N: '#forge:nuggets/tin',
+        P: 'create:mechanical_pump',
+        S: '#forge:plates/iron',
+        R: 'redstone'
+    }).id('thermal:servo_attachment_2')
+    event.shaped('2x thermal:turbo_servo_attachment', [
+        'NPN',
+        'SRS'
+    ], {
+        N: '#forge:nuggets/lead',
+        P: 'create:mechanical_pump',
+        S: '#forge:plates/invar',
+        R: 'thermal:redstone_servo'
+    }).id('thermal:turbo_servo_attachment_2')
 })

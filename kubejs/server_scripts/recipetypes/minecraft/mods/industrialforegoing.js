@@ -25,12 +25,12 @@ onEvent('recipes', event =>{
     erOutput(INF+':block_breaker')
     erOutput(INF+':fluid_placer')
     erOutput(INF+':fluid_collector')
-    erOutput(INF+':iron_gear')
-    erOutput(INF+':gold_gear')
-    erOutput(INF+':diamond_gear')
     erOutput(INF+':mechanical_dirt')
     erOutput(INF+':mycelial_furnace')
     erId(INF+':dissolution_chamber/xp_bottles')
+    erId(INF+':iron_gear')
+    erId(INF+':gold_gear')
+    erId(INF+':diamond_gear')
     function conveyorRemove(type){
         erOutput(INF+':conveyor_'+type+'_upgrade')
     }
@@ -64,7 +64,7 @@ onEvent('recipes', event =>{
         'PCP'
     ], {
         P: INF+':plastic',
-        F: 'create:brass_sheet',
+        F: '#forge:plates/brass',
         I: 'thermal:electrum_ingot',
         M: INF+':machine_frame_pity',
         C: 'thermal:redstone_servo'

@@ -18,7 +18,6 @@ onEvent('entity.spawned', event => {
     if (!entity.fullNBT.KubeJSPersistentData.MelonHusk) return
     server.scheduleInTicks(5, event => {
         let rad = entity.fullNBT.ForgeData.radiation
-        //let pers = entity.fullNBT.KubeJSPersistentData
 
         if (rad > 10000) entity.fullNBT.KubeJSPersistentData.Radiated = true
         else entity.fullNBT.KubeJSPersistentData.Radiated = false
@@ -27,13 +26,12 @@ onEvent('entity.spawned', event => {
         event.reschedule()
     })
 })
-// text: `Radiation: ${player.fullNBT.ForgeCaps["enlightened_end:player_variables"].radiation} rads`
-// if (player.mainHandItem != 'compass' || player.offHandItem != 'compass')
+
 let tick = 0
 let rad = NaN
 onEvent('player.tick', event => {
     const { player } = event
-    if (tick % 5 == 0) { rad = player.fullNBT.ForgeCaps["enlightened_end:player_variables"].radiation }
+    if (tick % 5 == 0) { rad = player.fullNBT.ForgeCaps["enlightened_end:player_variables"].radiation; tick = 0 }
     if (player.mainHandItem == 'compass' || player.offHandItem == 'compass') player.paint({ radiation: { text: `Radiation: ${rad} rads`, visible: true } })
     else player.paint({ radiation: { visible: false } })
 
@@ -56,5 +54,3 @@ onEvent('player.logged_in', event => {
         }
     })
 })
-
-

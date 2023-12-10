@@ -20,7 +20,6 @@ onEvent('recipes', event => {
         Fluid.of('thermal:redstone', 250)
     ])
 
-
     event.recipes.createEmptying([
         'minecraft:glass_bottle',
         Fluid.of(TF+':fiery_essence', 250)

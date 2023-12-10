@@ -1,0 +1,16 @@
+{
+  "color": "#def2da",
+  "containers": [
+    {
+      "filled": [
+        "brewinandchewin:dread_nog"
+      ],
+      "empty": "brewinandchewin:tankard",
+      "capacity": 1
+    }
+  ],
+  "flowing_texture": "selene:blocks/potion_flow",
+  "id": "brewinandchewin:dread_nog",
+  "still_texture": "selene:blocks/soup_liquid",
+  "translation_key": "item.brewinandchewin.dread_nog"
+}

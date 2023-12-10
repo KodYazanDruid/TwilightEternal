@@ -1,6 +1,123 @@
 const CAPACITOR = 'thermaloot:single_capacitor'
 
-onEvent('chest.loot_tables', event =>{
+const DCC = (type) => `dungeoncrawl:chests/${type}`
+
+let brick_map = new Map([
+    ['create:cut_andesite_bricks', 2],
+    ['create:cut_diorite_bricks', 2],
+    ['create:cut_granite_bricks', 2],
+    ['create:cut_calcite_bricks', 2],
+    ['create:cut_tuff_bricks', 2],
+    ['create_dd:cut_gabbro_bricks', 2],
+    ['create:cut_deepslate_bricks', 2],
+    ['create:cut_dripstone_bricks', 2],
+    ['create:cut_limestone_bricks', 2],
+    ['create_dd:cut_weathered_limestone_bricks', 2]
+])
+
+onEvent('lootjs', event => {
+    event.addLootTableModifier(/dungeoncrawl:chests\/\w+/)
+        .pool(pool => {
+            pool.randomChance(.4)
+            pool.addLoot(LootEntry.of('create:shaft')).limitCount([4, 7]).randomChance(.6)
+            pool.addLoot(LootEntry.of('create:cogwheel')).limitCount([4, 6]).randomChance(.6)
+            pool.addLoot(LootEntry.of('create:large_cogwheel')).limitCount([2, 4]).randomChance(.5)
+            pool.addLoot(LootEntry.of('create:gearbox')).limitCount([1, 3]).randomChance(.4)
+            pool.addLoot(LootEntry.of('create:copper_casing')).limitCount([2, 4]).randomChance(.5)
+            pool.addLoot(LootEntry.of('create:andesite_casing')).limitCount([2, 4]).randomChance(.5)
+            pool.addLoot(LootEntry.of('create:brass_casing')).limitCount([2, 3]).randomChance(.4)
+            pool.addLoot(LootEntry.of('create_dd:inductive_mechanism')).limitCount([1, 2]).randomChance(.3)
+            pool.addLoot(LootEntry.of('create:polished_rose_quartz')).limitCount([4, 5]).randomChance(.4)
+        })
+        .pool(pool => {
+            pool.randomChance(.5)
+            pool.addLoot(LootEntry.of('thermal:syrup_bottle')).limitCount([2, 4]).randomChance(.6)
+            pool.addLoot(LootEntry.of('thermal:rich_slag')).limitCount([1, 2]).randomChance(.3)
+            pool.addLoot(LootEntry.of('thermal:slag')).limitCount([3, 5]).randomChance(.5)
+            pool.addLoot(LootEntry.of('thermal:cured_rubber')).limitCount([1, 3]).randomChance(.4)
+            pool.addLoot(LootEntry.of('thermal:rosin')).limitCount([2, 4]).randomChance(.6)
+            pool.addLoot(LootEntry.of('thermal:tar')).limitCount([2, 4]).randomChance(.6)
+            pool.addLoot(LootEntry.of('thermal:bitumen')).limitCount([2, 3]).randomChance(.4)
+        })
+        .pool(pool => {
+            pool.randomChance(.3)
+            pool.addLoot(LootEntry.of('industrialforegoing:plastic')).limitCount([1, 3]).randomChance(.3)
+            pool.addLoot(LootEntry.of('industrialforegoing:dryrubber')).limitCount([2, 4]).randomChance(.4)
+            pool.addLoot(LootEntry.of('industrialforegoing:tinydryrubber')).limitCount([3, 7]).randomChance(.6)
+        })
+        .apply(ctx => {
+            ctxWeighedReplace(ctx, 'rotten_flesh', [
+                ['rotten_flesh', 4],
+                [IEt`cured_jerky`, 2],
+                ['brewinandchewin:jerky', 2]
+            ])
+            let keys_3 = selectRandomElements(Array.from(brick_map.keys()), 3)
+            let selected_bricks = new Map()
+            keys_3.forEach(k => selected_bricks.set(k, 2))
+            ctxWeighedReplace(ctx, 'stone_bricks', selected_bricks)
+            ctxReplacePreserveNbt(ctx, '#twilight:head_wearable', global.basic_helmet_loot)
+            ctxReplacePreserveNbt(ctx, '#twilight:chest_wearable', global.basic_chestplate_loot)
+            ctxReplacePreserveNbt(ctx, '#twilight:legs_wearable', global.basic_leggings_loot)
+            ctxReplacePreserveNbt(ctx, '#twilight:feet_wearable', global.basic_boots_loot)
+            ctxReplacePreserveNbt(ctx, '#forge:tools/swords', global.basic_sword_loot)
+            ctxReplacePreserveNbt(ctx, '#forge:tools/shovels', global.basic_shovel_loot)
+            ctxReplacePreserveNbt(ctx, '#forge:tools/pickaxes', global.basic_pickaxe_loot)
+            ctxReplacePreserveNbt(ctx, '#forge:tools/axes', global.basic_axe_loot)
+            ctxReplacePreserveNbt(ctx, '#forge:tools/hoes', global.basic_hoe_loot)
+        })
+
+    event.addLootTableModifier(DCC`library`)
+        .apply(ctx => { if (Math.random() < .2) ctx.addLoot(genTome()) })
+
+    event.addLootTableModifier(DCC`forge`)
+        .apply(ctx => {
+            ctxWeighedReplace(ctx, 'coal', [
+                ['coal', 9],
+                ['thermal:coal_coke', 1]
+            ])
+        })
+
+    event.addLootTableModifier(DCC`treasure`)
+        .apply(ctx => {
+            ctxReplacePreserveNbt(ctx, '#forge:tools/swords', [CSt`brass_sword`, 'diamond_sword', CSt`rose_quartz_sword`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/pickaxes', [CSt`brass_pickaxe`, 'diamond_pickaxe', CSt`rose_quartz_pickaxe`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/axes', [CSt`brass_axe`, 'diamond_axe', CSt`rose_quartz_axe`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/shovels', [CSt`brass_shovel`, 'diamond_shovel', CSt`rose_quartz_shovel`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/hoes', [CSt`brass_hoe`, 'diamond_hoe'])
+            ctxReplacePreserveNbt(ctx, '#twilight:head_wearable', [CSt`brass_helmet`, 'diamond_helmet'])
+            ctxReplacePreserveNbt(ctx, '#twilight:chest_wearable', [CSt`brass_chestplate`, 'diamond_chestplate'])
+            ctxReplacePreserveNbt(ctx, '#twilight:legs_wearable', [CSt`brass_leggings`, 'diamond_leggings'])
+            ctxReplacePreserveNbt(ctx, '#twilight:feet_wearable', [CSt`brass_boots`, 'diamond_boots'])
+        })
+
+    event.addLootTableModifier(DCC`stage_4`)
+        .apply(ctx => {
+            ctxReplacePreserveNbt(ctx, '#forge:tools/swords', [CSt`brass_sword`, 'diamond_sword', CSt`rose_quartz_sword`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/pickaxes', [CSt`brass_pickaxe`, 'diamond_pickaxe', CSt`rose_quartz_pickaxe`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/axes', [CSt`brass_axe`, 'diamond_axe', CSt`rose_quartz_axe`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/shovels', [CSt`brass_shovel`, 'diamond_shovel', CSt`rose_quartz_shovel`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/hoes', [CSt`brass_hoe`, 'diamond_hoe', CSt`rose_quartz_hoe`])
+            ctxReplacePreserveNbt(ctx, '#twilight:head_wearable', [CSt`brass_helmet`, 'diamond_helmet', 'iron_helmet', TCOMPt`bronze_helmet`])
+            ctxReplacePreserveNbt(ctx, '#twilight:chest_wearable', [CSt`brass_chestplate`, 'diamond_chestplate', 'iron_chestplate', TCOMPt`bronze_chestplate`])
+            ctxReplacePreserveNbt(ctx, '#twilight:legs_wearable', [CSt`brass_leggings`, 'diamond_leggings', 'iron_leggings', TCOMPt`bronze_leggings`])
+            ctxReplacePreserveNbt(ctx, '#twilight:feet_wearable', [CSt`brass_boots`, 'diamond_boots', 'iron_boots', TCOMPt`bronze_boots`])
+        })
+    event.addLootTableModifier(DCC`stage_5`)
+        .apply(ctx => {
+            ctxReplacePreserveNbt(ctx, '#forge:tools/swords', [CSt`brass_sword`, 'diamond_sword', CSt`rose_quartz_sword`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/pickaxes', [CSt`brass_pickaxe`, 'diamond_pickaxe', CSt`rose_quartz_pickaxe`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/axes', [CSt`brass_axe`, 'diamond_axe', CSt`rose_quartz_axe`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/shovels', [CSt`brass_shovel`, 'diamond_shovel', CSt`rose_quartz_shovel`])
+            ctxReplacePreserveNbt(ctx, '#forge:tools/hoes', [CSt`brass_hoe`, 'diamond_hoe', CSt`rose_quartz_hoe`])
+            ctxReplacePreserveNbt(ctx, '#twilight:head_wearable', [CSt`brass_helmet`, 'diamond_helmet', 'iron_helmet', TCOMPt`bronze_helmet`])
+            ctxReplacePreserveNbt(ctx, '#twilight:chest_wearable', [CSt`brass_chestplate`, 'diamond_chestplate', 'iron_chestplate', TCOMPt`bronze_chestplate`])
+            ctxReplacePreserveNbt(ctx, '#twilight:legs_wearable', [CSt`brass_leggings`, 'diamond_leggings', 'iron_leggings', TCOMPt`bronze_leggings`])
+            ctxReplacePreserveNbt(ctx, '#twilight:feet_wearable', [CSt`brass_boots`, 'diamond_boots', 'iron_boots', TCOMPt`bronze_boots`])
+        })
+})
+
+//Use this to add thermaloot capacitor
+onEvent('chest.loot_tables', event => {
     event.modify('minecraft:chests/buried_treasure', table => {
         table.addPool(p => {
             p.setUniformRolls(1, 1)
@@ -9,7 +126,7 @@ onEvent('chest.loot_tables', event =>{
         })
     })
 
-    event.addChest('dungeoncrawl:food', table =>{
+    /* event.addChest('dungeoncrawl:food', table =>{
         table.addPool(pool =>{
             pool.setUniformRolls(6, 12)
             pool.addItem(FD+':chicken_sandwich', '1', [1, 2])
@@ -265,5 +382,5 @@ onEvent('chest.loot_tables', event =>{
             pool.addItem('thermal:lumium_ingot', '2', [2, 3])
             pool.addItem('thermal:enderium_ingot', '2', [2, 3])
         })
-    })
+    }) */
 })

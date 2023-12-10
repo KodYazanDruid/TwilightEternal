@@ -15,4 +15,9 @@ onEvent('item.tooltip', event => {
     let name = text.get(0)
     text.removeIf(e => e != name)
   })
+
+  //Needs to be done with player tick event but it is now worth it.
+  /* event.addAdvanced('redstone_arsenal:flux_sword', (item, a, text) => {
+    text.add(Text.of(' §7Cooldown ' + global.fluxCd))
+  }) */
 })

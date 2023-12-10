@@ -1,0 +1,16 @@
+{
+  "color": "#472a1a",
+  "containers": [
+    {
+      "filled": [
+        "farmersrespite:coffee"
+      ],
+      "empty": "minecraft:glass_bottle",
+      "capacity": 1
+    }
+  ],
+  "flowing_texture": "selene:blocks/potion_flow",
+  "id": "farmersrespite:coffee",
+  "still_texture": "selene:blocks/milk_liquid",
+  "translation_key": "item.farmersrespite.coffee"
+}

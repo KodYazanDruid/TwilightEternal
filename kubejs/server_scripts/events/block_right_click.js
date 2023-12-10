@@ -22,17 +22,15 @@ onEvent('block.right_click', event => {
     event.cancel()
   }
 
-  if (Ingredient.of('#forge:shears').getItemIds().contains(item.id)
-    && Ingredient.of('#twilight:mossy_seared_blocks').getItemIds().contains(block.id)) {
+  if (item.hasTag('forge:shears') && block.hasTag('twilight:mossy_seared_blocks')) {
     server.runCommandSilent(`playsound minecraft:entity.sheep.shear ambient @a ${block.x} ${block.y} ${block.z}`)
     block.set(TCON + ':' + block.id.split(':mossy_')[1])
     player.damageHeldItem(hand, 1)
     player.swingArm(hand)
     let moss = block.createEntity('item')
-    moss.x = block.x + 0.5
-    moss.y = block.y + 0.9
-    moss.z = block.z + 0.5
-    moss.item = getRandomItem(['moss_block', 'quark:moss_paste', TF + ':moss_patch'])
+    let pos = block.pos.relative(event.facing)
+    moss.setPosition(pos.x + 0.5, pos.y, pos.z + 0.5)
+    moss.item = getRandomItem(Ingredient.of('#twilight:moss_components').itemIds.toArray())
     moss.item.count = ~~(Math.random() * 3 + 1)
     moss.motionY = 0.1
     moss.spawn()
@@ -127,7 +125,7 @@ onEvent('block.right_click', event => {
     })
     player.damageHeldItem(hand, 10)
     player.addItemCooldown(item, 24)
-    animatePlayer(event, 'kubejs:two_handed_slam_heavy', 'rightArm')
+    animatePlayer(event, 'kubejs:two_handed_slam_heavy', 'rightArm', undefined)
   }
 })
 

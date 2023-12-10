@@ -1,10 +1,10 @@
 onEvent('recipes', event => {
-    event.remove({output: 'ae2:printed_calculation_processor'})
-    event.remove({output: 'ae2:printed_logic_processor'})
-    event.remove({output: 'ae2:printed_engineering_processor'})
-    event.remove({output: 'ae2:printed_silicon'})
+    event.remove({ output: 'ae2:printed_calculation_processor' })
+    event.remove({ output: 'ae2:printed_logic_processor' })
+    event.remove({ output: 'ae2:printed_engineering_processor' })
+    event.remove({ output: 'ae2:printed_silicon' })
 
-    function keepHeldItem(input, output){
+    function keepHeldItem(input, output) {
         event.custom({
             'type': 'create:deploying',
             "ingredients": [
@@ -15,14 +15,14 @@ onEvent('recipes', event => {
                     "item": input[1]
                 }
             ],
-                "results": [
+            "results": [
                 {
                     "item": output
                 }
-                ],
-                "keepHeldItem": true
-                })
-       }
+            ],
+            "keepHeldItem": true
+        })
+    }
 
     keepHeldItem(['ae2:certus_quartz_crystal', 'ae2:calculation_processor_press'], 'ae2:printed_calculation_processor')
     keepHeldItem(['minecraft:gold_ingot', 'ae2:logic_processor_press'], 'ae2:printed_logic_processor')

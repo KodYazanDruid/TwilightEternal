@@ -52,6 +52,7 @@ onEvent('jei.hide.items', event => {
     event.hide(CDD+':accelerator_motor')
     event.hide(CDD+':kinetic_motor')
     event.hide(CDD+':coal_piece')
+    event.hide(CDD+':industrial_fan')
 })
 
 onEvent('jei.hide.fluids', event => {

@@ -51,5 +51,19 @@ onEvent('tags.blocks', event =>{
     let toExclude = Ingredient.of([Ingredient.of(event.get("forge:chests/trapped").objectIds.toArray()),"ender_chest", "aquaculture:neptunes_bounty", "framedblocks:framed_chest", "#lootr:containers"]).not()
     event.add('twilight:patience_challenge_suitable', chestNBarrel.filter(toExclude).itemIds.toArray())
 
+    event.add('tconstruct:smeltery', global.mossySmelteryBlocks)
+    event.add('tconstruct:smeltery/floor', global.mossySmelteryBlocks)
+    event.add('tconstruct:smeltery/wall', global.mossySmelteryBlocks)
+    event.add('tconstruct:smeltery_bricks', global.mossySmelteryBlocks)
+    event.add('twilight:mossy_seared_blocks', global.mossySmelteryBlocks)
+    event.add('minecraft:mineable/pickaxe', global.mossySmelteryBlocks)
 
+    event.add('minecraft:mineable/pickaxe', '@compactcrafting')
+
+    dyenamiColors.forEach(color => {
+        let chair_id = 'kubejs:' + color + '_chair'
+        let floor_chair_id = 'kubejs:' + color + '_floor_chair'
+        event.add('minecraft:mineable/axe', chair_id)
+        event.add('minecraft:mineable/axe', floor_chair_id)
+    })
 })

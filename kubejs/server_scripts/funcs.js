@@ -2,6 +2,11 @@
 const $Random = java('java.util.Random')
 const $UUID = java('java.util.UUID')
 
+/**
+ * 
+ * @param {Array} array 
+ * @returns {Array}
+ */
 function shuffleArray(array) {
     var m = array.length, t, i
     // While there remain elements to shuffle…
@@ -33,10 +38,10 @@ function itemWithLore(item, text) {
 
 function canEquip(item, slot, player) { return Item.getEmpty().item.canEquip(item, slot, player) }
 
-function animatePlayer(event, animation, type) {
+function animatePlayer(event, animation, type, tickDelta) {
     event.level.getEntities('@a').forEach(player => {
         let entity = event.player.id
-        player.sendData('animation', { animation: animation, player: entity.toString(), type: type })
+        player.sendData('animation', { animation: animation, player: entity.toString(), type: type, tickDelta: tickDelta })
     })
 }
 
@@ -44,6 +49,7 @@ function randomUUID(player) {return player.uuid.class.getMethod("randomUUID").in
 
 function getEnchantLevel(item, enchant) {return item.getEnchantments().get(enchant) != null ? item.getEnchantments().get(enchant) : 0}
 
+function flipCoin() {return $Random().nextBoolean()}
 
 global.shuffleArray = (array) => shuffleArray(array)
 global.selectRandomElements = (array, count) => selectRandomElements(array, count)
@@ -54,4 +60,4 @@ global.canEquip = (item, slot, player) => canEquip(item, slot, player)
 global.animatePlayer = (event, animation, type) => animatePlayer(event, animation, type)
 global.randomUUID = (player) => randomUUID(player)
 global.getEnchantLevel = (item, enchant) => getEnchantLevel(item, enchant)
-
+global.flipCoin = () => flipCoin()

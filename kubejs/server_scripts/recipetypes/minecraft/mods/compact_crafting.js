@@ -13,13 +13,12 @@ onEvent('recipes', event => {
     event.shaped('compactcrafting:base', [
         ' E ',
         'PSP',
-        'BCB'
+        'BBB'
     ], {
-        E: 'minecraft:end_rod',
+        E: '#forge:rods/enderium',
         P: INF+':plastic',
-        S: 'thermal:steel_block',
-        B: DD+':bolted_industrial_iron_slab',
-        C: 'ae2:spatial_cell_component_16'
+        S: 'ae2:calculation_processor',
+        B: DD+':bolted_industrial_iron_slab'
     }).id('compactcrafting:base')
 
     event.shaped('compactcrafting:field_projector', [

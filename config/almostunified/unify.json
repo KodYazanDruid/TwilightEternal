@@ -10,6 +10,7 @@
     "quark",
     "supplementaries",
     "create",
+    "krystalsmaterialcompats",
     "createdeco",
     "thermal",
     "immersiveengineering",
@@ -37,7 +38,10 @@
     "forge:wires/{material}",
     "forge:crops/{material}",
     "forge:storage_blocks/{material}",
-    "forge:storage_blocks/raw_{material}"
+    "forge:storage_blocks/raw_{material}",
+    "forge:raw/{material}",
+    "forge:cured/{material}",
+    "forge:eggs/{material}"
   ],
   "materials": [
     "aeternium",
@@ -110,7 +114,11 @@
     "banana",
     "adzuki",
 
-    "ender_pearl"
+    "ender_pearl",
+    "leather",
+    "rubber",
+    "egg_crate",
+    "cooked"
   ],
   "priorityOverrides": {},
   "ignoredTags": [],
